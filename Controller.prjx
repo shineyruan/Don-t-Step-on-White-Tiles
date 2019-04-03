@@ -35,23 +35,124 @@ KEY ProjectDescription ""
 KEY Pa4PeripheralNewSeq "GOOD"
 KEY SimulationType "VERILOG"
 KEY Vendor "Actel"
-KEY ActiveRoot "Controller::work"
+KEY ActiveRoot "controller::work"
 LIST REVISIONS
 VALUE="Impl1",NUM=1
 CURREV=1
 ENDLIST
 LIST LIBRARIES
 MSS_BFM_LIB
+COREAPB3_LIB
 ENDLIST
 LIST LIBRARY_MSS_BFM_LIB
 ALIAS=..\component\Actel\SmartFusionMSS\MSS\2.5.200\mti\user_verilog\MSS_BFM_LIB
 COMPILE_OPTION=REFRESH_AND_COMPILE
 CUSTOMPATH=false
 ENDLIST
+LIST LIBRARY_COREAPB3_LIB
+ALIAS=COREAPB3_LIB
+COMPILE_OPTION=COMPILE
+CUSTOMPATH=false
+ENDLIST
 LIST FileManager
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf,actgen_cxf"
+STATE="utd"
+TIME="1554178391"
+SIZE="2769"
+PARENT="<project>\component\work\controller\controller.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\coreparameters.v,tb_hdl"
+STATE="utd"
+TIME="1554178391"
+SIZE="1283"
+PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
+IS_READONLY="TRUE"
+IS_INCLUDED="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\mti\scripts\wave_user.do,do"
+STATE="utd"
+TIME="1554178210"
+SIZE="912"
+PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_ahbtoapb.v,tb_hdl"
+STATE="utd"
+TIME="1554178210"
+SIZE="4636"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apb.v,tb_hdl"
+STATE="utd"
+TIME="1554178210"
+SIZE="9073"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslave.v,tb_hdl"
+STATE="utd"
+TIME="1554178210"
+SIZE="25129"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslaveext.v,tb_hdl"
+STATE="utd"
+TIME="1554178210"
+SIZE="36275"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_main.v,tb_hdl"
+STATE="utd"
+TIME="1554178210"
+SIZE="122456"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3.v,hdl"
+STATE="utd"
+TIME="1554178210"
+SIZE="32806"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3_iaddr_reg.v,hdl"
+STATE="utd"
+TIME="1554178210"
+SIZE="3556"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3_muxptob3.v,hdl"
+STATE="utd"
+TIME="1554178210"
+SIZE="6765"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\test\user\testbench.v,tb_hdl"
+STATE="utd"
+TIME="1554178210"
+SIZE="23651"
+LIBRARY="COREAPB3_LIB"
+PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
+MODULE_UNDER_TEST="testbench"
+SIMULATION_TIME="-all"
+IS_READONLY="TRUE"
+ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS\2.5.200\MSS.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086425"
+TIME="1554178207"
 SIZE="945"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
@@ -69,91 +170,97 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_CCC\2.0.106\MSS_CCC.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086418"
+TIME="1554178202"
 SIZE="252"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_CM3\1.0.200\MSS_CM3.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086418"
+TIME="1554178202"
 SIZE="252"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_COM\1.0.200\MSS_COM.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086418"
+TIME="1554178202"
 SIZE="252"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_DMA\1.0.101\MSS_DMA.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086418"
+TIME="1554178202"
 SIZE="252"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_ENVM\2.3.200\MSS_ENVM.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086422"
+TIME="1554178205"
 SIZE="253"
+PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
+ENDFILE
+VALUE "<project>\component\Actel\SmartFusionMSS\MSS_FIC\1.0.101\MSS_FIC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1554178205"
+SIZE="252"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_FIO\1.0.203\MSS_FIO.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086422"
+TIME="1554178205"
 SIZE="252"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_GPIO\1.0.101\MSS_GPIO.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086422"
+TIME="1554178205"
 SIZE="253"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_INTR\1.0.101\MSS_INTR.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086422"
+TIME="1554178205"
 SIZE="253"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_RESET\1.0.101\MSS_RESET.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086422"
+TIME="1554178205"
 SIZE="254"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_RTC\1.0.100\MSS_RTC.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086422"
+TIME="1554178205"
 SIZE="252"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_TIMER\1.0.100\MSS_TIMER.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086422"
+TIME="1554178205"
 SIZE="254"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_UART\1.0.101\MSS_UART.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086422"
+TIME="1554178205"
 SIZE="253"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_UFROM\1.0.100\MSS_UFROM.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086422"
+TIME="1554178205"
 SIZE="254"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\work\controller\controller.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086440"
-SIZE="4578"
+TIME="1554178394"
+SIZE="4972"
 ENDFILE
 VALUE "<project>\component\work\controller\controller.pdc,pdc"
 STATE="utd"
-TIME="1554086437"
-SIZE="1333"
+TIME="1554178391"
+SIZE="2055"
 PARENT="<project>\component\work\controller\controller.cxf"
 BEGIN_USE_CONSTRAINT
 TOOL_CONSTRAINT_TYPE="ideDESIGNER"
@@ -163,8 +270,8 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\controller\controller.v,hdl"
 STATE="utd"
-TIME="1554086438"
-SIZE="2537"
+TIME="1554178391"
+SIZE="14197"
 PARENT="<project>\component\work\controller\controller.cxf"
 IS_READONLY="TRUE"
 ENDFILE
@@ -180,25 +287,25 @@ SIZE="413"
 ENDFILE
 VALUE "<project>\component\work\MSS_controller\MSS_CCC_0\MSS_controller_tmp_MSS_CCC_0_MSS_CCC.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086418"
+TIME="1554178202"
 SIZE="495"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\work\MSS_controller\MSS_CCC_0\MSS_controller_tmp_MSS_CCC_0_MSS_CCC.v,hdl"
 STATE="utd"
-TIME="1554086418"
-SIZE="2913"
+TIME="1554178202"
+SIZE="2891"
 PARENT="<project>\component\work\MSS_controller\MSS_CCC_0\MSS_controller_tmp_MSS_CCC_0_MSS_CCC.cxf"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\MSS_controller\MSS_controller.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554086426"
-SIZE="10565"
+TIME="1554178208"
+SIZE="12779"
 ENDFILE
 VALUE "<project>\component\work\MSS_controller\MSS_controller.pdc,pdc"
 STATE="utd"
-TIME="1554086414"
+TIME="1554178198"
 SIZE="1304"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 BEGIN_USE_CONSTRAINT
@@ -209,22 +316,34 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\MSS_controller\MSS_controller.v,hdl"
 STATE="utd"
-TIME="1554086425"
-SIZE="19553"
+TIME="1554178207"
+SIZE="19602"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\MSS_controller\MSS_ENVM_0\MSS_ENVM_0.efc,efc"
 STATE="utd"
-TIME="1554086422"
-SIZE="16218"
+TIME="1554178205"
+SIZE="15874"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\MSS_controller\mss_tshell.v,hdl"
 STATE="utd"
-TIME="1554086422"
+TIME="1554178206"
 SIZE="12226"
+PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
+BEGIN_USE_CONSTRAINT
+TOOL_CONSTRAINT_TYPE="ideSYNTHESIS"
+TOOL_CONSTRAINT_USE="SYNPLIFY7_EXT"
+END_USE_CONSTRAINT
+USE_FOR_ANY_TOOL="FALSE"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\MSS_controller\mss_tshell_syn.sdc,sdc"
+STATE="utd"
+TIME="1554178206"
+SIZE="200"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 BEGIN_USE_CONSTRAINT
 TOOL_CONSTRAINT_TYPE="ideSYNTHESIS"
@@ -235,18 +354,18 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\designer\impl1\controller.adb,adb"
 STATE="utd"
-TIME="1554086487"
-SIZE="281600"
+TIME="1554178686"
+SIZE="328192"
 ENDFILE
 VALUE "<project>\designer\impl1\controller.fdb,fdb"
 STATE="utd"
-TIME="1554086486"
-SIZE="32570"
+TIME="1554178685"
+SIZE="36096"
 ENDFILE
 VALUE "<project>\designer\impl1\controller.ide_des,ide_des"
 STATE="utd"
-TIME="1554086487"
-SIZE="1115"
+TIME="1554178686"
+SIZE="1114"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_1.ide_des,ide_des"
 STATE="utd"
@@ -255,48 +374,49 @@ SIZE="217"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_compile_log.rpt,log"
 STATE="utd"
-TIME="1554086459"
-SIZE="32279"
+TIME="1554178427"
+SIZE="34673"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_fp\controller.pdb,pdb"
 STATE="utd"
-TIME="1554086497"
-SIZE="38122"
+TIME="1554178696"
+SIZE="41608"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_fp\controller.pro,pro"
 STATE="utd"
-TIME="1554086539"
+TIME="1554178736"
 SIZE="2454"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_fp\projectData\controller.pdb,pdb"
 STATE="utd"
-TIME="1554086539"
-SIZE="38122"
+TIME="1554178736"
+SIZE="41608"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_placeroute_log.rpt,log"
 STATE="utd"
-TIME="1554086471"
-SIZE="2668"
+TIME="1554178671"
+SIZE="2695"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_prgdata_log.rpt,log"
 STATE="utd"
-TIME="1554086487"
+TIME="1554178686"
 SIZE="746"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_verifytiming_log.rpt,log"
 STATE="utd"
-TIME="1554086475"
+TIME="1554178675"
 SIZE="1202"
-ENDFILE
-VALUE "<project>\hdl\controller.v,hdl"
-STATE="utd"
-TIME="1554088030"
-SIZE="15"
 ENDFILE
 VALUE "<project>\hdl\Nintendo_controller.v,hdl"
 STATE="utd"
-TIME="1554165323"
-SIZE="1217"
+TIME="1554178402"
+SIZE="2664"
+ENDFILE
+VALUE "<project>\simulation\bfmtovec_compile.tcl,sim"
+STATE="utd"
+TIME="1554178210"
+SIZE="1229"
+PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
 ENDFILE
 VALUE "<project>\simulation\CompileDssBfm.tcl,sim"
 STATE="utd"
@@ -304,16 +424,22 @@ TIME="1551204711"
 SIZE="41"
 PARENT="<project>\component\Actel\SmartFusionMSS\MSS\2.5.200\MSS.cxf"
 ENDFILE
+VALUE "<project>\simulation\coreapb3_usertb_master.bfm,sim"
+STATE="utd"
+TIME="1554178210"
+SIZE="8016"
+PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
+ENDFILE
 VALUE "<project>\simulation\subsystem.bfm,sim"
 STATE="utd"
-TIME="1554086438"
-SIZE="602"
+TIME="1554178391"
+SIZE="644"
 PARENT="<project>\component\work\controller\controller.cxf"
 ENDFILE
 VALUE "<project>\simulation\test.bfm,sim"
 STATE="utd"
-TIME="1554086419"
-SIZE="5496"
+TIME="1554178202"
+SIZE="5460"
 PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\simulation\user.bfm,sim"
@@ -324,49 +450,144 @@ PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\synthesis\controller.edn,syn_edn"
 STATE="utd"
-TIME="1554086449"
-SIZE="99765"
+TIME="1554178419"
+SIZE="165201"
 ENDFILE
 VALUE "<project>\synthesis\controller.so,so"
 STATE="utd"
-TIME="1554086449"
+TIME="1554178419"
 SIZE="243"
 ENDFILE
 VALUE "<project>\synthesis\controller_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1554086449"
-SIZE="310"
+TIME="1554178419"
+SIZE="546"
 ENDFILE
 VALUE "<project>\synthesis\controller_syn.prj,prj"
 STATE="utd"
-TIME="1554086450"
-SIZE="2301"
+TIME="1554178419"
+SIZE="3067"
+ENDFILE
+VALUE "<project>\synthesis\synwork\layer0.so,so"
+STATE="utd"
+TIME="1554178337"
+SIZE="159"
 ENDFILE
 ENDLIST
 LIST UsedFile
-VALUE "<project>\hdl\Nintendo_controller.v,Controller"
 ENDLIST
 LIST NewModulesInfo
+LIST "controller::work"
+FILE "<project>\component\work\controller\controller.v,hdl"
+LIST Other_Association
+VALUE "<project>\simulation\subsystem.bfm,sim"
+VALUE "<project>\component\work\controller\controller.pdc,pdc"
+ENDLIST
+LIST SynthesisConstraints
+VALUE "<project>\component\work\MSS_controller\mss_tshell_syn.sdc,sdc"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+LiberoState=Post_Layout
+ideSYNTHESIS(<project>\synthesis\controller.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl1\controller.adb,adb)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST PinReports
+VALUE "<project>\designer\impl1\controller_report_pin_byname.txt,log"
+VALUE "<project>\designer\impl1\controller_report_pin_bynumber.txt,log"
+ENDLIST
+ENDLIST
 LIST "MSS_controller::work"
 FILE "<project>\component\work\MSS_controller\MSS_controller.v,hdl"
 LIST Other_Association
+VALUE "<project>\component\work\MSS_controller\mss_tshell_syn.sdc,sdc"
 VALUE "<project>\simulation\user.bfm,sim"
 VALUE "<project>\simulation\test.bfm,sim"
 VALUE "<project>\component\work\MSS_controller\MSS_controller.pdc,pdc"
 VALUE "<project>\component\work\MSS_controller\MSS_ENVM_0\MSS_ENVM_0.efc,efc"
 VALUE "<project>\simulation\CompileDssBfm.tcl,sim"
+ENDLIST
+ENDLIST
+LIST "CoreAPB3::COREAPB3_LIB"
+FILE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3.v,hdl"
+LIST Other_Association
+VALUE "<project>\simulation\bfmtovec_compile.tcl,sim"
+VALUE "<project>\simulation\coreapb3_usertb_master.bfm,sim"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\coreparameters.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_main.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_ahbtoapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslaveext.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslave.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\test\user\testbench.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\mti\scripts\wave_user.do,do"
+ENDLIST
+LIST AssociatedStimulus
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\coreparameters.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_main.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_ahbtoapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslaveext.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslave.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\test\user\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
 ENDLIST
 ENDLIST
 ENDLIST
 LIST AssociatedStimulus
+LIST CoreAPB3
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\coreparameters.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_main.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_ahbtoapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslaveext.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslave.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\test\user\testbench.v,tb_hdl"
+ENDLIST
 ENDLIST
 LIST Other_Association
+LIST controller
+VALUE "<project>\simulation\subsystem.bfm,sim"
+VALUE "<project>\component\work\controller\controller.pdc,pdc"
+ENDLIST
 LIST MSS_controller
+VALUE "<project>\component\work\MSS_controller\mss_tshell_syn.sdc,sdc"
 VALUE "<project>\simulation\user.bfm,sim"
 VALUE "<project>\simulation\test.bfm,sim"
 VALUE "<project>\component\work\MSS_controller\MSS_controller.pdc,pdc"
 VALUE "<project>\component\work\MSS_controller\MSS_ENVM_0\MSS_ENVM_0.efc,efc"
 VALUE "<project>\simulation\CompileDssBfm.tcl,sim"
+ENDLIST
+LIST CoreAPB3
+VALUE "<project>\simulation\bfmtovec_compile.tcl,sim"
+VALUE "<project>\simulation\coreapb3_usertb_master.bfm,sim"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\coreparameters.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_main.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_ahbtoapb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apb.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslaveext.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslave.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\test\user\testbench.v,tb_hdl"
+VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\mti\scripts\wave_user.do,do"
 ENDLIST
 ENDLIST
 LIST SimulationOptions
@@ -469,6 +690,32 @@ IS32BIT="1"
 EndProfile
 ENDLIST
 LIST ProjectState5.1
+LIST "controller::work"
+LIST Impl1
+LiberoState=Post_Layout
+ideSYNTHESIS(<project>\synthesis\controller.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl1\controller.adb,adb)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+LIST "CoreAPB3::COREAPB3_LIB"
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
 ENDLIST
 LIST ExcludePackageForSimulation
 ENDLIST
@@ -490,7 +737,10 @@ LIST "BIBUF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v",
 ENDLIST
 LIST "BIBUF_OPEND_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
 ENDLIST
-LIST "Controller::work","hdl\Nintendo_controller.v","FALSE","FALSE"
+LIST "controller::work","component\work\controller\controller.v","TRUE","FALSE"
+SUBBLOCK "MSS_controller::work","component\work\MSS_controller\MSS_controller.v","TRUE","FALSE"
+SUBBLOCK "Nintendo_Controller::work","hdl\Nintendo_controller.v","FALSE","FALSE"
+SUBBLOCK "CoreAPB3::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3.v","FALSE","FALSE"
 ENDLIST
 LIST "DESIGN_FIRMWARE::work","component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf","TRUE","FALSE"
 SUBBLOCK "HAL::work","","FALSE","FALSE"
@@ -550,11 +800,39 @@ LIST "MSS_XTLOSC::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v"
 ENDLIST
 LIST "MSSINT::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
 ENDLIST
+LIST "Nintendo_Controller::work","hdl\Nintendo_controller.v","FALSE","FALSE"
+ENDLIST
 LIST "OUTBUF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
 ENDLIST
 LIST "SmartFusion_CMSIS_PAL::work","","FALSE","FALSE"
 ENDLIST
 LIST "TRIBUFF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
+ENDLIST
+LIST "CAPB3II::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3_muxptob3.v","FALSE","FALSE"
+ENDLIST
+LIST "CAPB3O::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3_iaddr_reg.v","FALSE","FALSE"
+ENDLIST
+LIST "CoreAPB3::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3.v","FALSE","FALSE"
+SUBBLOCK "CAPB3II::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3_muxptob3.v","FALSE","FALSE"
+SUBBLOCK "CAPB3O::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3_iaddr_reg.v","FALSE","FALSE"
+ENDLIST
+LIST "BFM_APB::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apb.v","FALSE","TRUE"
+SUBBLOCK "BFMA1l1OII::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_ahbtoapb.v","FALSE","TRUE"
+SUBBLOCK "BFM_MAIN::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_main.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_APBSLAVE::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslave.v","FALSE","TRUE"
+SUBBLOCK "BFM_APBSLAVEEXT::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslaveext.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_APBSLAVEEXT::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslaveext.v","FALSE","TRUE"
+ENDLIST
+LIST "BFM_MAIN::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_main.v","FALSE","TRUE"
+ENDLIST
+LIST "BFMA1l1OII::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_ahbtoapb.v","FALSE","TRUE"
+ENDLIST
+LIST "testbench::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\test\user\testbench.v","FALSE","TRUE"
+SUBBLOCK "BFM_APB::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apb.v","FALSE","TRUE"
+SUBBLOCK "BFM_APBSLAVE::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslave.v","FALSE","TRUE"
+SUBBLOCK "CoreAPB3::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3.v","FALSE","FALSE"
 ENDLIST
 ENDLIST
 LIST ActiveTestBenchList
@@ -564,6 +842,7 @@ ENDLIST
 LIST FPTabList
 ENDLIST
 LIST TimingTabList
+VALUE "component\work\MSS_controller\mss_tshell_syn.sdc"
 ENDLIST
 LIST FDCTabList
 ENDLIST
