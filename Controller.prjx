@@ -359,8 +359,8 @@ SIZE="346624"
 ENDFILE
 VALUE "<project>\designer\impl1\controller.fdb,fdb"
 STATE="utd"
-TIME="1554320752"
-SIZE="36165"
+TIME="1554325856"
+SIZE="37007"
 ENDFILE
 VALUE "<project>\designer\impl1\controller.ide_des,ide_des"
 STATE="utd"
@@ -394,23 +394,23 @@ SIZE="41589"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_placeroute_log.rpt,log"
 STATE="utd"
-TIME="1554320739"
+TIME="1554325842"
 SIZE="2695"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_prgdata_log.rpt,log"
 STATE="utd"
-TIME="1554320752"
+TIME="1554325857"
 SIZE="746"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_verifytiming_log.rpt,log"
 STATE="utd"
-TIME="1554320743"
+TIME="1554325846"
 SIZE="1202"
 ENDFILE
 VALUE "<project>\hdl\Nintendo_controller.v,hdl"
 STATE="utd"
-TIME="1554320672"
-SIZE="3470"
+TIME="1554325795"
+SIZE="3919"
 ENDFILE
 VALUE "<project>\simulation\bfmtovec_compile.tcl,sim"
 STATE="utd"
@@ -733,8 +733,8 @@ Reports;Reports;0
 ReportsCurrentItem;Generate Programming Data:controller_prgdata_log.rpt
 SmartDesign;controller;0
 StartPage;StartPage;0
-HDL;hdl\Nintendo_controller.v;0
-ACTIVEVIEW;hdl\Nintendo_controller.v
+SmartDesign;MSS_controller;0
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "BIBUF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
