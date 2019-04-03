@@ -57,13 +57,13 @@ ENDLIST
 LIST FileManager
 VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554178391"
+TIME="1554309264"
 SIZE="2769"
 PARENT="<project>\component\work\controller\controller.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\coreparameters.v,tb_hdl"
 STATE="utd"
-TIME="1554178391"
+TIME="1554309264"
 SIZE="1283"
 PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
 IS_READONLY="TRUE"
@@ -254,13 +254,13 @@ PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\component\work\controller\controller.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554178394"
+TIME="1554309271"
 SIZE="4972"
 ENDFILE
 VALUE "<project>\component\work\controller\controller.pdc,pdc"
 STATE="utd"
-TIME="1554178391"
-SIZE="2055"
+TIME="1554309263"
+SIZE="1501"
 PARENT="<project>\component\work\controller\controller.cxf"
 BEGIN_USE_CONSTRAINT
 TOOL_CONSTRAINT_TYPE="ideDESIGNER"
@@ -270,7 +270,7 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\controller\controller.v,hdl"
 STATE="utd"
-TIME="1554178391"
+TIME="1554309264"
 SIZE="14197"
 PARENT="<project>\component\work\controller\controller.cxf"
 IS_READONLY="TRUE"
@@ -359,8 +359,8 @@ SIZE="328192"
 ENDFILE
 VALUE "<project>\designer\impl1\controller.fdb,fdb"
 STATE="utd"
-TIME="1554178685"
-SIZE="36096"
+TIME="1554311972"
+SIZE="36071"
 ENDFILE
 VALUE "<project>\designer\impl1\controller.ide_des,ide_des"
 STATE="utd"
@@ -394,23 +394,23 @@ SIZE="41608"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_placeroute_log.rpt,log"
 STATE="utd"
-TIME="1554178671"
+TIME="1554311958"
 SIZE="2695"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_prgdata_log.rpt,log"
 STATE="utd"
-TIME="1554178686"
+TIME="1554311972"
 SIZE="746"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_verifytiming_log.rpt,log"
 STATE="utd"
-TIME="1554178675"
+TIME="1554311962"
 SIZE="1202"
 ENDFILE
 VALUE "<project>\hdl\Nintendo_controller.v,hdl"
 STATE="utd"
-TIME="1554178402"
-SIZE="2664"
+TIME="1554311876"
+SIZE="3190"
 ENDFILE
 VALUE "<project>\simulation\bfmtovec_compile.tcl,sim"
 STATE="utd"
@@ -432,7 +432,7 @@ PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
 ENDFILE
 VALUE "<project>\simulation\subsystem.bfm,sim"
 STATE="utd"
-TIME="1554178391"
+TIME="1554309264"
 SIZE="644"
 PARENT="<project>\component\work\controller\controller.cxf"
 ENDFILE
@@ -656,8 +656,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM=""
-BATCH=0
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -729,8 +729,12 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Generate Programming Data:controller_prgdata_log.rpt
+SmartDesign;controller;0
 StartPage;StartPage;0
-ACTIVEVIEW;StartPage
+HDL;hdl\Nintendo_controller.v;0
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "BIBUF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
@@ -739,8 +743,8 @@ LIST "BIBUF_OPEND_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_com
 ENDLIST
 LIST "controller::work","component\work\controller\controller.v","TRUE","FALSE"
 SUBBLOCK "MSS_controller::work","component\work\MSS_controller\MSS_controller.v","TRUE","FALSE"
-SUBBLOCK "Nintendo_Controller::work","hdl\Nintendo_controller.v","FALSE","FALSE"
 SUBBLOCK "CoreAPB3::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3.v","FALSE","FALSE"
+SUBBLOCK "Nintendo_Controller::work","hdl\Nintendo_controller.v","FALSE","FALSE"
 ENDLIST
 LIST "DESIGN_FIRMWARE::work","component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf","TRUE","FALSE"
 SUBBLOCK "HAL::work","","FALSE","FALSE"

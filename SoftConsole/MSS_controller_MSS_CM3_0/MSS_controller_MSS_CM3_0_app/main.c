@@ -19,12 +19,13 @@ int main() {
     //     MSS_UART_polled_tx(&g_mss_uart1, clear_display, sizeof(clear_display));
     // }
 
-    volatile uint8_t* command = (uint8_t*)(0x40050000);
+    volatile uint8_t* command_addr = (uint8_t*)(0x40050000);
 
     while (1) {
+        uint8_t command = (*command_addr);
         printf("Right: %d  Left: %d  Down: %d  Up: %d  Start: %d  Select: %d  B: %d  A: %d\r\n",
-               *command & (0x01), (*command >> 1) & 0x01, (*command >> 2) & 0x01, (*command >> 3) & 0x01,
-               (*command >> 4) & 0x01, (*command >> 5) & 0x01, (*command >> 6) & 0x01, (*command >> 7) & 0x01);
+               command & (0x01), (command >> 1) & 0x01, (command >> 2) & 0x01, (command >> 3) & 0x01,
+               (command >> 4) & 0x01, (command >> 5) & 0x01, (command >> 6) & 0x01, (command >> 7) & 0x01);
     }
 
     return 0;
