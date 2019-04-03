@@ -19,6 +19,21 @@ module Nintendo_Controller(input PCLK,               // clock
     
     // ****** Your code ******
     
+    reg [9:0] clock_divider;
+    assign clock_divider_max = (clock_divider == 10'd600);
+    
+    always @(posedge PCLK) begin
+        if (~PRESERN) begin
+            clock_divider <= 10'd0;
+        end
+        else if (clock_divider_max) begin
+            clock_divider <= 0;
+        end
+        else begin
+            clock_divider <= clock_divider + 1;
+        end
+    end
+    
     reg [4:0] count;
     reg [4:0] nextCount;
     
@@ -29,8 +44,9 @@ module Nintendo_Controller(input PCLK,               // clock
     reg [7:0] data_in;
     reg [2:0] read_count;
     reg start, finish;
-
-    assign data_en = (finish == 0) && (start == 0) && (latch == 0) && (clock == 0);
+    
+    assign data_en   = (finish == 0) && (start == 0) && (latch == 0) && (clock == 0);
+    assign count_max = (count == 5'd20);
     
     always @(posedge PCLK) begin
         if (~PRESERN) begin
@@ -42,7 +58,7 @@ module Nintendo_Controller(input PCLK,               // clock
             data_in    <= 8'd0;
             read_count <= 3'd0;
         end
-        if (finish == 1) begin
+        else if (finish == 1) begin
             PRDATA[31:8] <= 24'd0;
             PRDATA[7:0]  <= data_in;
             finish       <= 0;
@@ -50,40 +66,43 @@ module Nintendo_Controller(input PCLK,               // clock
             clock        <= 0;
             data_in      <= 8'd0;
         end
-        if (start == 1) begin
-            // latch the first data
-            latch <= 1;
-            start <= 0;
-        end
-        if (latch == 1) begin
-            count <= nextCount;
-            if (count == 5'd20) begin
-                count <= 5'd0;
+        else if (clock_divider_max) begin
+            if (start == 1) begin
+                // latch the first data
+                latch <= 1;
+                start <= 0;
+            end
+            if (latch == 1) begin
+                // count <= nextCount;
+                // if (count_max) begin
+                //     count <= 5'd0;
+                //     latch <= 0;
+                // end
                 latch <= 0;
             end
-        end
-        if (clock == 1) begin
-            clock <= 0;
-        end
-        if (data_en) begin
-            // latch data
-            clock      <= 1;
-            data_in[7] <= data_in[6];
-            data_in[6] <= data_in[5];
-            data_in[5] <= data_in[4];
-            data_in[4] <= data_in[3];
-            data_in[3] <= data_in[2];
-            data_in[2] <= data_in[1];
-            data_in[1] <= data_in[0];
-            data_in[0] <= data;
-            read_count <= read_count + 1;
-
-            if (read_count == 3'd7) begin
-                // latch the last data
-                finish     <= 1;
-                read_count <= 3'd0;
+            if (clock == 1) begin
+                clock <= 0;
+            end
+            if (data_en) begin
+                // latch data
+                // data are inverted bits
+                clock      <= 1;
+                data_in[7] <= data_in[6];
+                data_in[6] <= data_in[5];
+                data_in[5] <= data_in[4];
+                data_in[4] <= data_in[3];
+                data_in[3] <= data_in[2];
+                data_in[2] <= data_in[1];
+                data_in[1] <= data_in[0];
+                data_in[0] <= ~data;
+                read_count <= read_count + 1;
+                
+                if (read_count == 3'd7) begin
+                    // latch the last data
+                    finish     <= 1;
+                    read_count <= 3'd0;
+                end
             end
         end
     end
-    
 endmodule

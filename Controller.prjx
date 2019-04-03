@@ -354,17 +354,17 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\designer\impl1\controller.adb,adb"
 STATE="utd"
-TIME="1554178686"
-SIZE="328192"
+TIME="1554311972"
+SIZE="346624"
 ENDFILE
 VALUE "<project>\designer\impl1\controller.fdb,fdb"
 STATE="utd"
-TIME="1554311972"
-SIZE="36071"
+TIME="1554320752"
+SIZE="36165"
 ENDFILE
 VALUE "<project>\designer\impl1\controller.ide_des,ide_des"
 STATE="utd"
-TIME="1554178686"
+TIME="1554311972"
 SIZE="1114"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_1.ide_des,ide_des"
@@ -374,43 +374,43 @@ SIZE="217"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_compile_log.rpt,log"
 STATE="utd"
-TIME="1554178427"
-SIZE="34673"
+TIME="1554311944"
+SIZE="34716"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_fp\controller.pdb,pdb"
 STATE="utd"
-TIME="1554178696"
-SIZE="41608"
+TIME="1554311982"
+SIZE="41589"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_fp\controller.pro,pro"
 STATE="utd"
-TIME="1554178736"
+TIME="1554312021"
 SIZE="2454"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_fp\projectData\controller.pdb,pdb"
 STATE="utd"
-TIME="1554178736"
-SIZE="41608"
+TIME="1554312021"
+SIZE="41589"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_placeroute_log.rpt,log"
 STATE="utd"
-TIME="1554311958"
+TIME="1554320739"
 SIZE="2695"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_prgdata_log.rpt,log"
 STATE="utd"
-TIME="1554311972"
+TIME="1554320752"
 SIZE="746"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_verifytiming_log.rpt,log"
 STATE="utd"
-TIME="1554311962"
+TIME="1554320743"
 SIZE="1202"
 ENDFILE
 VALUE "<project>\hdl\Nintendo_controller.v,hdl"
 STATE="utd"
-TIME="1554311876"
-SIZE="3190"
+TIME="1554320672"
+SIZE="3470"
 ENDFILE
 VALUE "<project>\simulation\bfmtovec_compile.tcl,sim"
 STATE="utd"
@@ -450,22 +450,22 @@ PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\synthesis\controller.edn,syn_edn"
 STATE="utd"
-TIME="1554178419"
-SIZE="165201"
+TIME="1554311936"
+SIZE="160130"
 ENDFILE
 VALUE "<project>\synthesis\controller.so,so"
 STATE="utd"
-TIME="1554178419"
+TIME="1554311936"
 SIZE="243"
 ENDFILE
 VALUE "<project>\synthesis\controller_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1554178419"
+TIME="1554311936"
 SIZE="546"
 ENDFILE
 VALUE "<project>\synthesis\controller_syn.prj,prj"
 STATE="utd"
-TIME="1554178419"
+TIME="1554311936"
 SIZE="3067"
 ENDFILE
 VALUE "<project>\synthesis\synwork\layer0.so,so"
@@ -734,7 +734,7 @@ ReportsCurrentItem;Generate Programming Data:controller_prgdata_log.rpt
 SmartDesign;controller;0
 StartPage;StartPage;0
 HDL;hdl\Nintendo_controller.v;0
-ACTIVEVIEW;Reports
+ACTIVEVIEW;hdl\Nintendo_controller.v
 ENDLIST
 LIST ModuleSubBlockList
 LIST "BIBUF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
