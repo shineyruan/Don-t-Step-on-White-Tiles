@@ -1,5 +1,5 @@
 KEY LIBERO "11.9"
-KEY CAPTURE "11.9.2.1"
+KEY CAPTURE "11.9.3.5"
 KEY DEFAULT_IMPORT_LOC ""
 KEY DEFAULT_OPEN_LOC ""
 KEY ProjectID "0"
@@ -354,8 +354,8 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\designer\impl1\controller.adb,adb"
 STATE="utd"
-TIME="1554311972"
-SIZE="346624"
+TIME="1554325857"
+SIZE="369152"
 ENDFILE
 VALUE "<project>\designer\impl1\controller.fdb,fdb"
 STATE="utd"
@@ -364,7 +364,7 @@ SIZE="37007"
 ENDFILE
 VALUE "<project>\designer\impl1\controller.ide_des,ide_des"
 STATE="utd"
-TIME="1554311972"
+TIME="1554325857"
 SIZE="1114"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_1.ide_des,ide_des"
@@ -374,23 +374,23 @@ SIZE="217"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_compile_log.rpt,log"
 STATE="utd"
-TIME="1554311944"
-SIZE="34716"
+TIME="1554325827"
+SIZE="34712"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_fp\controller.pdb,pdb"
 STATE="utd"
-TIME="1554311982"
-SIZE="41589"
+TIME="1554325866"
+SIZE="42524"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_fp\controller.pro,pro"
 STATE="utd"
-TIME="1554312021"
+TIME="1554325905"
 SIZE="2454"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_fp\projectData\controller.pdb,pdb"
 STATE="utd"
-TIME="1554312021"
-SIZE="41589"
+TIME="1554325905"
+SIZE="42524"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_placeroute_log.rpt,log"
 STATE="utd"
@@ -450,22 +450,22 @@ PARENT="<project>\component\work\MSS_controller\MSS_controller.cxf"
 ENDFILE
 VALUE "<project>\synthesis\controller.edn,syn_edn"
 STATE="utd"
-TIME="1554311936"
-SIZE="160130"
+TIME="1554325820"
+SIZE="178180"
 ENDFILE
 VALUE "<project>\synthesis\controller.so,so"
 STATE="utd"
-TIME="1554311936"
+TIME="1554325820"
 SIZE="243"
 ENDFILE
 VALUE "<project>\synthesis\controller_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1554311936"
+TIME="1554325820"
 SIZE="546"
 ENDFILE
 VALUE "<project>\synthesis\controller_syn.prj,prj"
 STATE="utd"
-TIME="1554311936"
+TIME="1554325820"
 SIZE="3067"
 ENDFILE
 VALUE "<project>\synthesis\synwork\layer0.so,so"
@@ -656,8 +656,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -729,12 +729,8 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
-Reports;Reports;0
-ReportsCurrentItem;Generate Programming Data:controller_prgdata_log.rpt
-SmartDesign;controller;0
 StartPage;StartPage;0
-SmartDesign;MSS_controller;0
-ACTIVEVIEW;Reports
+ACTIVEVIEW;StartPage
 ENDLIST
 LIST ModuleSubBlockList
 LIST "BIBUF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
@@ -743,8 +739,8 @@ LIST "BIBUF_OPEND_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_com
 ENDLIST
 LIST "controller::work","component\work\controller\controller.v","TRUE","FALSE"
 SUBBLOCK "MSS_controller::work","component\work\MSS_controller\MSS_controller.v","TRUE","FALSE"
-SUBBLOCK "CoreAPB3::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3.v","FALSE","FALSE"
 SUBBLOCK "Nintendo_Controller::work","hdl\Nintendo_controller.v","FALSE","FALSE"
+SUBBLOCK "CoreAPB3::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3.v","FALSE","FALSE"
 ENDLIST
 LIST "DESIGN_FIRMWARE::work","component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf","TRUE","FALSE"
 SUBBLOCK "HAL::work","","FALSE","FALSE"
