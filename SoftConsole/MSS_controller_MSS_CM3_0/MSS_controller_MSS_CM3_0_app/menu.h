@@ -11,16 +11,13 @@
 typedef struct LCD {
     /* data */
     uint8_t curr_line_num;
-    uint8_t line_1[20];
-    uint8_t line_2[20];
-    uint8_t line_3[20];
-    uint8_t line_4[20];
+    uint8_t lines[4][20];
 } LCD_Display;
 
 typedef struct menu
 {
-    /* 1 for up, 0 for down. */
-    int scroll_history;
+    int start_line;
+    int end_line;
     int curr_selection;
     uint8_t layer_1[6][20];
 } Menu;

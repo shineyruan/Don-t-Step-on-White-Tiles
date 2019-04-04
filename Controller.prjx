@@ -379,17 +379,17 @@ SIZE="34712"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_fp\controller.pdb,pdb"
 STATE="utd"
-TIME="1554325866"
+TIME="1554342137"
 SIZE="42524"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_fp\controller.pro,pro"
 STATE="utd"
-TIME="1554325905"
+TIME="1554342176"
 SIZE="2454"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_fp\projectData\controller.pdb,pdb"
 STATE="utd"
-TIME="1554325905"
+TIME="1554342176"
 SIZE="42524"
 ENDFILE
 VALUE "<project>\designer\impl1\controller_placeroute_log.rpt,log"
@@ -729,8 +729,12 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Program Device:controller_program.log
+SmartDesign;controller;0
 StartPage;StartPage;0
-ACTIVEVIEW;StartPage
+SmartDesign;MSS_controller;0
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "BIBUF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
