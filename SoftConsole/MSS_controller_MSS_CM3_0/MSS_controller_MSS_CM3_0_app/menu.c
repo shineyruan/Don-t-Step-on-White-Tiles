@@ -1,35 +1,12 @@
 #include "menu.h"
 
-void Display_newline(mss_uart_instance_t *this_uart, const uint8_t *content) {
-    if (Display.curr_line_num + 1 < 4)
-        Display.curr_line_num++;
-    else
-        Display.curr_line_num = 0;
-
-    strcpy(Display.lines[Display.curr_line_num], content);
-
-    Display_frame(this_uart);
-}
-
-void Display_newline_scroll(mss_uart_instance_t *this_uart, const uint8_t *content) {
-    bool all_filled = true;
-
-    int i = 0;
+void Display_clearMenu() {
+    int i;
     for (i = 0; i < 4; i++)
-        if (!Display_lineEmpty(Display.lines[i])) {
-            strcpy(Display.lines[i], content);
-            all_filled = false;
-            break;
-        }
+        memset(Display.lines[i], 0, sizeof(Display.lines[i]));
 
-    if (all_filled) {
-        for (i = 0; i < 3; i++)
-            strcpy(Display.lines[i], Display.lines[i + 1]);
-
-        strcpy(Display.lines[3], content);
-    }
-
-    Display_frame(this_uart);
+    for (i = 0; i < 6; i++)
+        memset(myMenu.layer[i], 0, sizeof(myMenu.layer[i]));
 }
 
 void Display_frame(mss_uart_instance_t *this_uart) {
@@ -58,21 +35,115 @@ bool Display_lineEmpty(int line) {
 }
 
 void Display_initializeMenu() {
-    strcpy(myMenu.layer_1[0], "Player 1");
-    strcpy(myMenu.layer_1[1], "Player 2");
-    strcpy(myMenu.layer_1[2], "Player 3");
-    strcpy(myMenu.layer_1[3], "Player 4");
-    strcpy(myMenu.layer_1[4], "Player 5");
-    strcpy(myMenu.layer_1[5], "Player 6");
+    strcpy(myMenu.layer[0], "Start");
+    strcpy(myMenu.layer[1], "Mode");
+    strcpy(myMenu.layer[2], "Song");
+    strcpy(myMenu.layer[3], "Print config");
+    strcpy(myMenu.layer[4], "Option 2");
+    strcpy(myMenu.layer[5], "Option 3");
+    myMenu.length = 6;
     myMenu.curr_selection = 0;
     myMenu.start_line = 0;
     myMenu.end_line = 4;
+    myMenu.curr_location = ROOT;
 }
 
-void Display_displayMenu() {
-    if (myMenu.curr_selection >= 0 && myMenu.curr_selection <= 1) {
-        uint8_t combined;
-        strcpy(combined, "> ");
-        strcat(combined, myMenu.layer_1[myMenu.curr_selection]);
+void Display_displayMenu(mss_uart_instance_t *this_uart) {
+    int i;
+    for (i = myMenu.start_line; i < myMenu.end_line; i++)
+        if (myMenu.curr_selection == i)
+            strcpy(Display.lines[i - myMenu.start_line], "> ");
+        else
+            strcpy(Display.lines[i - myMenu.start_line], "  ");
+
+    for (i = myMenu.start_line; i < myMenu.end_line; i++)
+        strcat(Display.lines[i - myMenu.start_line], myMenu.layer[i]);
+
+    Display_frame(this_uart);
+}
+
+void Display_scrollDownMenu() {
+    if (myMenu.curr_selection == myMenu.end_line - 1) {
+        if (myMenu.end_line != myMenu.length) {
+            myMenu.start_line++;
+            myMenu.end_line++;
+        }
+    }
+    if (myMenu.curr_selection < myMenu.length - 1)
+        myMenu.curr_selection++;
+}
+
+void Display_scrollUpMenu() {
+    if (myMenu.curr_selection == myMenu.start_line) {
+        if (myMenu.start_line != 0) {
+            myMenu.start_line--;
+            myMenu.end_line--;
+        }
+    }
+    if (myMenu.curr_selection > 0)
+        myMenu.curr_selection--;
+}
+
+void Display_enterModeSelections() {
+    Display_clearMenu();
+    strcpy(myMenu.layer[0], "Slow");
+    strcpy(myMenu.layer[1], "Medium");
+    strcpy(myMenu.layer[2], "Fast");
+    myMenu.length = 3;
+    myMenu.curr_selection = 0;
+    myMenu.start_line = 0;
+    myMenu.end_line = 3;
+    myMenu.curr_location = MODE;
+}
+
+void Display_enterSongSelections() {
+    Display_clearMenu();
+    strcpy(myMenu.layer[0], "Song 1");
+    strcpy(myMenu.layer[1], "Song 2");
+    strcpy(myMenu.layer[2], "Song 3");
+    strcpy(myMenu.layer[3], "Song 4");
+    strcpy(myMenu.layer[4], "Song 5");
+    strcpy(myMenu.layer[5], "Song 6");
+    myMenu.length = 6;
+    myMenu.curr_selection = 0;
+    myMenu.start_line = 0;
+    myMenu.end_line = 4;
+    myMenu.curr_location = SONG;
+}
+
+void Display_enterPrintConfig() {
+    Display_clearMenu();
+    strcpy(myMenu.layer[0], "Mode: ");
+    strcpy(myMenu.layer[1], "Song: ");
+
+    switch (selected_config.selected_mode) {
+        case SLOW:
+            strcat(myMenu.layer[0], "slow");
+            break;
+        case MEDIUM:
+            strcat(myMenu.layer[0], "medium");
+            break;
+        case FAST:
+            strcat(myMenu.layer[0], "fast");
+            break;
+        default:
+            break;
+    }
+
+    char num_str[3];
+    sprintf(num_str, "%d", selected_config.selected_song);
+    strcat(myMenu.layer[1], num_str);
+
+    myMenu.length = 2;
+    myMenu.curr_selection = -1;
+    myMenu.start_line = 0;
+    myMenu.end_line = 2;
+    myMenu.curr_location = PRINT;
+}
+
+void Display_returnLastMenu() {
+    if (myMenu.curr_location == SONG || myMenu.curr_location == MODE || myMenu.curr_location == PRINT) {
+        Display_clearMenu();
+        Display_initializeMenu();
     }
 }
