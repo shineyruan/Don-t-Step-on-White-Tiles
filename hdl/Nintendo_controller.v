@@ -6,17 +6,21 @@ module Nintendo_Controller(input PCLK,               // clock
                            output wire PREADY,       // peripheral ready signal
                            output wire PSLVERR,      // error signal
                            input PWRITE,             // read/write control bit
-                           input [7:0] PADDR,        // IO address
+                           input [31:0] PADDR,        // IO address
                            input wire [31:0] PWDATA, // (processor) bus is writing data to
                            output reg [31:0] PRDATA, // (processor) bus is reading data from this device
                            output reg latch,
                            output reg clock,
-                           input data);
+                           input data
+                           // output reg reset,
+                           // output reg [5:0] selection
+                            );
     
     assign PSLVERR   = 0;                                                       //assumes no error generation
     assign PREADY    = 1;                                                       //assumes zero wait
-    wire read_enable = ~PWRITE && PSEL && (PADDR == 8'd0);                    //decode APB3 read cycle
-    
+    wire read_enable = ~PWRITE && PSEL && (PADDR == 32'h40050000);                    //decode APB3 read cycle
+    // wire sound_write_en = PENABLE & PSEL & PWRITE & (PADDR == 32'h40050004);
+    // wire sound_read_en =  ~PWRITE && PSEL && (PADDR == 32'h40050004);   
     // ****** Your code ******
     
     reg [9:0] clock_divider;
@@ -58,7 +62,12 @@ module Nintendo_Controller(input PCLK,               // clock
             data_in    <= 8'd0;
             read_count <= 3'd0;
         end
-        else if (finish == 1) begin
+        // else if (sound_read_en) begin
+        //     PRDATA[5:0] <= selection[5:0];
+        //     PRDATA[6] <= reset;
+        //     PRDATA[31:7] <= 25'b0;
+        // end
+        else if (finish == 1 && read_enable) begin
             PRDATA[31:8] <= 24'd0;
             PRDATA[7:0]  <= data_in;
             finish       <= 0;
@@ -105,4 +114,17 @@ module Nintendo_Controller(input PCLK,               // clock
             end
         end
     end
+
+// always @ (posedge PCLK) 
+//     begin
+//         if (~PRESERN) begin
+//             selection <= 6'b111111;
+//             reset <= 0;
+//         end    
+//         else if (sound_write_en) begin
+//             selection <= PWDATA[5:0];
+//             reset <= PWDATA[6];
+//         end
+
+//     end
 endmodule

@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include "drivers/mss_uart/mss_uart.h"
 
+#include "soundboard.h"
+
 #define CURSOR_POS_BASE 0x80
 
 typedef enum ModeSelect {
@@ -19,8 +21,9 @@ typedef enum SelectionLocation {
     ROOT,
     MODE,
     SONG,
-    PRINT
-} MenuLocation;
+    PRINT,
+    MESSAGE
+} Menu_Location;
 
 typedef struct LCD {
     /* data */
@@ -28,14 +31,20 @@ typedef struct LCD {
     uint8_t lines[4][20];
 } LCD_Display;
 
-typedef struct menu
+typedef struct menuEssential
 {
     int start_line;
     int end_line;
     int curr_selection;
     int length;
-    MenuLocation curr_location;
+} Menu_Essential;
+
+
+typedef struct menu
+{
     uint8_t layer[6][20];
+    Menu_Location curr_location;
+    Menu_Essential frame;
 } Menu;
 
 typedef struct Selections
@@ -45,8 +54,10 @@ typedef struct Selections
 } Selected;
 
 bool started;
+bool print_state;
 LCD_Display Display;
 Menu myMenu;
+Menu_Essential prev_frame;
 Selected selected_config;
 
 static uint8_t line_start[] = {0, 64, 20, 84};
@@ -63,9 +74,11 @@ void Display_initializeMenu();
 void Display_displayMenu(mss_uart_instance_t *this_uart);
 void Display_scrollDownMenu();
 void Display_scrollUpMenu();
+void Display_enterStart();
 void Display_enterModeSelections();
 void Display_enterSongSelections();
 void Display_enterPrintConfig();
+void Display_printSuccessful();
 void Display_returnLastMenu();
 
 #endif

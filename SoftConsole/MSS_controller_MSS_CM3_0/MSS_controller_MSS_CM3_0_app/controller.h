@@ -4,6 +4,8 @@
 #include <inttypes.h>
 #include <stdbool.h>
 
+#define CONTROLLER_ADDR 0x40050000
+
 typedef struct Controller {
     /* data */
     bool right;
