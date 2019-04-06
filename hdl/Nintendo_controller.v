@@ -9,18 +9,17 @@ module Nintendo_Controller(input PCLK,               // clock
                            input [31:0] PADDR,        // IO address
                            input wire [31:0] PWDATA, // (processor) bus is writing data to
                            output reg [31:0] PRDATA, // (processor) bus is reading data from this device
-                           output reg latch,
-                           output reg clock,
-                           input data
-                           // output reg reset,
-                           // output reg [5:0] selection
-                            );
+                           output reg latch,                    //    output reg reset,
+                                                                //    output reg [5:0] selection
+                           input data,
+                           output reg clock
+);
     
     assign PSLVERR   = 0;                                                       //assumes no error generation
     assign PREADY    = 1;                                                       //assumes zero wait
-    wire read_enable = ~PWRITE && PSEL && (PADDR == 32'h40050000);                    //decode APB3 read cycle
-    // wire sound_write_en = PENABLE & PSEL & PWRITE & (PADDR == 32'h40050004);
-    // wire sound_read_en =  ~PWRITE && PSEL && (PADDR == 32'h40050004);   
+    wire controller_read_enable = ~PWRITE && PSEL && (PADDR == 32'h40050000);                    //decode APB3 read cycle
+    // wire sound_write_en = PENABLE & PSEL & PWRITE & (PADDR == 32'h40050100);
+    // wire sound_read_en =  ~PWRITE && PSEL && (PADDR == 32'h40050100);   
     // ****** Your code ******
     
     reg [9:0] clock_divider;
@@ -67,7 +66,7 @@ module Nintendo_Controller(input PCLK,               // clock
         //     PRDATA[6] <= reset;
         //     PRDATA[31:7] <= 25'b0;
         // end
-        else if (finish == 1 && read_enable) begin
+        else if (finish == 1 && controller_read_enable) begin
             PRDATA[31:8] <= 24'd0;
             PRDATA[7:0]  <= data_in;
             finish       <= 0;
@@ -82,11 +81,6 @@ module Nintendo_Controller(input PCLK,               // clock
                 start <= 0;
             end
             if (latch == 1) begin
-                // count <= nextCount;
-                // if (count_max) begin
-                //     count <= 5'd0;
-                //     latch <= 0;
-                // end
                 latch <= 0;
             end
             if (clock == 1) begin

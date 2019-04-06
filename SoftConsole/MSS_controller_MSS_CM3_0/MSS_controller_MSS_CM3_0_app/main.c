@@ -29,8 +29,8 @@ int main() {
 
     Display_initializeMenu();
     printf("Controller init: %x\r\n", *command_addr);
-    (*soundboard_addr) = 0x7F;
-    printf("Sound Initial: %x\r\n", *soundboard_addr);
+    // (*soundboard_addr) = 0x7F;
+    // printf("Sound Initial: %x\r\n", *soundboard_addr);
     printf("Controller init: %x\r\n", *command_addr);
 
 
@@ -126,7 +126,10 @@ int main() {
             if (!(prev_NES_command_struct.select && NES_command_struct.select)) {
                 switch (myMenu.curr_location) {
                     case ROOT:
-                        if (myMenu.frame.curr_selection == 1) {
+                        if (myMenu.frame.curr_selection == 0) {
+                            Display_enterStart();
+                            changed = true;
+                        } else if (myMenu.frame.curr_selection == 1) {
                             Display_enterModeSelections();
                             changed = true;
                         } else if (myMenu.frame.curr_selection == 2) {
@@ -180,7 +183,7 @@ int main() {
                     changed = true;
                     continue;
 
-                    (*soundboard_addr) &= ~(1 << 6);
+                    // (*soundboard_addr) &= ~(1 << 6);
                 }
             }
         }
