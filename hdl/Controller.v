@@ -1,19 +1,26 @@
-// Nintendo_controller.v
-module Nintendo_Controller(input PCLK,                 // clock
-                           input PRESERN,              // system reset
-                           input PSEL,                 // peripheral select
-                           input PENABLE,              // distinguishes access phase
-                           output wire PREADY,         // peripheral ready signal
-                           output wire PSLVERR,        // error signal
-                           input PWRITE,               // read/write control bit
-                           input [31:0] PADDR,         // IO address
-                           input wire [31:0] PWDATA,   // (processor) bus is writing data to
-                           output reg [31:0] PRDATA,   // (processor) bus is reading data from this device
-                           output wire reset,
-                           output wire [5:0] selection,
-                           output reg latch,
-                           output reg clock,
-                           input data);
+// Controller.v
+module Core_Control(input PCLK,                  // clock
+                    input PRESERN,               // system reset
+                    input PSEL,                  // peripheral select
+                    input PENABLE,               // distinguishes access phase
+                    output wire PREADY,          // peripheral ready signal
+                    output wire PSLVERR,         // error signal
+                    input PWRITE,                // read/write control bit
+                    input [31:0] PADDR,          // IO address
+                    input wire [31:0] PWDATA,    // (processor) bus is writing data to
+                    output reg [31:0] PRDATA,    // (processor) bus is reading data from this device
+                    output wire VGA_HS_O,
+                    output wire VGA_VS_O,
+                    output wire VGA_R,
+                    output wire VGA_G,
+                    output wire VGA_B,
+                    output wire [9:0] x,         // current pixel x position: 10-bit value: 0-1023
+                    output wire [8:0] y,         // current pixel y position: 9-bit value: 0-511
+                    output wire reset,
+                    output wire [5:0] selection,
+                    output reg latch,
+                    output reg clock,
+                    input data);
     
     assign PSLVERR = 0;                                                       //assumes no error generation
     assign PREADY  = 1;                                                       //assumes zero wait
@@ -21,7 +28,7 @@ module Nintendo_Controller(input PCLK,                 // clock
     // ****** Your code ******
     
     reg [9:0] clock_divider;
-    assign clock_divider_max = (clock_divider == 10'd600);
+    assign clock_divider_max = (clock_divider == 10'd150);
     
     always @(posedge PCLK) begin
         if (~PRESERN) begin
@@ -45,21 +52,22 @@ module Nintendo_Controller(input PCLK,                 // clock
     reg [7:0] data_in, data_complete;
     reg [2:0] read_count;
     reg start, finish;
-
+    
     reg [5:0] sound_selection;
     reg sound_reset;
-
-    assign reset = sound_reset;
+    
+    assign reset          = sound_reset;
     assign selection[5:0] = sound_selection[5:0];
     
     assign data_en   = (finish == 0) & (start == 0) & (latch == 0) & (clock == 0);
     assign count_max = (count == 5'd20);
-
-    // The comparison of PADDR *must* only utilize the bits lower than PSEL! 
-    // Otherwise there will be some I/O pins losing! 
-    assign ctrl_read_en   = ~PWRITE & PSEL & (PADDR[11:0] == 12'h000);
+    
+    // The comparison of PADDR *must* only utilize the bits lower than PSEL!
+    // Otherwise there will be some I/O pins losing!
+    assign ctrl_read_en   = ~PWRITE & PSEL & (PADDR[11:0] == 12'h024);
     assign sound_write_en = PENABLE & PSEL & PWRITE & (PADDR[11:0] == 12'h100);
     assign sound_read_en  = ~PWRITE & PSEL & (PADDR[11:0] == 12'h100);
+    assign VGA_write_en   = PWRITE & PENABLE & PSEL;
     
     always @(posedge PCLK) begin
         if (~PRESERN) begin
@@ -82,7 +90,7 @@ module Nintendo_Controller(input PCLK,                 // clock
             end
         end
     end
-            
+                
     always @(posedge PCLK) begin
         if (~PRESERN) begin
             latch         <= 0;
@@ -135,4 +143,142 @@ module Nintendo_Controller(input PCLK,                 // clock
             end
         end
     end
+                
+    wire animate;
+    vga640x480 display (
+    .i_clk(PCLK),
+    .i_pix_stb(PCLK),
+    .i_rst(PRESERN),
+    .o_hs(VGA_HS_O),
+    .o_vs(VGA_VS_O),
+    .o_x(x),
+    .o_y(y),
+    .o_animate(animate)
+    );
+    wire [31:0] col1;
+    get_data read_col1(
+    .clk(PCLK),
+    .res(PRESERN),
+    .write_en0(VGA_write_en),
+    .right_addr(PADDR[11:0] == 12'h000),
+    .pwdata(PWDATA),
+    .data(col1)
+    );
+    wire [31:0] col2;
+    get_data read_col2(
+    .clk(PCLK),
+    .res(PRESERN),
+    .write_en0(VGA_write_en),
+    .right_addr(PADDR[11:0] == 12'h004),
+    .pwdata(PWDATA),
+    .data(col2)
+    );
+    assign is_col = (((x > col1[19:10]) & (x < col1[19:10] + col1[9:0])) | ((x > col1[29:20]) & (x < col1[29:20] + col1[9:0])) |
+                    ((x > col2[19:10]) & (x < col2[19:10] + col1[9:0])) | ((x > col2[9:0]) & (x < col1[9:0] + col2[9:0])) | ((x > col2[29:20]) & (x < col2[29:20] + col1[9:0])))? 1 : 0;
+    wire sq1;
+    get_sq read_sq1(
+    .clk(PCLK),
+    .res(PRESERN),
+    .write_en0(VGA_write_en),
+    .right_addr(PADDR[11:0] == 12'h008),
+    .pwdata(PWDATA),
+    .col1(col1),
+    .animate(animate),
+    .x(x),
+    .y(y),
+    .sq(sq1)
+    );
+
+    wire sq2;
+    get_sq read_sq2(
+    .clk(PCLK),
+    .res(PRESERN),
+    .write_en0(VGA_write_en),
+    .right_addr(PADDR[11:0] == 12'h00c),
+    .pwdata(PWDATA),
+    .col1(col1),
+    .animate(animate),
+    .x(x),
+    .y(y),
+    .sq(sq2)
+    );
+
+    wire sq3;
+    get_sq read_sq3(
+    .clk(PCLK),
+    .res(PRESERN),
+    .write_en0(VGA_write_en),
+    .right_addr(PADDR[11:0] == 12'h010),
+    .pwdata(PWDATA),
+    .col1(col1),
+    .animate(animate),
+    .x(x),
+    .y(y),
+    .sq(sq3)
+    );
+
+    wire sq4;
+    get_sq read_sq4(
+    .clk(PCLK),
+    .res(PRESERN),
+    .write_en0(VGA_write_en),
+    .right_addr(PADDR[11:0] == 12'h014),
+    .pwdata(PWDATA),
+    .col1(col1),
+    .animate(animate),
+    .x(x),
+    .y(y),
+    .sq(sq4)
+    );
+
+    wire sq5;
+    get_sq read_sq5(
+    .clk(PCLK),
+    .res(PRESERN),
+    .write_en0(VGA_write_en),
+    .right_addr(PADDR[11:0] == 12'h018),
+    .pwdata(PWDATA),
+    .col1(col1),
+    .animate(animate),
+    .x(x),
+    .y(y),
+    .sq(sq5)
+    );
+
+    wire num0;
+    get_score read_num0(
+    .clk(PCLK),
+    .res(PRESERN),
+    .write_en0(VGA_write_en),
+    .right_addr(PADDR[11:0] == 12'h01c),
+    .pwdata(PWDATA),
+    .animate(animate),
+    .x(x),
+    .y(y),
+    .num(num0),
+    .x1(24),
+    .x2(36),
+    .x3(48)
+    );
+
+    wire num1;
+    get_score read_num1(
+    .clk(PCLK),
+    .res(PRESERN),
+    .write_en0(VGA_write_en),
+    .right_addr(PADDR[11:0] == 12'h020),
+    .pwdata(PWDATA),
+    .animate(animate),
+    .x(x),
+    .y(y),
+    .num(num1),
+    .x1(84),
+    .x2(96),
+    .x3(108)
+    );
+
+    assign c     = is_col | sq1 | sq2 | sq3 | sq4 | sq5 | num0| num1;
+    assign VGA_R = c;
+    assign VGA_G = c;
+    assign VGA_B = c;
 endmodule

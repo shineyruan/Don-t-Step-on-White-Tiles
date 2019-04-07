@@ -4,7 +4,7 @@
 #include <inttypes.h>
 #include <stdbool.h>
 
-#define CONTROLLER_ADDR 0x40050000
+#define CONTROLLER_ADDR 0x40050024
 
 typedef struct Controller {
     /* data */
@@ -18,7 +18,7 @@ typedef struct Controller {
     bool button_a;
 } Command;
 
-static volatile uint8_t* command_addr = (uint8_t*)(0x40050000);
+static volatile uint8_t* command_addr = (uint8_t*)(CONTROLLER_ADDR);
 
 void Controller_getCommand(Command* cmd_struct);
 

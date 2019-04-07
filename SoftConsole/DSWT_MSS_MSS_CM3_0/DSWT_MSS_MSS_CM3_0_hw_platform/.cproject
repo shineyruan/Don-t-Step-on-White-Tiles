@@ -29,9 +29,28 @@
 <option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.cross.cortexm3.lib.debug.option.optimization.level.681489611" name="Optimization Level" superClass="gnu.c.compiler.cross.cortexm3.lib.debug.option.optimization.level" valueType="enumerated"/>
 <option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.cross.cortexm3.lib.debug.option.debugging.level.1682080951" name="Debug Level" superClass="gnu.c.compiler.cross.cortexm3.lib.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 <option id="gnu.c.compiler.option.include.paths.1398648520" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/CMSIS}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/CMSIS/startup_gcc}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_gpio}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_nvm}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_nvm/drivers}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_nvm/drivers/F2DSS_NVM}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_pdma}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_rtc}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_rtc/drivers}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_rtc/drivers/mss_rtc}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_timer}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_uart}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/hal}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/hal/CortexM3}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/hal/CortexM3/GNU}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/CMSIS}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/CMSIS/startup_gcc}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_gpio}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_nvm}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_nvm/drivers}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_nvm/drivers/F2DSS_NVM}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_pdma}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_rtc}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_rtc/drivers}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_rtc/drivers/mss_rtc}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_timer}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_uart}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/hal}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/hal/CortexM3}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/hal/CortexM3/GNU}"/>
 </option>
 <option id="gnu.c.compiler.option.optimization.flags.224943415" name="Other optimization flags" superClass="gnu.c.compiler.option.optimization.flags" value="-ffunction-sections -fdata-sections" valueType="string"/>
+<option id="gnu.c.compiler.option.preprocessor.def.symbols.1204245668" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="ACTEL_STDIO_THRU_UART"/>
+</option>
 <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.916892465" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 </tool>
 <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cross.cortexm3.lib.debug.395470401" name="GNU C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cross.cortexm3.lib.debug">
@@ -322,20 +341,34 @@
 <builder buildPath="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/Release}" id="cdt.managedbuild.target.gnu.builder.cross.cortexm3.lib.release.1640256977" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.cross.cortexm3.lib.release"/>
 <tool id="cdt.managedbuild.tool.gnu.c.compiler.cross.cortexm3.lib.release.1212597782" name="GNU C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cross.cortexm3.lib.release">
 <option defaultValue="gnu.c.optimization.level.more" id="gnu.c.compiler.cross.cortexm3.lib.release.option.optimization.level.1842963782" name="Optimization Level" superClass="gnu.c.compiler.cross.cortexm3.lib.release.option.optimization.level" valueType="enumerated"/>
-<option id="gnu.c.compiler.option.include.paths.2053077215" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/CMSIS}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/CMSIS/startup_gcc}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_gpio}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_nvm}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_nvm/drivers}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_nvm/drivers/F2DSS_NVM}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_pdma}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_rtc}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_rtc/drivers}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_rtc/drivers/mss_rtc}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_timer}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_uart}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/hal}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/hal/CortexM3}"/><listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/hal/CortexM3/GNU}"/>
+<option id="gnu.c.compiler.option.include.paths.2053077215" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/CMSIS}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/CMSIS/startup_gcc}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_gpio}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_nvm}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_nvm/drivers}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_nvm/drivers/F2DSS_NVM}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_pdma}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_rtc}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_rtc/drivers}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_rtc/drivers/mss_rtc}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_timer}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/drivers/mss_uart}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/hal}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/hal/CortexM3}"/>
+<listOptionValue builtIn="false" value="${workspace_loc:/DSWT_MSS_MSS_CM3_0_hw_platform/hal/CortexM3/GNU}"/>
 </option>
 <option id="gnu.c.compiler.option.preprocessor.def.symbols.2093688099" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="NDEBUG"/>
 </option>
-<option id="gnu.c.compiler.option.optimization.flags.1920927224" superClass="gnu.c.compiler.option.optimization.flags" value="-ffunction-sections -fdata-sections" valueType="string"/>
+<option id="gnu.c.compiler.option.optimization.flags.1920927224" name="Other optimization flags" superClass="gnu.c.compiler.option.optimization.flags" value="-ffunction-sections -fdata-sections" valueType="string"/>
 <inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1186259578" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 </tool>
-
 <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cross.cortexm3.lib.release.1141557031" name="GNU C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cross.cortexm3.lib.release">
 <option id="gnu.cpp.compiler.cross.cortexm3.lib.release.option.optimization.level.823083958" name="Optimization Level" superClass="gnu.cpp.compiler.cross.cortexm3.lib.release.option.optimization.level" value="gnu.cpp.compiler.optimization.level.more" valueType="enumerated"/>
 </tool>
-
 <tool id="cdt.managedbuild.tool.gnu.archiver.cross.cortexm3.lib.release.1824012661" name="GNU Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cross.cortexm3.lib.release">
 <outputType id="cdt.managedbuild.tool.gnu.archiver.output.11738404" outputPrefix="lib" superClass="cdt.managedbuild.tool.gnu.archiver.output"/>
 </tool>

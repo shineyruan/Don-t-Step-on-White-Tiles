@@ -98,17 +98,16 @@ void Display_enterStart() {
     myMenu.frame.end_line = 3;
     myMenu.curr_location = PRINT;
 
-    // printf("Before: %x\r\n", *soundboard_addr);
+#ifdef DEBUG
+    printf("Before: %x\r\n", *soundboard_addr);
+#endif
 
-    // (*soundboard_addr) = ~(1 << (selected_config.selected_song - 1)) & (0xFF);
+    (*soundboard_addr) = ~(1 << (selected_config.selected_song - 1)) & (0xFF);
 
-    // printf("After: %x\r\n", *soundboard_addr);
+#ifdef DEBUG
+    printf("After: %x\r\n", *soundboard_addr);
+#endif
 
-    int i = 0;
-    for (i = 0; i < 10000; i++)
-        ;
-
-    // (*soundboard_addr) = ~0;
 }
 
 void Display_enterModeSelections() {

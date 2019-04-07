@@ -6,11 +6,41 @@
 #include "controller.h"
 #include "menu.h"
 #include "soundboard.h"
+#include "pixy.h"
+#include "main.h"
 
 Command NES_command_struct;
 Command prev_NES_command_struct;
 
 int main() {
+    //vga
+	vga_init();
+
+	//pixy
+	const uint8_t frame_size = 16;
+
+	/* inconsequential transfer value (for full duplex) */
+	const uint16_t master_tx_frame = 0;
+
+	//x: 0~320, left to right
+	//y: 0~200, up to down
+	BoundingBox range;
+	range.lbx=74;
+	range.lby=190;
+	range.rbx=248;
+	range.rby=190;
+	range.ltx=83;
+	range.lty=5;
+	range.rtx=250;
+	range.rty=7;
+
+	MSS_SPI_init(&g_mss_spi1);
+	MSS_SPI_configure_master_mode(&g_mss_spi1, MSS_SPI_SLAVE_0, MSS_SPI_MODE0,
+								  MSS_SPI_PCLK_DIV_256, frame_size);
+
+	MSS_SPI_set_slave_select(&g_mss_spi1, MSS_SPI_SLAVE_0);
+
+    // controller
     Display.curr_line_num = 0;
 
     /* Initialize the UART1 */
@@ -28,15 +58,70 @@ int main() {
     /*******************************************/
 
     Display_initializeMenu();
+
+#ifdef DEBUG
     printf("Controller init: %x\r\n", *command_addr);
-    // (*soundboard_addr) = 0x7F;
-    // printf("Sound Initial: %x\r\n", *soundboard_addr);
+#endif
+    (*soundboard_addr) = 0x7F;
+#ifdef DEBUG
+    printf("Sound Initial: %x\r\n", *soundboard_addr);
     printf("Controller init: %x\r\n", *command_addr);
+#endif
 
 
     bool changed = true;
 
     while (1) {
+        delay(400000);
+    	//display
+    	if (started) {
+    		int i;
+    		for (i = 0; i < 4; i++) {
+    			random_mode(i);
+    		}
+    	}
+        if (changed) {
+            Display_displayMenu(&g_mss_uart1);
+            changed = false;
+
+            if (myMenu.curr_location == PRINT)
+                print_state = true;
+            else
+                print_state = false;
+        }
+
+        //pixy
+        uint16_t receive_data[14] = {0};
+        int i = 0;
+		int j;
+    	for (j = 0; j < 10; j++) {
+
+			uint16_t receiver =
+							MSS_SPI_transfer_frame(&g_mss_spi1, master_tx_frame);
+			uint16_t frame_starter =
+				MSS_SPI_transfer_frame(&g_mss_spi1, master_tx_frame);
+
+			/* Two consecutive 0xaa55 means a start of a new frame. */
+			if (receiver == PIXY_START_WORD &&
+				frame_starter == PIXY_START_WORD) {
+				while (i < 12)
+					receive_data[i++] =
+						MSS_SPI_transfer_frame(&g_mss_spi1, master_tx_frame);
+				i = 0;
+			}
+    	}
+        
+		Two_Block data;
+		data = process(range,receive_data);
+
+		if (is_left_on_tile(sq, data, range)){
+			printf("left foot is on tile!\r\n");
+		}
+		if (is_right_on_tile(sq, data, range)){
+			printf("right foot is on tile!\r\n");
+		}
+
+        // controller 
         if (changed) {
             Display_displayMenu(&g_mss_uart1);
             changed = false;
@@ -181,9 +266,9 @@ int main() {
                 if (started) {
                     Display_returnLastMenu();
                     changed = true;
-                    continue;
 
-                    // (*soundboard_addr) &= ~(1 << 6);
+                    (*soundboard_addr) &= (~(1 << 6)) & (0xFF);
+                    continue;
                 }
             }
         }
