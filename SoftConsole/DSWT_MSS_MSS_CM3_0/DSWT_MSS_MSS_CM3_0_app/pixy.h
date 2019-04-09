@@ -49,8 +49,10 @@ typedef struct{
 	//top_y: 0-480 up to down, move from down to up
 	int top_x, top_y, length;
 	int actual_length;
-	//0..9 top_x 10..19 top_y 20..29 length
+	//0..9 top_x 10..19 top_y 20..29 length 30 left_foot_on 31 right_foot_on
 	volatile int* addr;
+    int left_on;
+    int right_on;
 }sq_info;
 
 Two_Block process(BoundingBox range,uint16_t* receive_data){
@@ -135,28 +137,59 @@ uint16_t tf_floor_2_cam(int y, BoundingBox range){
 bool is_left_on_tile(sq_info* tiles, Two_Block oneframe, BoundingBox range){
 	bool result=false;
 	size_t n_tiles = 5;
-	size_t i = 0;
-	for (i = 0; i < n_tiles; i++){
-//		sq_info tile = tiles[i];
-		if(oneframe.col1 == tiles[i].col - 1){
-			if (oneframe.y1> tf_floor_2_cam(tiles[i].top_y,range)   && oneframe.y1< tf_floor_2_cam( (tiles[i].top_y + tiles[i].length),range)){
-				result=true;
-				break;
+	if (oneframe.signature1 == 1){
+		size_t i = 0;
+		for (i = 0; i < n_tiles; i++){
+	//		sq_info tile = tiles[i];
+			if(oneframe.col1 == tiles[i].col - 1){
+				if (oneframe.y1> tf_floor_2_cam(tiles[i].top_y,range)   && oneframe.y1< tf_floor_2_cam( (tiles[i].top_y + tiles[i].length),range)){
+					tiles[i].left_on = 1;
+					result = true;
+					break;
+				}
 			}
 		}
 	}
-	return result;
+	else if (oneframe.signature2 == 1){
+		size_t i = 0;
+		for (i = 0; i < n_tiles; i++){
+	//		sq_info tile = tiles[i];
+			if(oneframe.col2 == tiles[i].col - 1){
+				if (oneframe.y2> tf_floor_2_cam(tiles[i].top_y,range)   && oneframe.y2< tf_floor_2_cam( (tiles[i].top_y + tiles[i].length),range)){
+					tiles[i].left_on = 1;
+					result = true;
+					break;
+				}
+			}
+		}
+	}
+    return result;
 }
 
 bool is_right_on_tile(sq_info* tiles, Two_Block oneframe, BoundingBox range){
 	bool result=false;
 	size_t n_tiles = 5;
-	size_t i = 0;
-	for (i = 0; i < n_tiles; i++){
-		if(oneframe.col2 == tiles[i].col - 1){
-			if (oneframe.y2> tf_floor_2_cam(tiles[i].top_y,range)   && oneframe.y2< tf_floor_2_cam( (tiles[i].top_y + tiles[i].length),range)){
-				result=true;
-				break;
+	if (oneframe.signature1 == 2){
+		size_t i = 0;
+		for (i = 0; i < n_tiles; i++){
+			if(oneframe.col1 == tiles[i].col - 1){
+				if (oneframe.y1> tf_floor_2_cam(tiles[i].top_y,range)   && oneframe.y1< tf_floor_2_cam( (tiles[i].top_y + tiles[i].length),range)){
+					tiles[i].right_on = 1;
+					result = true;
+					break;
+				}
+			}
+		}
+	}
+	else if (oneframe.signature2 == 2){
+		size_t i = 0;
+		for (i = 0; i < n_tiles; i++){
+			if(oneframe.col2 == tiles[i].col - 1){
+				if (oneframe.y2> tf_floor_2_cam(tiles[i].top_y,range)   && oneframe.y2< tf_floor_2_cam( (tiles[i].top_y + tiles[i].length),range)){
+					tiles[i].right_on = 1;
+					result = true;
+					break;
+				}
 			}
 		}
 	}

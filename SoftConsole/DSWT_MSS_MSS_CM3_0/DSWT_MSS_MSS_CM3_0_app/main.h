@@ -5,7 +5,7 @@
 #define PIXY_START_WORD_CC 0xaa56
 #define DATA_MEAN 5
 #define SAME_LENGTH 50
-
+#include "pixy.h"
 //width of column
 #define width 96
 //width of column line
@@ -23,14 +23,8 @@ static volatile int* num_addr0 = (int *) 0x4005001c;
 static volatile int* num_addr1 = (int *) 0x40050020;
 static int number[10] = {0x0f99999f, 0x04444444, 0x0f11f88f, 0x0f11f11f, 0x0aaaaf22, 0x0f88f11f, 0x0f88f99f, 0x0f111111, 0x0f99f99f, 0x0f99f11f};
 int speed = -5;
-//typedef struct{
-//	int delay;
-//	int col;
-//	int top_x, top_y, length;
-//	int actual_length;
-//	//0..9 top_x 10..19 top_y 20..29 length
-//	volatile int* addr;
-//}sq_info;
+int score = 0;
+
 sq_info sq[5];
 
 int get_col_pos(int i) {
@@ -47,14 +41,17 @@ void sq_init() {
 	volatile int *addr[5] = {(int *)0x40050008, (int *)0x4005000c, (int *)0x40050010, (int *)0x40050014, (int *)0x40050018};
 	for (i = 0; i < sq_num; i++) {
 		sq[i].length = 0;
+		sq[i].actual_length = 0;
 		sq[i].col = i + 1;
 		sq[i].addr = addr[i];
 		*sq[i].addr = 0;
+		sq[i].left_on = 0;
+		sq[i].right_on = 0;
 		sq[i].delay = (rand() % longest_delay) + 1;
-	}
+        }
 }
 
-void random_mode(int k) {
+void random_mode(int k, Two_Block data) {
 	volatile int *addr = sq[k].addr;
 	int actual_length = sq[k].actual_length;
 	int top_x = sq[k].top_x;
@@ -65,7 +62,7 @@ void random_mode(int k) {
 		sq[k].delay--;
 		if (!sq[k].delay) {
 			//generate new square
-			sq[k].actual_length = 40 + rand() % 100;
+			sq[k].actual_length = 50 + rand() % 100;
 			length = 1;
 			top_x = get_col_pos(sq[k].col);
 			top_y = res_length - 2;
@@ -76,6 +73,9 @@ void random_mode(int k) {
 			length += speed;
 			if (length < 0) {
 				length = 0;
+				score += (sq[k].left_on | sq[k].right_on);
+				sq[k].left_on = 0;
+				sq[k].right_on = 0;
 				sq[k].actual_length = 0;
 				sq[k].delay = (rand() % longest_delay) + 1;
 			}
@@ -91,10 +91,11 @@ void random_mode(int k) {
 			top_y = 0;
 		}
 	}
+
 	sq[k].top_x = top_x;
 	sq[k].top_y = top_y;
 	sq[k].length = length;
-	*addr = (top_x | (top_y << 10) | (length << 20));
+	*addr = (top_x | (top_y << 10) | (length << 20) | (sq[k].left_on << 30) | (sq[k].right_on << 31));
 }
 
 void set_score(int x) {
@@ -109,7 +110,8 @@ void delay(int x) {
 void vga_init() {
 	define_column();
 	sq_init();
-	set_score(0);
+    score = 0;
+    set_score(score);
 }
 
 #endif

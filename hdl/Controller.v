@@ -27,6 +27,7 @@ module Core_Control(input PCLK,                  // clock
     
     // ****** Your code ******
     
+    
     reg [9:0] clock_divider;
     assign clock_divider_max = (clock_divider == 10'd150);
     
@@ -67,7 +68,7 @@ module Core_Control(input PCLK,                  // clock
     assign ctrl_read_en   = ~PWRITE & PSEL & (PADDR[11:0] == 12'h024);
     assign sound_write_en = PENABLE & PSEL & PWRITE & (PADDR[11:0] == 12'h100);
     assign sound_read_en  = ~PWRITE & PSEL & (PADDR[11:0] == 12'h100);
-    assign VGA_write_en   = PWRITE & PENABLE & PSEL;
+    
     
     always @(posedge PCLK) begin
         if (~PRESERN) begin
@@ -143,7 +144,8 @@ module Core_Control(input PCLK,                  // clock
             end
         end
     end
-                
+      
+    assign VGA_write_en = PWRITE & PENABLE & PSEL;
     wire animate;
     vga640x480 display (
     .i_clk(PCLK),
@@ -175,7 +177,7 @@ module Core_Control(input PCLK,                  // clock
     );
     assign is_col = (((x > col1[19:10]) & (x < col1[19:10] + col1[9:0])) | ((x > col1[29:20]) & (x < col1[29:20] + col1[9:0])) |
                     ((x > col2[19:10]) & (x < col2[19:10] + col1[9:0])) | ((x > col2[9:0]) & (x < col1[9:0] + col2[9:0])) | ((x > col2[29:20]) & (x < col2[29:20] + col1[9:0])))? 1 : 0;
-    wire sq1;
+    wire sq1, left_1, right_1;
     get_sq read_sq1(
     .clk(PCLK),
     .res(PRESERN),
@@ -186,10 +188,12 @@ module Core_Control(input PCLK,                  // clock
     .animate(animate),
     .x(x),
     .y(y),
-    .sq(sq1)
+    .sq(sq1),
+    .left_foot(left_1),
+    .right_foot(right_1)
     );
 
-    wire sq2;
+    wire sq2, left_2, right_2;
     get_sq read_sq2(
     .clk(PCLK),
     .res(PRESERN),
@@ -200,10 +204,12 @@ module Core_Control(input PCLK,                  // clock
     .animate(animate),
     .x(x),
     .y(y),
-    .sq(sq2)
+    .sq(sq2),
+    .left_foot(left_2),
+    .right_foot(right_2)
     );
 
-    wire sq3;
+    wire sq3, left_3, right_3;
     get_sq read_sq3(
     .clk(PCLK),
     .res(PRESERN),
@@ -214,10 +220,12 @@ module Core_Control(input PCLK,                  // clock
     .animate(animate),
     .x(x),
     .y(y),
-    .sq(sq3)
+    .sq(sq3),
+    .left_foot(left_3),
+    .right_foot(right_3)
     );
 
-    wire sq4;
+    wire sq4, left_4, right_4;
     get_sq read_sq4(
     .clk(PCLK),
     .res(PRESERN),
@@ -228,10 +236,12 @@ module Core_Control(input PCLK,                  // clock
     .animate(animate),
     .x(x),
     .y(y),
-    .sq(sq4)
+    .sq(sq4),
+    .left_foot(left_4),
+    .right_foot(right_4)
     );
 
-    wire sq5;
+    wire sq5, left_5, right_5;
     get_sq read_sq5(
     .clk(PCLK),
     .res(PRESERN),
@@ -242,7 +252,9 @@ module Core_Control(input PCLK,                  // clock
     .animate(animate),
     .x(x),
     .y(y),
-    .sq(sq5)
+    .sq(sq5),
+    .left_foot(left_5),
+    .right_foot(right_5)
     );
 
     wire num0;
@@ -277,8 +289,15 @@ module Core_Control(input PCLK,                  // clock
     .x3(108)
     );
 
-    assign c     = is_col | sq1 | sq2 | sq3 | sq4 | sq5 | num0| num1;
-    assign VGA_R = c;
-    assign VGA_G = c;
-    assign VGA_B = c;
+    assign c = sq1 | sq2 | sq3 | sq4 | sq5;
+    assign num = num0 | num1;
+    assign sq1_no = (sq1 & (~left_1) & (~right_1));
+    assign sq2_no = (sq2 & (~left_2) & (~right_2));
+    assign sq3_no = (sq3 & (~left_3) & (~right_3));
+    assign sq4_no = (sq4 & (~left_4) & (~right_4));
+    assign sq5_no = (sq5 & (~left_5) & (~right_5));
+    assign sq_no = sq1_no | sq2_no | sq3_no | sq4_no | sq5_no;
+    assign VGA_R = is_col | num | sq_no | (sq1 & left_1) | (sq2 & left_2) | (sq3 & left_3) | (sq4 & left_4) |(sq5 & left_5);
+    assign VGA_G = is_col | num | sq_no | (sq1 & right_1)| (sq2 & right_2) | (sq3 & right_3)| (sq4 & right_4)| (sq5 & right_5);
+    assign VGA_B = is_col | num | sq_no;
 endmodule

@@ -28,7 +28,9 @@ module get_sq(
     input wire animate,
     input wire [9:0] x,
     input wire [8:0] y,
-    output wire sq
+    output wire sq,
+    output reg left_foot,
+    output reg right_foot
     );
     wire [31:0] data;
     get_data read_sq_info(
@@ -45,8 +47,11 @@ module get_sq(
             top_x <= data[9:0];
             top_y <= data[19:10];
             length <= data[29:20];
+            left_foot <= data[30];
+            right_foot <= data[31];
         end
     end
     assign sq = ((y > top_y) & (y < top_y + length) & (x > top_x) & (x < top_x + col1[29:20] - col1[19:10] + col1[9:0]))?1:0;
+
 endmodule
 
