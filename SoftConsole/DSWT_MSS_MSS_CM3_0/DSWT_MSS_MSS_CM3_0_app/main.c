@@ -107,18 +107,7 @@ int main() {
         }
 
         // controller
-        if (changed) {
-            Display_displayMenu(&g_mss_uart1);
-            changed = false;
-
-            if (myMenu.curr_location == PRINT)
-                print_state = true;
-            else
-                print_state = false;
-        }
-
         prev_NES_command_struct = NES_command_struct;
-
         Controller_getCommand(&NES_command_struct);
 
         if (NES_command_struct.right) {
