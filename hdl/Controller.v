@@ -20,11 +20,13 @@ module Core_Control(input PCLK,                  // clock
                     output wire [5:0] selection,
                     output reg latch,
                     output reg clock,
-                    input data);
+                    input data,
+                    output wire FABINT
+                    );
     
     assign PSLVERR = 0;                                                       //assumes no error generation
     assign PREADY  = 1;                                                       //assumes zero wait
-    
+    assign FABINT = (x == 635) & (y == 475);
     // ****** Your code ******
     
     

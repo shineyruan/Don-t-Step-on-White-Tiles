@@ -78,6 +78,8 @@ void Display_enterStart();
 void Display_enterModeSelections();
 void Display_enterSongSelections();
 void Display_enterPrintConfig();
+void Display_enterCalibration();
+void Display_enterCalibrationSuccessful();
 void Display_printSuccessful();
 void Display_returnLastMenu();
 

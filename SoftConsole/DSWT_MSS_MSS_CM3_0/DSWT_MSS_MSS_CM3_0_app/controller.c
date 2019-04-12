@@ -1,6 +1,6 @@
 #include "controller.h"
 
-void Controller_getCommand(Command* cmd_struct) {
+inline void Controller_getCommand(Command* cmd_struct) {
     uint8_t command = (*command_addr);
 
     cmd_struct->right = command & 0x1;

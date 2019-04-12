@@ -11,29 +11,39 @@
 
 Command NES_command_struct;
 Command prev_NES_command_struct;
+__attribute__((interrupt)) void Fabric_IRQHandler(void) {
+    NVIC_ClearPendingIRQ(Fabric_IRQn);
 
+    int i;
+
+    if (started) {
+        for (i = 0; i < 4; i++) {
+            random_mode(i);
+        }
+        set_score(score);
+    }
+}
 int main() {
+    /* Enable FABINT Interrupt for generating tiles */
+    NVIC_EnableIRQ(Fabric_IRQn);
+
+    // pixy
+    // x: 0~320, left to right
+    // y: 0~200, up to down
     BoundingBox range;
-    range.lbx = 94;
-    range.lby = 174;
-    range.rbx = 241;
-    range.rby = 181;
-    range.ltx = 100;
-    range.lty = 11;
-    range.rtx = 240;
-    range.rty = 15;
-    //vga
+    range.lbx = 63;
+    range.lby = 164;
+    range.rbx = 285;
+    range.rby = 165;
+    range.ltx = 54;
+    range.lty = 20;
+    range.rtx = 311;
+    range.rty = 25;
+
+    // vga
     vga_init();
 
-    //pixy
     const uint8_t frame_size = 16;
-
-    /* inconsequential transfer value (for full duplex) */
-    const uint16_t master_tx_frame = 0;
-
-    //x: 0~320, left to right
-    //y: 0~200, up to down
-
     MSS_SPI_init(&g_mss_spi1);
     MSS_SPI_configure_master_mode(&g_mss_spi1, MSS_SPI_SLAVE_0, MSS_SPI_MODE0,
                                   MSS_SPI_PCLK_DIV_256, frame_size);
@@ -43,7 +53,7 @@ int main() {
     // controller
     Display.curr_line_num = 0;
 
-    /* Initialize the UART1 */
+    /* LCD init */
     MSS_UART_init(&g_mss_uart1, MSS_UART_9600_BAUD,
                   MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT);
 
@@ -70,44 +80,14 @@ int main() {
 #endif
 
     bool changed = true;
-
     while (1) {
-        delay(400000);
-        //pixy
-
-        uint16_t receive_data[14] = {0};
-
-        int i = 0;
-        int j;
-        for (j = 0; j < 10; j++) {
-            uint16_t receiver =
-                MSS_SPI_transfer_frame(&g_mss_spi1, master_tx_frame);
-            uint16_t frame_starter =
-                MSS_SPI_transfer_frame(&g_mss_spi1, master_tx_frame);
-
-            /* Two consecutive 0xaa55 means a start of a new frame. */
-
-            if (receiver == PIXY_START_WORD &&
-                frame_starter == PIXY_START_WORD) {
-                while (i < 12)
-                    receive_data[i++] =
-                        MSS_SPI_transfer_frame(&g_mss_spi1, master_tx_frame);
-                i = 0;
-            }
-        }
+        // pixy
+        Pixy_getData(&g_mss_spi1);
 
         Two_Block data;
         data = process(range, receive_data);
-
-        //display
-        if (started) {
-            int i;
-            for (i = 0; i < 4; i++) {
-                random_mode(i, data);
-            }
-            set_score(score);
-        }
-
+        
+        // LCD display
         if (changed) {
             Display_displayMenu(&g_mss_uart1);
             changed = false;
@@ -118,6 +98,7 @@ int main() {
                 print_state = false;
         }
 
+        // pixy judge
         if (is_left_on_tile(sq, data, range)) {
             printf("left foot is on tile!\r\n");
         }

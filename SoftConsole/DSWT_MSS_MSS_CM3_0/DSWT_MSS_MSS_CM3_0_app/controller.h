@@ -20,6 +20,6 @@ typedef struct Controller {
 
 static volatile uint8_t* command_addr = (uint8_t*)(CONTROLLER_ADDR);
 
-void Controller_getCommand(Command* cmd_struct);
+inline void Controller_getCommand(Command* cmd_struct);
 
 #endif

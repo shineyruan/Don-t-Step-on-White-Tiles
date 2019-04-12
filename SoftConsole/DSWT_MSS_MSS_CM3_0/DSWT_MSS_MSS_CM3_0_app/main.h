@@ -1,11 +1,10 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
-#define PIXY_START_WORD 0xaa55
-#define PIXY_START_WORD_CC 0xaa56
 #define DATA_MEAN 5
 #define SAME_LENGTH 50
 #include "pixy.h"
+#include "CMSIS/a2fxxxm3.h"
 //width of column
 #define width 96
 //width of column line
@@ -51,7 +50,7 @@ void sq_init() {
         }
 }
 
-void random_mode(int k, Two_Block data) {
+void random_mode(int k) {
 	volatile int *addr = sq[k].addr;
 	int actual_length = sq[k].actual_length;
 	int top_x = sq[k].top_x;
@@ -113,5 +112,7 @@ void vga_init() {
     score = 0;
     set_score(score);
 }
+
+
 
 #endif

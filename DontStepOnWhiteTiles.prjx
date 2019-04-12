@@ -57,13 +57,13 @@ ENDLIST
 LIST FileManager
 VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554769316"
+TIME="1555037707"
 SIZE="2769"
 PARENT="<project>\component\work\DontStepOnWhiteTiles\DontStepOnWhiteTiles.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\coreparameters.v,tb_hdl"
 STATE="utd"
-TIME="1554769316"
+TIME="1555037707"
 SIZE="1284"
 PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
 IS_READONLY="TRUE"
@@ -152,7 +152,7 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS\2.5.200\MSS.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775084"
+TIME="1555037687"
 SIZE="945"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
@@ -170,91 +170,91 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_CCC\2.0.106\MSS_CCC.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775077"
+TIME="1555037680"
 SIZE="252"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_CM3\1.0.200\MSS_CM3.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775077"
+TIME="1555037680"
 SIZE="252"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_COM\1.0.200\MSS_COM.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775077"
+TIME="1555037680"
 SIZE="252"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_DMA\1.0.101\MSS_DMA.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775077"
+TIME="1555037680"
 SIZE="252"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_ENVM\2.3.200\MSS_ENVM.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775082"
+TIME="1555037684"
 SIZE="253"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_FIC\1.0.101\MSS_FIC.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775082"
+TIME="1555037684"
 SIZE="252"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_FIO\1.0.203\MSS_FIO.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775082"
+TIME="1555037684"
 SIZE="252"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_GPIO\1.0.101\MSS_GPIO.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775082"
+TIME="1555037684"
 SIZE="253"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_INTR\1.0.101\MSS_INTR.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775082"
+TIME="1555037684"
 SIZE="253"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_RESET\1.0.101\MSS_RESET.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775082"
+TIME="1555037684"
 SIZE="254"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_RTC\1.0.100\MSS_RTC.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775082"
+TIME="1555037684"
 SIZE="252"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_SPI\1.0.102\MSS_SPI.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775082"
+TIME="1555037684"
 SIZE="252"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_TIMER\1.0.100\MSS_TIMER.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775082"
+TIME="1555037684"
 SIZE="254"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_UART\1.0.101\MSS_UART.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775082"
+TIME="1555037684"
 SIZE="253"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\Actel\SmartFusionMSS\MSS_UFROM\1.0.100\MSS_UFROM.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775082"
+TIME="1555037684"
 SIZE="254"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
@@ -270,13 +270,13 @@ SIZE="413"
 ENDFILE
 VALUE "<project>\component\work\DontStepOnWhiteTiles\DontStepOnWhiteTiles.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554769320"
+TIME="1555037710"
 SIZE="8057"
 ENDFILE
 VALUE "<project>\component\work\DontStepOnWhiteTiles\DontStepOnWhiteTiles.pdc,pdc"
 STATE="utd"
-TIME="1554769315"
-SIZE="2030"
+TIME="1555037706"
+SIZE="2077"
 PARENT="<project>\component\work\DontStepOnWhiteTiles\DontStepOnWhiteTiles.cxf"
 BEGIN_USE_CONSTRAINT
 TOOL_CONSTRAINT_TYPE="ideDESIGNER"
@@ -286,19 +286,19 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\DontStepOnWhiteTiles\DontStepOnWhiteTiles.v,hdl"
 STATE="utd"
-TIME="1554769316"
-SIZE="16360"
+TIME="1555037707"
+SIZE="16494"
 PARENT="<project>\component\work\DontStepOnWhiteTiles\DontStepOnWhiteTiles.cxf"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\DSWT_MSS\DSWT_MSS.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775085"
-SIZE="14452"
+TIME="1555037688"
+SIZE="14605"
 ENDFILE
 VALUE "<project>\component\work\DSWT_MSS\DSWT_MSS.pdc,pdc"
 STATE="utd"
-TIME="1554775072"
+TIME="1555037674"
 SIZE="1704"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 BEGIN_USE_CONSTRAINT
@@ -309,34 +309,34 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\DSWT_MSS\DSWT_MSS.v,hdl"
 STATE="utd"
-TIME="1554775084"
-SIZE="21789"
+TIME="1555037687"
+SIZE="21815"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\DSWT_MSS\MSS_CCC_0\DSWT_MSS_tmp_MSS_CCC_0_MSS_CCC.cxf,actgen_cxf"
 STATE="utd"
-TIME="1554775077"
+TIME="1555037680"
 SIZE="483"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\component\work\DSWT_MSS\MSS_CCC_0\DSWT_MSS_tmp_MSS_CCC_0_MSS_CCC.v,hdl"
 STATE="utd"
-TIME="1554775077"
+TIME="1555037680"
 SIZE="2885"
 PARENT="<project>\component\work\DSWT_MSS\MSS_CCC_0\DSWT_MSS_tmp_MSS_CCC_0_MSS_CCC.cxf"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\DSWT_MSS\MSS_ENVM_0\MSS_ENVM_0.efc,efc"
 STATE="utd"
-TIME="1554775081"
+TIME="1555037684"
 SIZE="15874"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\DSWT_MSS\mss_tshell.v,hdl"
 STATE="utd"
-TIME="1554775082"
+TIME="1555037685"
 SIZE="12227"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 BEGIN_USE_CONSTRAINT
@@ -348,7 +348,7 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\DSWT_MSS\mss_tshell_syn.sdc,sdc"
 STATE="utd"
-TIME="1554775082"
+TIME="1555037685"
 SIZE="186"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 BEGIN_USE_CONSTRAINT
@@ -360,58 +360,58 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\designer\impl1\DontStepOnWhiteTiles.adb,adb"
 STATE="utd"
-TIME="1554673981"
-SIZE="1945088"
+TIME="1555037839"
+SIZE="2021888"
 ENDFILE
 VALUE "<project>\designer\impl1\DontStepOnWhiteTiles.fdb,fdb"
 STATE="utd"
-TIME="1554775373"
-SIZE="85334"
+TIME="1555037839"
+SIZE="86997"
 ENDFILE
 VALUE "<project>\designer\impl1\DontStepOnWhiteTiles.ide_des,ide_des"
 STATE="utd"
-TIME="1554673981"
+TIME="1555037840"
 SIZE="1194"
 ENDFILE
 VALUE "<project>\designer\impl1\DontStepOnWhiteTiles_compile_log.rpt,log"
 STATE="utd"
-TIME="1554672873"
-SIZE="30329"
+TIME="1555037740"
+SIZE="30305"
 ENDFILE
 VALUE "<project>\designer\impl1\DontStepOnWhiteTiles_fp\DontStepOnWhiteTiles.pdb,pdb"
 STATE="utd"
-TIME="1554673991"
-SIZE="90879"
+TIME="1555037850"
+SIZE="92540"
 ENDFILE
 VALUE "<project>\designer\impl1\DontStepOnWhiteTiles_fp\DontStepOnWhiteTiles.pro,pro"
 STATE="utd"
-TIME="1554674031"
+TIME="1555037890"
 SIZE="2554"
 ENDFILE
 VALUE "<project>\designer\impl1\DontStepOnWhiteTiles_fp\projectData\DontStepOnWhiteTiles.pdb,pdb"
 STATE="utd"
-TIME="1554674031"
-SIZE="90879"
+TIME="1555037890"
+SIZE="92540"
 ENDFILE
 VALUE "<project>\designer\impl1\DontStepOnWhiteTiles_placeroute_log.rpt,log"
 STATE="utd"
-TIME="1554775356"
-SIZE="2818"
+TIME="1555037823"
+SIZE="2822"
 ENDFILE
 VALUE "<project>\designer\impl1\DontStepOnWhiteTiles_prgdata_log.rpt,log"
 STATE="utd"
-TIME="1554775374"
+TIME="1555037840"
 SIZE="837"
 ENDFILE
 VALUE "<project>\designer\impl1\DontStepOnWhiteTiles_verifytiming_log.rpt,log"
 STATE="utd"
-TIME="1554775362"
+TIME="1555037828"
 SIZE="1307"
 ENDFILE
 VALUE "<project>\hdl\Controller.v,hdl"
 STATE="utd"
-TIME="1554773808"
-SIZE="9249"
+TIME="1555037604"
+SIZE="9352"
 ENDFILE
 VALUE "<project>\hdl\get_data.v,hdl"
 STATE="utd"
@@ -468,13 +468,13 @@ PARENT="<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\CoreAPB3.cxf"
 ENDFILE
 VALUE "<project>\simulation\subsystem.bfm,sim"
 STATE="utd"
-TIME="1554769316"
+TIME="1555037707"
 SIZE="637"
 PARENT="<project>\component\work\DontStepOnWhiteTiles\DontStepOnWhiteTiles.cxf"
 ENDFILE
 VALUE "<project>\simulation\test.bfm,sim"
 STATE="utd"
-TIME="1554775078"
+TIME="1555037681"
 SIZE="5461"
 PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
@@ -486,22 +486,22 @@ PARENT="<project>\component\work\DSWT_MSS\DSWT_MSS.cxf"
 ENDFILE
 VALUE "<project>\synthesis\DontStepOnWhiteTiles.edn,syn_edn"
 STATE="utd"
-TIME="1554672863"
-SIZE="1421051"
+TIME="1555037728"
+SIZE="1450601"
 ENDFILE
 VALUE "<project>\synthesis\DontStepOnWhiteTiles.so,so"
 STATE="utd"
-TIME="1554672863"
+TIME="1555037728"
 SIZE="273"
 ENDFILE
 VALUE "<project>\synthesis\DontStepOnWhiteTiles_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1554672863"
+TIME="1555037728"
 SIZE="536"
 ENDFILE
 VALUE "<project>\synthesis\DontStepOnWhiteTiles_syn.prj,prj"
 STATE="utd"
-TIME="1554672864"
+TIME="1555037729"
 SIZE="3588"
 ENDFILE
 VALUE "<project>\synthesis\synwork\layer0.so,so"
@@ -605,6 +605,14 @@ LIST DontStepOnWhiteTiles
 VALUE "<project>\simulation\subsystem.bfm,sim"
 VALUE "<project>\component\work\DontStepOnWhiteTiles\DontStepOnWhiteTiles.pdc,pdc"
 ENDLIST
+LIST DSWT_MSS
+VALUE "<project>\component\work\DSWT_MSS\mss_tshell_syn.sdc,sdc"
+VALUE "<project>\simulation\user.bfm,sim"
+VALUE "<project>\simulation\test.bfm,sim"
+VALUE "<project>\component\work\DSWT_MSS\DSWT_MSS.pdc,pdc"
+VALUE "<project>\component\work\DSWT_MSS\MSS_ENVM_0\MSS_ENVM_0.efc,efc"
+VALUE "<project>\simulation\CompileDssBfm.tcl,sim"
+ENDLIST
 LIST CoreAPB3
 VALUE "<project>\simulation\bfmtovec_compile.tcl,sim"
 VALUE "<project>\simulation\coreapb3_usertb_master.bfm,sim"
@@ -616,14 +624,6 @@ VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\b
 VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslave.v,tb_hdl"
 VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\test\user\testbench.v,tb_hdl"
 VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\mti\scripts\wave_user.do,do"
-ENDLIST
-LIST DSWT_MSS
-VALUE "<project>\component\work\DSWT_MSS\mss_tshell_syn.sdc,sdc"
-VALUE "<project>\simulation\user.bfm,sim"
-VALUE "<project>\simulation\test.bfm,sim"
-VALUE "<project>\component\work\DSWT_MSS\DSWT_MSS.pdc,pdc"
-VALUE "<project>\component\work\DSWT_MSS\MSS_ENVM_0\MSS_ENVM_0.efc,efc"
-VALUE "<project>\simulation\CompileDssBfm.tcl,sim"
 ENDLIST
 ENDLIST
 LIST SimulationOptions
@@ -692,8 +692,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -765,14 +765,8 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
-Reports;Reports;0
-ReportsCurrentItem;Generate Programming Data:DontStepOnWhiteTiles_prgdata_log.rpt
 StartPage;StartPage;0
-SmartDesign;DontStepOnWhiteTiles;0
-SmartDesign;DSWT_MSS;0
-HDL;hdl\Controller.v;0
-HDL;hdl\get_sq.v;0
-ACTIVEVIEW;Reports
+ACTIVEVIEW;StartPage
 ENDLIST
 LIST ModuleSubBlockList
 LIST "BIBUF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
@@ -800,9 +794,9 @@ ENDLIST
 LIST "DESIGN_IO::work","component\work\DESIGN_IO\DESIGN_IO.cxf","TRUE","FALSE"
 ENDLIST
 LIST "DontStepOnWhiteTiles::work","component\work\DontStepOnWhiteTiles\DontStepOnWhiteTiles.v","TRUE","FALSE"
-SUBBLOCK "CoreAPB3::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3.v","FALSE","FALSE"
 SUBBLOCK "Core_Control::work","hdl\Controller.v","FALSE","FALSE"
 SUBBLOCK "DSWT_MSS::work","component\work\DSWT_MSS\DSWT_MSS.v","TRUE","FALSE"
+SUBBLOCK "CoreAPB3::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3.v","FALSE","FALSE"
 ENDLIST
 LIST "DSWT_MSS::work","component\work\DSWT_MSS\DSWT_MSS.v","TRUE","FALSE"
 SUBBLOCK "BIBUF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"

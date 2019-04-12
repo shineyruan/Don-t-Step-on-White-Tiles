@@ -40,7 +40,7 @@ void Display_initializeMenu() {
     strcpy(myMenu.layer[1], "Mode");
     strcpy(myMenu.layer[2], "Song");
     strcpy(myMenu.layer[3], "Print config");
-    strcpy(myMenu.layer[4], "Option 2");
+    strcpy(myMenu.layer[4], "Calibrate PIXY");
     strcpy(myMenu.layer[5], "Option 3");
     myMenu.frame.length = 6;
     myMenu.frame.curr_selection = 0;
@@ -165,6 +165,27 @@ void Display_enterPrintConfig() {
 
     strcpy(myMenu.layer[3], "  LEFT for return  ");
 
+    myMenu.frame.length = 4;
+    myMenu.frame.curr_selection = -100;
+    myMenu.frame.start_line = 0;
+    myMenu.frame.end_line = 4;
+    myMenu.curr_location = PRINT;
+}
+
+void Display_enterCalibration() {
+    Display_clearMenu();
+    strcpy(myMenu.layer[1], "   Calibrating...  ");
+    myMenu.frame.length = 2;
+    myMenu.frame.curr_selection = -100;
+    myMenu.frame.start_line = 0;
+    myMenu.frame.end_line = 2;
+    myMenu.curr_location = PRINT;
+}
+
+void Display_enterCalibrationSuccessful() {
+    Display_clearMenu();
+    strcpy(myMenu.layer[1], " Calibration Done! ");
+    strcpy(myMenu.layer[3], "  LEFT for return  ");
     myMenu.frame.length = 4;
     myMenu.frame.curr_selection = -100;
     myMenu.frame.start_line = 0;
