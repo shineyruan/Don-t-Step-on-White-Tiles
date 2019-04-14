@@ -64,4 +64,3 @@ module get_score(
     end
     assign num = (x >= x1 - 12) & (x < x3 + 12) & (y >= 12) & (y < 108) & num_data[pos];
 endmodule
-

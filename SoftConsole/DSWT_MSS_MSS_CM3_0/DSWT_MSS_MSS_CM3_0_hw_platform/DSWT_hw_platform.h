@@ -1,10 +1,10 @@
-#ifndef DontStepOnWhiteTiles_HW_PLATFORM_H_
-#define DontStepOnWhiteTiles_HW_PLATFORM_H_
+#ifndef DSWT_HW_PLATFORM_H_
+#define DSWT_HW_PLATFORM_H_
 /*****************************************************************************
 *
-*Created by Microsemi SmartDesign  Thu Apr 11 22:55:09 2019
+*Created by Microsemi SmartDesign  Sun Apr 14 15:47:34 2019
 *
-*Memory map specification for peripherals in DontStepOnWhiteTiles
+*Memory map specification for peripherals in DSWT
 */
 
 /*-----------------------------------------------------------------------------
@@ -14,4 +14,4 @@
 #define CORE_CONTROL_0                  0x40050000U
 
 
-#endif /* DontStepOnWhiteTiles_HW_PLATFORM_H_*/
+#endif /* DSWT_HW_PLATFORM_H_*/
