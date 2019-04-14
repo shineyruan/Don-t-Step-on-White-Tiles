@@ -11,6 +11,7 @@
 
 Command NES_command_struct;
 Command prev_NES_command_struct;
+
 __attribute__((interrupt)) void Fabric_IRQHandler(void) {
     NVIC_ClearPendingIRQ(Fabric_IRQn);
 
@@ -30,15 +31,15 @@ int main() {
     // pixy
     // x: 0~320, left to right
     // y: 0~200, up to down
-    BoundingBox range;
-    range.lbx = 63;
-    range.lby = 164;
-    range.rbx = 285;
-    range.rby = 165;
-    range.ltx = 54;
-    range.lty = 20;
-    range.rtx = 311;
-    range.rty = 25;
+
+    // range.lbx = 63;
+    // range.lby = 164;
+    // range.rbx = 285;
+    // range.rby = 165;
+    // range.ltx = 54;
+    // range.lty = 20;
+    // range.rtx = 311;
+    // range.rty = 25;
 
     // vga
     vga_init();
@@ -70,11 +71,11 @@ int main() {
     Display_initializeMenu();
     started = false;
 
-#ifdef DEBUG
+#ifdef INIT_DEBUG
     printf("Controller init: %x\r\n", *command_addr);
 #endif
     (*soundboard_addr) = 0x7F;
-#ifdef DEBUG
+#ifdef INIT_DEBUG
     printf("Sound Initial: %x\r\n", *soundboard_addr);
     printf("Controller init: %x\r\n", *command_addr);
 #endif
@@ -82,11 +83,12 @@ int main() {
     bool changed = true;
     while (1) {
         // pixy
-        Pixy_getData(&g_mss_spi1);
+        int i;
+        for (i = 0; i < 14;i++){
+            receive_data[i] = 0;
+        }
+        Two_Block data = Pixy_getData(&g_mss_spi1);
 
-        Two_Block data;
-        data = process(range, receive_data);
-        
         // LCD display
         if (changed) {
             Display_displayMenu(&g_mss_uart1);
@@ -99,10 +101,10 @@ int main() {
         }
 
         // pixy judge
-        if (is_left_on_tile(sq, data, range)) {
+        if (is_left_on_tile(sq, data)) {
             printf("left foot is on tile!\r\n");
         }
-        if (is_right_on_tile(sq, data, range)) {
+        if (is_right_on_tile(sq, data)) {
             printf("right foot is on tile!\r\n");
         }
 
@@ -125,6 +127,9 @@ int main() {
                             changed = true;
                         } else if (myMenu.frame.curr_selection == 3) {
                             Display_enterPrintConfig();
+                            changed = true;
+                        } else if (myMenu.frame.curr_selection == 4) {
+                            Display_enterCalibrationMode();
                             changed = true;
                         }
                         break;
@@ -150,6 +155,25 @@ int main() {
                         selected_config.selected_song = myMenu.frame.curr_selection + 1;
                         Display_printSuccessful();
                         changed = true;
+                        break;
+                    case CALIBRATION:
+                        if (myMenu.frame.curr_selection == 0) {
+                            pos = TOP_LEFT;
+                            Display_enterCalibration();
+                            changed = true;
+                        } else if (myMenu.frame.curr_selection == 1) {
+                            pos = TOP_RIGHT;
+                            Display_enterCalibration();
+                            changed = true;
+                        } else if (myMenu.frame.curr_selection == 2) {
+                            pos = BOTTOM_RIGHT;
+                            Display_enterCalibration();
+                            changed = true;
+                        } else if (myMenu.frame.curr_selection == 3) {
+                            pos = BOTTOM_LEFT;
+                            Display_enterCalibration();
+                            changed = true;
+                        }
                         break;
                     default:
                         break;
@@ -200,19 +224,25 @@ int main() {
                         } else if (myMenu.frame.curr_selection == 3) {
                             Display_enterPrintConfig();
                             changed = true;
+                        } else if (myMenu.frame.curr_selection == 4) {
+                            Display_enterCalibrationMode();
+                            changed = true;
                         }
                         break;
                     case MODE:
                         if (myMenu.frame.curr_selection == 0) {
                             Display_printSuccessful();
                             selected_config.selected_mode = SLOW;
+                            speed = -5;
                             changed = true;
                         } else if (myMenu.frame.curr_selection == 1) {
                             selected_config.selected_mode = MEDIUM;
+                            speed = -10;
                             Display_printSuccessful();
                             changed = true;
                         } else if (myMenu.frame.curr_selection == 2) {
                             selected_config.selected_mode = FAST;
+                            speed = -15;
                             Display_printSuccessful();
                             changed = true;
                         }
@@ -221,6 +251,25 @@ int main() {
                         selected_config.selected_song = myMenu.frame.curr_selection + 1;
                         Display_printSuccessful();
                         changed = true;
+                        break;
+                    case CALIBRATION:
+                        if (myMenu.frame.curr_selection == 0) {
+                            pos = TOP_LEFT;
+                            Display_enterCalibration();
+                            changed = true;
+                        } else if (myMenu.frame.curr_selection == 1) {
+                            pos = TOP_RIGHT;
+                            Display_enterCalibration();
+                            changed = true;
+                        } else if (myMenu.frame.curr_selection == 2) {
+                            pos = BOTTOM_RIGHT;
+                            Display_enterCalibration();
+                            changed = true;
+                        } else if (myMenu.frame.curr_selection == 3) {
+                            pos = BOTTOM_LEFT;
+                            Display_enterCalibration();
+                            changed = true;
+                        }
                         break;
                     default:
                         break;

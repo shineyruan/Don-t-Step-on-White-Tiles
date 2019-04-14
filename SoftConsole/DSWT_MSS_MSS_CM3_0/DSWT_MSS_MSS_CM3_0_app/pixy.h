@@ -16,6 +16,14 @@
 
 #define PIXY_START_WORD 0xaa55
 #define PIXY_START_WORD_CC 0xaa56
+#define sq_num 8
+
+typedef enum Box_Position {
+    TOP_LEFT,
+    TOP_RIGHT,
+    BOTTOM_RIGHT,
+    BOTTOM_LEFT
+} Position;
 
 typedef struct
 {
@@ -57,16 +65,20 @@ typedef struct {
     int right_on;
 } sq_info;
 
+
+BoundingBox range;
+Position pos;
+int score;
 static uint16_t receive_data[14];
 
-Two_Block process(BoundingBox range, uint16_t* receive_data);
-uint16_t tf_floor_2_cam(int y, BoundingBox range);
-bool is_left_on_tile(sq_info* tiles, Two_Block oneframe, BoundingBox range);
-bool is_right_on_tile(sq_info* tiles, Two_Block oneframe, BoundingBox range);
+Two_Block process();
+uint16_t tf_floor_2_cam(int y);
+bool is_left_on_tile(sq_info* tiles, Two_Block oneframe);
+bool is_right_on_tile(sq_info* tiles, Two_Block oneframe);
 
 /**
  * Modifies: global array `receive_data`
  */
-inline void Pixy_getData(mss_spi_instance_t* this_spi);
+inline Two_Block Pixy_getData(mss_spi_instance_t* this_spi);
 
 #endif /* PIXY_H_ */

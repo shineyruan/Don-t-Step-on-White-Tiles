@@ -1,6 +1,8 @@
 #include "pixy.h"
 
-Two_Block process(BoundingBox range, uint16_t* receive_data) {
+#define PIXY_DEBUG
+
+Two_Block process() {
     Two_Block oneframe;
 
     //Object 1
@@ -47,6 +49,7 @@ Two_Block process(BoundingBox range, uint16_t* receive_data) {
         oneframe.col2 = 4;
     }
 
+#ifdef PIXY_DEBUG
     printf(
         "signature: %d\t    x center: %*d\t    y center: %*d\t    width: %*d\t    height: %*d\t 	column: %d\r\n",
         oneframe.signature1, 3, oneframe.x1, 3, oneframe.y1, 3, oneframe.width1, 3, oneframe.height1, oneframe.col1);
@@ -54,11 +57,12 @@ Two_Block process(BoundingBox range, uint16_t* receive_data) {
     printf(
         "signature: %d\t    x center: %*d\t    y center: %*d\t    width: %*d\t    height: %*d\t 	column: %d\r\n",
         oneframe.signature2, 3, oneframe.x2, 3, oneframe.y2, 3, oneframe.width2, 3, oneframe.height2, oneframe.col2);
+#endif
 
     return oneframe;
 }
 
-uint16_t tf_floor_2_cam(int y, BoundingBox range) {
+uint16_t tf_floor_2_cam(int y) {
     uint16_t y_cam;
     uint16_t yb = (range.lby + range.rby) / 2;
     uint16_t yt = (range.lty + range.rty) / 2;
@@ -66,17 +70,21 @@ uint16_t tf_floor_2_cam(int y, BoundingBox range) {
     return y_cam;
 }
 
-bool is_left_on_tile(sq_info* tiles, Two_Block oneframe, BoundingBox range) {
+bool is_left_on_tile(sq_info* tiles, Two_Block oneframe) {
     bool result = false;
-    size_t n_tiles = 5;
+    size_t n_tiles = sq_num;
     if (oneframe.signature1 == 1) {
         size_t i = 0;
         for (i = 0; i < n_tiles; i++) {
             //		sq_info tile = tiles[i];
             if (oneframe.col1 == tiles[i].col - 1) {
-                if (oneframe.y1 > tf_floor_2_cam(tiles[i].top_y, range) && oneframe.y1 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length), range)) {
+                if (oneframe.y1 + oneframe.height1 / 2 > tf_floor_2_cam(tiles[i].top_y) &&
+                    oneframe.y1 - oneframe.height1 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     tiles[i].left_on = 1;
                     result = true;
+                    if (tiles[i].right_on == 0 && tiles[i].left_on==0) {
+                        score++;
+                    }
                     break;
                 }
             }
@@ -86,27 +94,36 @@ bool is_left_on_tile(sq_info* tiles, Two_Block oneframe, BoundingBox range) {
         for (i = 0; i < n_tiles; i++) {
             //		sq_info tile = tiles[i];
             if (oneframe.col2 == tiles[i].col - 1) {
-                if (oneframe.y2 > tf_floor_2_cam(tiles[i].top_y, range) && oneframe.y2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length), range)) {
+                if (oneframe.y2 + oneframe.height2 / 2 > tf_floor_2_cam(tiles[i].top_y) &&
+                    oneframe.y2 - oneframe.height2 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     tiles[i].left_on = 1;
                     result = true;
+                    if (tiles[i].right_on == 0 && tiles[i].left_on==0) {
+                        score++;
+                    }
                     break;
                 }
             }
         }
     }
+
     return result;
 }
 
-bool is_right_on_tile(sq_info* tiles, Two_Block oneframe, BoundingBox range) {
+bool is_right_on_tile(sq_info* tiles, Two_Block oneframe) {
     bool result = false;
-    size_t n_tiles = 5;
+    size_t n_tiles = sq_num;
     if (oneframe.signature1 == 2) {
         size_t i = 0;
         for (i = 0; i < n_tiles; i++) {
             if (oneframe.col1 == tiles[i].col - 1) {
-                if (oneframe.y1 > tf_floor_2_cam(tiles[i].top_y, range) && oneframe.y1 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length), range)) {
+                if (oneframe.y1 + oneframe.height1 / 2 > tf_floor_2_cam(tiles[i].top_y) &&
+                    oneframe.y1 - oneframe.height1 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     tiles[i].right_on = 1;
                     result = true;
+                    if (tiles[i].left_on == 0 && tiles[i].right_on==0) {
+                        score++;
+                    }
                     break;
                 }
             }
@@ -115,9 +132,13 @@ bool is_right_on_tile(sq_info* tiles, Two_Block oneframe, BoundingBox range) {
         size_t i = 0;
         for (i = 0; i < n_tiles; i++) {
             if (oneframe.col2 == tiles[i].col - 1) {
-                if (oneframe.y2 > tf_floor_2_cam(tiles[i].top_y, range) && oneframe.y2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length), range)) {
+                if (oneframe.y2 + oneframe.height2 / 2 > tf_floor_2_cam(tiles[i].top_y) &&
+                    oneframe.y2 - oneframe.height2 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     tiles[i].right_on = 1;
                     result = true;
+                    if (tiles[i].left_on == 0 && tiles[i].right_on==0) {
+                        score++;
+                    }
                     break;
                 }
             }
@@ -126,14 +147,13 @@ bool is_right_on_tile(sq_info* tiles, Two_Block oneframe, BoundingBox range) {
     return result;
 }
 
-inline void Pixy_getData(mss_spi_instance_t* this_spi) {
-    
+inline Two_Block Pixy_getData(mss_spi_instance_t* this_spi) {
     /* inconsequential transfer value (for full duplex) */
     const uint16_t master_tx_frame = 0;
 
     int i = 0;
     int j;
-    for (j = 0; j < 10; j++) {
+    for (j = 0; j < 1; j++) {
         uint16_t receiver =
             MSS_SPI_transfer_frame(this_spi, master_tx_frame);
         uint16_t frame_starter =
@@ -149,4 +169,6 @@ inline void Pixy_getData(mss_spi_instance_t* this_spi) {
             i = 0;
         }
     }
+
+    return process();
 }

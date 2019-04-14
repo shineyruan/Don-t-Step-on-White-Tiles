@@ -6,8 +6,10 @@
 #include <string.h>
 #include <stdio.h>
 #include "drivers/mss_uart/mss_uart.h"
+#include "drivers/mss_spi/drivers/mss_spi/mss_spi.h"
 
 #include "soundboard.h"
+#include "pixy.h"
 
 #define CURSOR_POS_BASE 0x80
 
@@ -22,6 +24,7 @@ typedef enum SelectionLocation {
     MODE,
     SONG,
     PRINT,
+    CALIBRATION,
     MESSAGE
 } Menu_Location;
 
@@ -78,6 +81,7 @@ void Display_enterStart();
 void Display_enterModeSelections();
 void Display_enterSongSelections();
 void Display_enterPrintConfig();
+void Display_enterCalibrationMode();
 void Display_enterCalibration();
 void Display_enterCalibrationSuccessful();
 void Display_printSuccessful();
