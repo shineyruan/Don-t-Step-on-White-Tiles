@@ -349,7 +349,7 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\constraint\DontStepOnWhiteTiles.pdc,pdc"
 STATE="utd"
-TIME="1555368859"
+TIME="1555618216"
 SIZE="2077"
 ENDFILE
 VALUE "<project>\designer\impl1\DontStepOnWhiteTiles.adb,adb"
@@ -394,23 +394,23 @@ SIZE="1307"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT.adb,adb"
 STATE="utd"
-TIME="1555271684"
-SIZE="1429504"
+TIME="1555467293"
+SIZE="2531840"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT.fdb,fdb"
 STATE="utd"
-TIME="1555271683"
-SIZE="84794"
+TIME="1555619783"
+SIZE="106294"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT.ide_des,ide_des"
 STATE="utd"
-TIME="1555271684"
+TIME="1555467293"
 SIZE="1114"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_compile_log.rpt,log"
 STATE="utd"
-TIME="1555271276"
-SIZE="30354"
+TIME="1555467149"
+SIZE="30074"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_fp\DSWT.pdb,pdb"
 STATE="utd"
@@ -434,17 +434,17 @@ SIZE="223"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_placeroute_log.rpt,log"
 STATE="utd"
-TIME="1555271667"
+TIME="1555619758"
 SIZE="2655"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_prgdata_log.rpt,log"
 STATE="utd"
-TIME="1555271684"
+TIME="1555619785"
 SIZE="758"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_verifytiming_log.rpt,log"
 STATE="utd"
-TIME="1555271673"
+TIME="1555619768"
 SIZE="1170"
 ENDFILE
 VALUE "<project>\designer\impl1\proj_top_fp\projectData\proj_top.pdb,pdb"
@@ -469,42 +469,42 @@ SIZE="224"
 ENDFILE
 VALUE "<project>\hdl\get_data.v,hdl"
 STATE="utd"
-TIME="1554083570"
+TIME="1555466685"
 SIZE="1013"
+ENDFILE
+VALUE "<project>\hdl\get_health.v,hdl"
+STATE="utd"
+TIME="1555466685"
+SIZE="2071"
 ENDFILE
 VALUE "<project>\hdl\get_sq.v,hdl"
 STATE="utd"
-TIME="1555268736"
+TIME="1555466685"
 SIZE="1588"
 ENDFILE
 VALUE "<project>\hdl\proj_veri.v,hdl"
 STATE="utd"
-TIME="1555269078"
-SIZE="9281"
-ENDFILE
-VALUE "<project>\hdl\score_control.v,hdl"
-STATE="utd"
-TIME="1554429610"
-SIZE="1564"
+TIME="1555619425"
+SIZE="12526"
 ENDFILE
 VALUE "<project>\hdl\score_control2.v,hdl"
 STATE="utd"
-TIME="1555268786"
+TIME="1555466685"
 SIZE="1916"
 ENDFILE
 VALUE "<project>\hdl\sram_control.v,hdl"
 STATE="utd"
-TIME="1554424817"
+TIME="1555466685"
 SIZE="1936"
 ENDFILE
 VALUE "<project>\hdl\vga640x480.v,hdl"
 STATE="utd"
-TIME="1553565263"
+TIME="1555466685"
 SIZE="3529"
 ENDFILE
 VALUE "<project>\hdl\write_pos.v,hdl"
 STATE="utd"
-TIME="1553567212"
+TIME="1555466685"
 SIZE="741"
 ENDFILE
 VALUE "<project>\simulation\bfmtovec_compile.tcl,sim"
@@ -588,23 +588,23 @@ SIZE="3588"
 ENDFILE
 VALUE "<project>\synthesis\DSWT.edn,syn_edn"
 STATE="utd"
-TIME="1555271267"
-SIZE="1431842"
+TIME="1555467138"
+SIZE="2150949"
 ENDFILE
 VALUE "<project>\synthesis\DSWT.so,so"
 STATE="utd"
-TIME="1555271267"
+TIME="1555467138"
 SIZE="241"
 ENDFILE
 VALUE "<project>\synthesis\DSWT_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1555271267"
+TIME="1555467138"
 SIZE="536"
 ENDFILE
 VALUE "<project>\synthesis\DSWT_syn.prj,prj"
 STATE="utd"
-TIME="1555271267"
-SIZE="3507"
+TIME="1555467139"
+SIZE="3609"
 ENDFILE
 VALUE "<project>\synthesis\proj_top.so,so"
 STATE="utd"
@@ -632,8 +632,8 @@ ENDLIST
 LIST ProjectState5.1
 LIST Impl1
 LiberoState=Post_Layout
-ideDESIGNER(<project>\designer\impl1\DSWT.adb,adb)=StateSuccess
 ideSYNTHESIS(<project>\synthesis\DSWT.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl1\DSWT.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -797,8 +797,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM=""
-BATCH=0
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -834,8 +834,8 @@ LIST ProjectState5.1
 LIST "DSWT::work"
 LIST Impl1
 LiberoState=Post_Layout
-ideDESIGNER(<project>\designer\impl1\DSWT.adb,adb)=StateSuccess
 ideSYNTHESIS(<project>\synthesis\DSWT.edn,syn_edn)=StateSuccess
+ideDESIGNER(<project>\designer\impl1\DSWT.adb,adb)=StateSuccess
 LIST FlowOptions
 UsePhySynth=FALSE
 UseSynth=TRUE
@@ -871,9 +871,10 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;Generate Programming Data:DSWT_prgdata_log.rpt
+ReportsCurrentItem;Program Device:DSWT_program.log
 SmartDesign;DSWT;0
-ACTIVEVIEW;DSWT
+HDL;hdl\proj_veri.v;0
+ACTIVEVIEW;hdl\proj_veri.v
 ENDLIST
 LIST ModuleSubBlockList
 LIST "BIBUF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
@@ -882,6 +883,7 @@ LIST "BIBUF_OPEND_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_com
 ENDLIST
 LIST "Core_Control::work","hdl\proj_veri.v","FALSE","FALSE"
 SUBBLOCK "get_data::work","hdl\get_data.v","FALSE","FALSE"
+SUBBLOCK "get_health::work","hdl\get_health.v","FALSE","FALSE"
 SUBBLOCK "get_score::work","hdl\score_control2.v","FALSE","FALSE"
 SUBBLOCK "get_sq::work","hdl\get_sq.v","FALSE","FALSE"
 SUBBLOCK "vga640x480::work","hdl\vga640x480.v","FALSE","FALSE"
@@ -901,9 +903,9 @@ ENDLIST
 LIST "DESIGN_IO::work","component\work\DESIGN_IO\DESIGN_IO.cxf","TRUE","FALSE"
 ENDLIST
 LIST "DSWT::work","component\work\DSWT\DSWT.v","TRUE","FALSE"
-SUBBLOCK "Core_Control::work","hdl\proj_veri.v","FALSE","FALSE"
 SUBBLOCK "DSWT_MSS::work","component\work\DSWT_MSS\DSWT_MSS.v","TRUE","FALSE"
 SUBBLOCK "CoreAPB3::COREAPB3_LIB","component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\core_obfuscated\coreapb3.v","FALSE","FALSE"
+SUBBLOCK "Core_Control::work","hdl\proj_veri.v","FALSE","FALSE"
 ENDLIST
 LIST "DSWT_MSS::work","component\work\DSWT_MSS\DSWT_MSS.v","TRUE","FALSE"
 SUBBLOCK "BIBUF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
@@ -917,6 +919,9 @@ LIST "DSWT_MSS_tmp_MSS_CCC_0_MSS_CCC::work","component\work\DSWT_MSS\MSS_CCC_0\D
 SUBBLOCK "MSS_CCC::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
 ENDLIST
 LIST "get_data::work","hdl\get_data.v","FALSE","FALSE"
+ENDLIST
+LIST "get_health::work","hdl\get_health.v","FALSE","FALSE"
+SUBBLOCK "get_data::work","hdl\get_data.v","FALSE","FALSE"
 ENDLIST
 LIST "get_score::work","hdl\score_control2.v","FALSE","FALSE"
 SUBBLOCK "get_data::work","hdl\get_data.v","FALSE","FALSE"
@@ -963,9 +968,6 @@ ENDLIST
 LIST "MSSINT::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
 ENDLIST
 LIST "OUTBUF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"
-ENDLIST
-LIST "score_control::work","hdl\score_control.v","FALSE","FALSE"
-SUBBLOCK "get_data::work","hdl\get_data.v","FALSE","FALSE"
 ENDLIST
 LIST "SmartFusion_CMSIS_PAL::work","","FALSE","FALSE"
 ENDLIST

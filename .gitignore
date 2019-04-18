@@ -11,6 +11,7 @@ synthesis
 tooldata
 viewdraw
 SoftConsole/DSWT_MSS_MSS_CM3_0/DSWT_MSS_MSS_CM3_0_app/Debug
+SoftConsole/DSWT_MSS_MSS_CM3_0/DSWT_MSS_MSS_CM3_0_app/.settings
 SoftConsole/DSWT_MSS_MSS_CM3_0/DSWT_MSS_MSS_CM3_0_hw_platform/Debug
 SoftConsole/DSWT_MSS_MSS_CM3_0/.metadata
 .verilog-format.properties

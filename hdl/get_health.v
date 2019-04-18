@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Company: <Name>
 //
-// File: score_control2.v
+// File: get_health.v
 // File history:
 //      <Revision number>: <Date>: <Comments>
 //      <Revision number>: <Date>: <Comments>
@@ -18,7 +18,7 @@
 
 //`timescale <time_units> / <precision>
 
-module get_score( 
+module get_health( 
     input wire clk,
     input wire res,
     input wire write_en0,
@@ -27,13 +27,12 @@ module get_score(
     input wire animate,
     input wire [9:0] x,
     input wire [8:0] y,
-    output wire num,
-    input wire [9:0] x1,
-    input wire [9:0] x2,
-    input wire [9:0] x3
+    output wire h,
+    input wire [9:0] x0,
+    input wire [8:0] y0
     );
     wire [31:0] data;
-    get_data read_sq_info(
+    get_data read_health_info(
         .clk(clk),
         .res(res),
         .write_en0(write_en0),
@@ -41,26 +40,18 @@ module get_score(
         .pwdata(pwdata),
         .data(data)
     );
-    reg [31:0] num_data;
+    reg heart_data;
     always @(posedge clk) begin
         if (animate) begin
-            num_data <= data;
+            heart_data <= data[0];
         end
     end
-    
-    reg[5:0] pos;
-    always @(posedge clk) begin
-        if (x == 0 && y == 0)
-            pos <= 0;
-        else if (((y >= 12) & (y < 108)) & ((x == x1) | (x == x2) | (x == x3)))
-            pos <= pos + 1;
-        else if (x == 600 & ((y >= 12) & (y < 108))) begin
-            //begin next line
-            if ((y == 24) | (y == 36) | (y == 48) | (y == 60) | (y == 72) | (y == 84) | (y == 96))
-                pos <= pos + 1;
-            else
-                pos <= pos - 3;
-        end
-    end
-    assign num = (x >= x1 - 12) & (x < x3 + 12) & (y >= 12) & (y < 108) & num_data[pos];
+    assign l1 = ((y >= y0) & (y < y0 + 6) & (x >= x0 + 6 * 4) & (x < x0 + 6 * 5));
+    assign l2 = ((y >= y0 + 6) & (y < y0 + 6 * 2) & (x >= x0 + 6 * 3) & (x < x0 + 6 * 6));
+    assign l3 = ((y >= y0 + 6 * 2) & (y < y0 + 6 * 3) & (x >= x0 + 6 * 2) & (x < x0 + 6 * 7));
+    assign l4 = ((y >= y0 + 6 * 3) & (y < y0 + 6 * 4) & (x >= x0 + 6 * 1) & (x < x0 + 6 * 8));
+    assign l5 = ((y >= y0 + 6 * 4) & (y < y0 + 6 * 5) & (x >= x0) & (x < x0 + 6 * 9));
+    assign l6 = ((y >= y0 + 6 * 5) & (y < y0 + 6 * 6) & (((x >= x0) & (x < x0 + 6 * 4)) | ((x >= x0 + 6 * 5) & (x < x0 + 6 * 9))));
+    assign l7 = ((y >= y0 + 6 * 6) & (y < y0 + 6 * 7) & (((x >= x0 + 6) & (x < x0 + 6 * 3)) | ((x >= x0 + 6 * 6) & (x < x0 + 6 * 8))));
+    assign h = heart_data & (l1 | l2 | l3 | l4 | l5 | l6 | l7);
 endmodule
