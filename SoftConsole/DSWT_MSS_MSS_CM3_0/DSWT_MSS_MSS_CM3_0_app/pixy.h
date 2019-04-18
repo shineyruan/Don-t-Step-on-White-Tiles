@@ -69,14 +69,12 @@ typedef struct {
 BoundingBox range;
 Position pos;
 int score;
-
 static uint16_t receive_data[14];
 
 Two_Block process();
 uint16_t tf_floor_2_cam(int y);
 bool is_left_on_tile(sq_info* tiles, Two_Block oneframe);
 bool is_right_on_tile(sq_info* tiles, Two_Block oneframe);
-
 /**
  * Modifies: global array `receive_data`
  */

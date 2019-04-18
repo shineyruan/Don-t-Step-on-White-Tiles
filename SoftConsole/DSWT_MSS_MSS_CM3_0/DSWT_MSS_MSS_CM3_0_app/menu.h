@@ -13,9 +13,6 @@
 
 #define CURSOR_POS_BASE 0x80
 
-extern volatile uint8_t *soundboard_addr;
-extern uint16_t receive_data[14];
-
 typedef enum ModeSelect {
     SLOW,
     MEDIUM,
@@ -33,6 +30,7 @@ typedef enum SelectionLocation {
 
 typedef struct LCD {
     /* data */
+    uint8_t curr_line_num;
     uint8_t lines[4][20];
 } LCD_Display;
 
@@ -69,9 +67,12 @@ static uint8_t line_start[] = {0, 64, 20, 84};
 static uint8_t set_cursor_pos[] = {0xFE, CURSOR_POS_BASE};
 static uint8_t reset[] = {0x12};
 static uint8_t clear_display[] = {0xFE, 0x01};
+static uint8_t backlight_off[] = {0x7C, 0x80};
+static uint8_t clear_line[] = "                    ";
 
 void Display_clearMenu();
 void Display_frame(mss_uart_instance_t *this_uart);
+bool Display_lineEmpty(int line);
 void Display_initializeMenu();
 void Display_displayMenu(mss_uart_instance_t *this_uart);
 void Display_scrollDownMenu();

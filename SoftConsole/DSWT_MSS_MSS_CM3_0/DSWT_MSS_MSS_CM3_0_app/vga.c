@@ -10,11 +10,10 @@ void define_column() {
     *col_addr2 = (get_col_pos(3) | (get_col_pos(4) << 10) | (get_col_pos(5) << 20));
     *col_addr3 = res_length;
 }
-
 void sq_init() {
     int i;
     volatile int *addr[8] = {(int *)0x40050008, (int *)0x4005000c, (int *)0x40050010, (int *)0x40050014, (int *)0x40050018, (int *)0x4005002c, (int *)0x40050030, (int *)0x40050034};
-    for (i = 0; i < sq_num; i++) {
+    for (i = 0; i < 8; i++) {
         sq[i].length = 0;
         sq[i].actual_length = 0;
         sq[i].addr = addr[i];
@@ -33,6 +32,17 @@ void health_init() {
         *addr[i] = 1;
         health[i].alive = 1;
     }
+}
+
+bool overlap(int k) {
+    int i;
+    for (i = 0; i < sq_num; i++)
+        if (i != k && !sq[i].delay && sq[i].col == sq[k].col) {
+            if (sq[i].top_y + sq[i].length > sq[k].top_y - 10)
+                return true;
+        }
+    //not overlap with anyone
+    return false;
 }
 
 void random_mode(int k) {
@@ -107,7 +117,6 @@ void delay(int x) {
     for (i = 0; i < x; i++)
         ;
 }
-
 void set_health() {
     int i;
     for (i = 0; i < heart_num; i++)
@@ -117,20 +126,9 @@ void set_health() {
 void vga_init() {
     define_column();
     sq_init();
+    dead = false;
     health_init();
     score = 0;
-    dead = false;
     set_score(score);
     set_health();
-}
-
-bool overlap(int k) {
-    int i;
-    for (i = 0; i < sq_num; i++)
-        if (i != k && !sq[i].delay && sq[i].col == sq[k].col) {
-            if (sq[i].top_y + sq[i].length > sq[k].top_y - 10)
-                return true;
-        }
-    //not overlap with anyone
-    return false;
 }

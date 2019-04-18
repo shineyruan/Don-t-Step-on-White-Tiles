@@ -9,19 +9,9 @@
 #include "pixy.h"
 #include "soundboard.h"
 
-extern volatile uint8_t* soundboard_addr;
-extern uint16_t receive_data[14];
-//0..9: col_width 10..19: col1 20..29: col2
-extern volatile int *col_addr1;
-//0..9: col3 10..19: col4 20..29: col5
-extern volatile int *col_addr2;
-//0..9: length of column: 480
-extern volatile int *col_addr3;
+Command NES_command_struct;
+Command prev_NES_command_struct;
 
-extern volatile int *num_addr0;
-extern volatile int *num_addr1;
-extern volatile int *num_addr2;
-extern int speed;
 
 __attribute__((interrupt)) void Fabric_IRQHandler(void) {
     NVIC_ClearPendingIRQ(Fabric_IRQn);
@@ -41,18 +31,13 @@ __attribute__((interrupt)) void Fabric_IRQHandler(void) {
         	dead = true;
     }
 }
-
 int main() {
-	Command NES_command_struct;
-	Command prev_NES_command_struct;
-
     /* Enable FABINT Interrupt for generating tiles */
     NVIC_EnableIRQ(Fabric_IRQn);
 
     // vga
     vga_init();
 
-    // pixy
     const uint8_t frame_size = 16;
     MSS_SPI_init(&g_mss_spi1);
     MSS_SPI_configure_master_mode(&g_mss_spi1, MSS_SPI_SLAVE_0, MSS_SPI_MODE0,
@@ -60,9 +45,25 @@ int main() {
 
     MSS_SPI_set_slave_select(&g_mss_spi1, MSS_SPI_SLAVE_0);
 
+    // controller
+    Display.curr_line_num = 0;
+
     /* LCD init */
     MSS_UART_init(&g_mss_uart1, MSS_UART_9600_BAUD,
                   MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT);
+
+    /************* Welcome Message *************/
+
+    uint8_t tx_buff[] = "Welcome to Nintendo!";
+
+    MSS_UART_polled_tx(&g_mss_uart1, clear_display, sizeof(clear_display));
+    MSS_UART_polled_tx(&g_mss_uart1, set_cursor_pos, sizeof(set_cursor_pos));
+    MSS_UART_polled_tx_string(&g_mss_uart1, tx_buff);
+
+    /*******************************************/
+
+    Display_initializeMenu();
+    started = false;
 
 #ifdef INIT_DEBUG
     printf("Controller init: %x\r\n", *command_addr);
@@ -73,14 +74,11 @@ int main() {
     printf("Controller init: %x\r\n", *command_addr);
 #endif
 
-    Display_initializeMenu();
-    started = false;
-    changed = true;
-
+    bool changed = true;
     while (1) {
         // pixy
         int i;
-        for (i = 0; i < 14; i++) {
+        for (i = 0; i < 14;i++){
             receive_data[i] = 0;
         }
         Two_Block data = Pixy_getData(&g_mss_spi1);

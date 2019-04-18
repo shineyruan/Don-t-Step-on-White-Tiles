@@ -21,13 +21,26 @@ void Display_frame(mss_uart_instance_t *this_uart) {
     }
 }
 
+bool Display_lineEmpty(int line) {
+    bool flag = true;
+    int i = 0;
+
+    for (i = 0; i < 20; i++)
+        if (Display.lines[line][i] != 0 && Display.lines[line][i] != ' ') {
+            flag = false;
+            break;
+        }
+
+    return flag;
+}
+
 void Display_initializeMenu() {
     started = false;
     strcpy(myMenu.layer[0], "Start");
     strcpy(myMenu.layer[1], "Mode");
     strcpy(myMenu.layer[2], "Song");
     strcpy(myMenu.layer[3], "Print config");
-    strcpy(myMenu.layer[4], "Calibrate Pixy");
+    strcpy(myMenu.layer[4], "Calibrate PIXY");
     strcpy(myMenu.layer[5], "Option 3");
     myMenu.frame.length = 6;
     myMenu.frame.curr_selection = 0;
@@ -248,7 +261,7 @@ void Display_printSuccessful() {
 }
 
 void Display_returnLastMenu() {
-    if (myMenu.curr_location == SONG || myMenu.curr_location == MODE ||
+    if (myMenu.curr_location == SONG || myMenu.curr_location == MODE || 
         myMenu.curr_location == PRINT || myMenu.curr_location == CALIBRATION) {
         Display_clearMenu();
         Display_initializeMenu();

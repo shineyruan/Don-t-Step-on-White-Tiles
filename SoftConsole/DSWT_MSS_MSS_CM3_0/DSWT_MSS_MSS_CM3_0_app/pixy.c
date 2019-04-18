@@ -1,6 +1,6 @@
 #include "pixy.h"
 
-/* #define PIXY_DEBUG */
+#define PIXY_DEBUG
 
 Two_Block process() {
     Two_Block oneframe;
@@ -82,7 +82,7 @@ bool is_left_on_tile(sq_info* tiles, Two_Block oneframe) {
                     oneframe.y1 - oneframe.height1 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     tiles[i].left_on = 1;
                     result = true;
-                    if (tiles[i].right_on == 0 && tiles[i].left_on == 0) {
+                    if (tiles[i].right_on == 0 && tiles[i].left_on==0) {
                         score++;
                     }
                     break;
@@ -98,7 +98,7 @@ bool is_left_on_tile(sq_info* tiles, Two_Block oneframe) {
                     oneframe.y2 - oneframe.height2 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     tiles[i].left_on = 1;
                     result = true;
-                    if (tiles[i].right_on == 0 && tiles[i].left_on == 0) {
+                    if (tiles[i].right_on == 0 && tiles[i].left_on==0) {
                         score++;
                     }
                     break;
@@ -121,7 +121,7 @@ bool is_right_on_tile(sq_info* tiles, Two_Block oneframe) {
                     oneframe.y1 - oneframe.height1 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     tiles[i].right_on = 1;
                     result = true;
-                    if (tiles[i].left_on == 0 && tiles[i].right_on == 0) {
+                    if (tiles[i].left_on == 0 && tiles[i].right_on==0) {
                         score++;
                     }
                     break;
@@ -136,7 +136,7 @@ bool is_right_on_tile(sq_info* tiles, Two_Block oneframe) {
                     oneframe.y2 - oneframe.height2 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     tiles[i].right_on = 1;
                     result = true;
-                    if (tiles[i].left_on == 0 && tiles[i].right_on == 0) {
+                    if (tiles[i].left_on == 0 && tiles[i].right_on==0) {
                         score++;
                     }
                     break;
