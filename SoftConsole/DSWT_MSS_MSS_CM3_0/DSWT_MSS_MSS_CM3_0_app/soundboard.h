@@ -6,6 +6,6 @@
 
 #define SOUNDBOARD_ADDR 0x40050100
 
-static volatile uint8_t* soundboard_addr = (uint8_t*)(SOUNDBOARD_ADDR);
+volatile uint8_t* soundboard_addr = (uint8_t*)(SOUNDBOARD_ADDR);
 
 #endif

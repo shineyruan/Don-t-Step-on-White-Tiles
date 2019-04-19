@@ -13,6 +13,16 @@
 
 #define CURSOR_POS_BASE 0x80
 
+/******************* EXTERNAL VARIABLES *******************/
+// soundboard.h
+extern volatile uint8_t *soundboard_addr;
+// pixy.h 
+extern BoundingBox range;
+extern Position pos;
+extern int score;
+extern uint16_t receive_data[14];
+/**********************************************************/
+
 typedef enum ModeSelect {
     SLOW,
     MEDIUM,
@@ -63,12 +73,12 @@ Menu myMenu;
 Menu_Essential prev_frame;
 Selected selected_config;
 
-static uint8_t line_start[] = {0, 64, 20, 84};
-static uint8_t set_cursor_pos[] = {0xFE, CURSOR_POS_BASE};
-static uint8_t reset[] = {0x12};
-static uint8_t clear_display[] = {0xFE, 0x01};
-static uint8_t backlight_off[] = {0x7C, 0x80};
-static uint8_t clear_line[] = "                    ";
+uint8_t line_start[] = {0, 64, 20, 84};
+uint8_t set_cursor_pos[] = {0xFE, CURSOR_POS_BASE};
+uint8_t reset[] = {0x12};
+uint8_t clear_display[] = {0xFE, 0x01};
+uint8_t backlight_off[] = {0x7C, 0x80};
+uint8_t clear_line[] = "                    ";
 
 void Display_clearMenu();
 void Display_frame(mss_uart_instance_t *this_uart);

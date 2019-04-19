@@ -354,8 +354,8 @@ SIZE="2077"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT.adb,adb"
 STATE="utd"
-TIME="1555623803"
-SIZE="2871808"
+TIME="1555641173"
+SIZE="2874368"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT.fdb,fdb"
 STATE="utd"
@@ -364,28 +364,28 @@ SIZE="106254"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT.ide_des,ide_des"
 STATE="utd"
-TIME="1555623804"
-SIZE="1114"
+TIME="1555641174"
+SIZE="1113"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_compile_log.rpt,log"
 STATE="utd"
-TIME="1555623667"
-SIZE="29847"
+TIME="1555638595"
+SIZE="29661"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_fp\DSWT.pdb,pdb"
 STATE="utd"
-TIME="1555619440"
-SIZE="111721"
+TIME="1555643787"
+SIZE="111835"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_fp\DSWT.pro,pro"
 STATE="utd"
-TIME="1555623488"
-SIZE="2412"
+TIME="1555643826"
+SIZE="2442"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_fp\projectData\DSWT.pdb,pdb"
 STATE="utd"
-TIME="1555619478"
-SIZE="111721"
+TIME="1555643826"
+SIZE="111835"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_placeroute_log.rpt,log"
 STATE="utd"
@@ -523,22 +523,22 @@ SIZE="3588"
 ENDFILE
 VALUE "<project>\synthesis\DSWT.edn,syn_edn"
 STATE="utd"
-TIME="1555623653"
-SIZE="2191335"
+TIME="1555638574"
+SIZE="2193438"
 ENDFILE
 VALUE "<project>\synthesis\DSWT.so,so"
 STATE="utd"
-TIME="1555623653"
+TIME="1555638574"
 SIZE="241"
 ENDFILE
 VALUE "<project>\synthesis\DSWT_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1555623653"
+TIME="1555638574"
 SIZE="536"
 ENDFILE
 VALUE "<project>\synthesis\DSWT_syn.prj,prj"
 STATE="utd"
-TIME="1555623653"
+TIME="1555638575"
 SIZE="3609"
 ENDFILE
 VALUE "<project>\synthesis\proj_top.so,so"
@@ -615,6 +615,18 @@ VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\b
 VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslaveext.v,tb_hdl"
 VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\amba_bfm\bfm_apbslave.v,tb_hdl"
 VALUE "<project>\component\Actel\DirectCore\CoreAPB3\4.1.100\rtl\vlog\test\user\testbench.v,tb_hdl"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
 ENDLIST
 ENDLIST
 ENDLIST
@@ -720,8 +732,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -768,6 +780,18 @@ Used_File_List
 ENDUsed_File_List
 ENDLIST
 ENDLIST
+LIST "CoreAPB3::COREAPB3_LIB"
+LIST Impl1
+ideSTIMULUS=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
 ENDLIST
 LIST ExcludePackageForSimulation
 ENDLIST
@@ -782,7 +806,7 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;Generate Programming Data:DSWT_prgdata_log.rpt
+ReportsCurrentItem;Program Device:DSWT_program.log
 SmartDesign;DSWT;0
 HDL;hdl\proj_veri.v;0
 StartPage;StartPage;0

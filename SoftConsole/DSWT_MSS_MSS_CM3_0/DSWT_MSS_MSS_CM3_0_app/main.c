@@ -13,8 +13,43 @@
 Command NES_command_struct;
 Command prev_NES_command_struct;
 
-
+/******************* EXTERNAL VARIABLES *******************/
+// controller.h
+extern volatile uint8_t* command_addr;
 extern bool changed;
+// vga.h
+extern volatile int *col_addr1;
+extern volatile int *col_addr2;
+extern volatile int *col_addr3;
+extern volatile int *num_addr0;
+extern volatile int *num_addr1;
+extern volatile int *num_addr2;
+extern int number[10];
+extern sq_info sq[8];
+extern health_info health[5];
+extern int speed;
+extern bool dead;
+// menu.h
+extern bool started;
+extern bool print_state;
+extern LCD_Display Display;
+extern Menu myMenu;
+extern Menu_Essential prev_frame;
+extern Selected selected_config;
+extern uint8_t line_start[];
+extern uint8_t set_cursor_pos[];
+extern uint8_t reset[];
+extern uint8_t clear_display[];
+extern uint8_t backlight_off[];
+extern uint8_t clear_line[];
+// pixy.h
+extern BoundingBox range;
+extern Position pos;
+extern int score;
+extern uint16_t receive_data[14];
+// soundboard.h
+extern volatile uint8_t* soundboard_addr;
+/**********************************************************/
 
 __attribute__((interrupt)) void Fabric_IRQHandler(void) {
     NVIC_ClearPendingIRQ(Fabric_IRQn);
@@ -28,29 +63,29 @@ __attribute__((interrupt)) void Fabric_IRQHandler(void) {
         set_health();
         bool found = false;
         for (i = 0; i < heart_num; i++)
-        	if (health[i].alive)
-        		found = true;
+            if (health[i].alive)
+                found = true;
         if (!found)
-        	dead = true;
+            dead = true;
     }
 }
 
-void SoundEffect() {
-    MSS_GPIO_set_output(MSS_GPIO_2, 0);
-    int i = 0;
-    for (i = 0; i < 10000; ++i) {}
-    MSS_GPIO_set_output(MSS_GPIO_2, 1);
-}
+// void SoundEffect() {
+//     MSS_GPIO_set_output(MSS_GPIO_2, 0);
+//     int i = 0;
+//     for (i = 0; i < 10000; ++i) {}
+//     MSS_GPIO_set_output(MSS_GPIO_2, 1);
+// }
 
 int main() {
-    /* initiate Sound Board */
-    MSS_GPIO_init();
-    MSS_GPIO_config(MSS_GPIO_0, MSS_GPIO_OUTPUT_MODE);
-    MSS_GPIO_config(MSS_GPIO_1, MSS_GPIO_OUTPUT_MODE);
-    MSS_GPIO_config(MSS_GPIO_2, MSS_GPIO_OUTPUT_MODE);
-    MSS_GPIO_set_output(MSS_GPIO_0, 1);
-    MSS_GPIO_set_output(MSS_GPIO_1, 1);
-    MSS_GPIO_set_output(MSS_GPIO_2, 1);
+    // /* initiate Sound Board */
+    // MSS_GPIO_init();
+    // MSS_GPIO_config(MSS_GPIO_0, MSS_GPIO_OUTPUT_MODE);
+    // MSS_GPIO_config(MSS_GPIO_1, MSS_GPIO_OUTPUT_MODE);
+    // MSS_GPIO_config(MSS_GPIO_2, MSS_GPIO_OUTPUT_MODE);
+    // MSS_GPIO_set_output(MSS_GPIO_0, 1);
+    // MSS_GPIO_set_output(MSS_GPIO_1, 1);
+    // MSS_GPIO_set_output(MSS_GPIO_2, 1);
 
     /* Enable FABINT Interrupt for generating tiles */
     NVIC_EnableIRQ(Fabric_IRQn);
@@ -58,6 +93,7 @@ int main() {
     // vga
     vga_init();
 
+    // pixy
     const uint8_t frame_size = 16;
     MSS_SPI_init(&g_mss_spi1);
     MSS_SPI_configure_master_mode(&g_mss_spi1, MSS_SPI_SLAVE_0, MSS_SPI_MODE0,
@@ -85,7 +121,7 @@ int main() {
     while (1) {
         // pixy
         int i;
-        for (i = 0; i < 14;i++){
+        for (i = 0; i < 14; i++) {
             receive_data[i] = 0;
         }
         Two_Block data = Pixy_getData(&g_mss_spi1);
@@ -109,9 +145,9 @@ int main() {
             printf("right foot is on tile!\r\n");
         }
 
-        if (!is_left_on_tile(sq, data) || !(is_right_on_tile(sq, data))) {
-            SoundEffect();
-        }
+        // if (!is_left_on_tile(sq, data) || !(is_right_on_tile(sq, data))) {
+        //     SoundEffect();
+        // }
 
         // controller
         prev_NES_command_struct = NES_command_struct;

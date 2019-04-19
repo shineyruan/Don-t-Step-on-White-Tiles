@@ -261,7 +261,7 @@ void Display_printSuccessful() {
 }
 
 void Display_returnLastMenu() {
-    if (myMenu.curr_location == SONG || myMenu.curr_location == MODE || 
+    if (myMenu.curr_location == SONG || myMenu.curr_location == MODE ||
         myMenu.curr_location == PRINT || myMenu.curr_location == CALIBRATION) {
         Display_clearMenu();
         Display_initializeMenu();

@@ -69,7 +69,8 @@ typedef struct {
 BoundingBox range;
 Position pos;
 int score;
-static uint16_t receive_data[14];
+
+uint16_t receive_data[14];
 
 Two_Block process();
 uint16_t tf_floor_2_cam(int y);
