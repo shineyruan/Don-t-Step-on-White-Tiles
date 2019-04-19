@@ -30,16 +30,16 @@ typedef struct {
 
 
 //0..9: col_width 10..19: col1 20..29: col2
-volatile int *col_addr1 = (int *)0x40050000;
+volatile int *col_addr1;
 //0..9: col3 10..19: col4 20..29: col5
-volatile int *col_addr2 = (int *)0x40050004;
+volatile int *col_addr2;
 //0..9: length of column: 480
-volatile int *col_addr3 = (int *)0x40050038;
+volatile int *col_addr3;
 
-volatile int *num_addr0 = (int *)0x4005001c;
-volatile int *num_addr1 = (int *)0x40050020;
-volatile int *num_addr2 = (int *)0x40050028;
-int number[10] = {0x0f99999f, 0x04444444, 0x0f11f88f, 0x0f11f11f, 0x0aaaaf22, 0x0f88f11f, 0x0f88f99f, 0x0f111111, 0x0f99f99f, 0x0f99f11f};
+volatile int *num_addr0;
+volatile int *num_addr1;
+volatile int *num_addr2;
+int number[10];
 sq_info sq[8];
 health_info health[5];
 

@@ -58,10 +58,14 @@ typedef struct Controller {
     bool button_a;
 } Command;
 
-volatile uint8_t* command_addr = (uint8_t*)(CONTROLLER_ADDR);
+volatile uint8_t* command_addr;
 bool changed;
 
 inline void Controller_getCommand(Command* cmd_struct);
+/**
+ * Left, Right, Up, Down, B 
+ * Only 5 buttons are in use 
+ */
 void Controller_getAction(Command* cmd_struct, Command* prev_cmd_struct);
 
 #endif

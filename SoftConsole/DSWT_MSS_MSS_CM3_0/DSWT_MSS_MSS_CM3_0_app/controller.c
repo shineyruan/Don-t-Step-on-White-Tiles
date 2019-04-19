@@ -114,16 +114,6 @@ void Controller_getAction(Command* cmd_struct, Command* prev_cmd_struct) {
             }
         }
     }
-    if (NES_command_struct.button_a) {
-        if (!(prev_NES_command_struct.button_a && NES_command_struct.button_a)) {
-            MSS_UART_polled_tx(&g_mss_uart1, reset, sizeof(reset));
-            Display_clearMenu();
-            Display_initializeMenu();
-            started = false;
-            prev_frame = myMenu.frame;
-            changed = true;
-        }
-    }
     if (NES_command_struct.button_b) {
         if (!(prev_NES_command_struct.button_b && NES_command_struct.button_b)) {
             if (started) {

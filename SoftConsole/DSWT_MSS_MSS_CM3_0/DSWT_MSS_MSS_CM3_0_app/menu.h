@@ -73,12 +73,10 @@ Menu myMenu;
 Menu_Essential prev_frame;
 Selected selected_config;
 
-uint8_t line_start[] = {0, 64, 20, 84};
-uint8_t set_cursor_pos[] = {0xFE, CURSOR_POS_BASE};
-uint8_t reset[] = {0x12};
-uint8_t clear_display[] = {0xFE, 0x01};
-uint8_t backlight_off[] = {0x7C, 0x80};
-uint8_t clear_line[] = "                    ";
+uint8_t line_start[4];
+uint8_t set_cursor_pos[2];
+uint8_t reset[1];
+uint8_t clear_display[2];
 
 void Display_clearMenu();
 void Display_frame(mss_uart_instance_t *this_uart);

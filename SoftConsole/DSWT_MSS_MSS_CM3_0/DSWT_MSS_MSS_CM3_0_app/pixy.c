@@ -74,7 +74,7 @@ bool is_left_on_tile(sq_info* tiles, Two_Block oneframe) {
     bool result = false;
     size_t n_tiles = sq_num;
     if (oneframe.signature1 == 1) {
-        size_t i = 0;
+        uint8_t i = 0;
         for (i = 0; i < n_tiles; i++) {
             //		sq_info tile = tiles[i];
             if (oneframe.col1 == tiles[i].col - 1) {
@@ -90,7 +90,7 @@ bool is_left_on_tile(sq_info* tiles, Two_Block oneframe) {
             }
         }
     } else if (oneframe.signature2 == 1) {
-        size_t i = 0;
+        uint8_t i = 0;
         for (i = 0; i < n_tiles; i++) {
             //		sq_info tile = tiles[i];
             if (oneframe.col2 == tiles[i].col - 1) {

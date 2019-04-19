@@ -18,12 +18,12 @@ Command prev_NES_command_struct;
 extern volatile uint8_t* command_addr;
 extern bool changed;
 // vga.h
-extern volatile int *col_addr1;
-extern volatile int *col_addr2;
-extern volatile int *col_addr3;
-extern volatile int *num_addr0;
-extern volatile int *num_addr1;
-extern volatile int *num_addr2;
+extern volatile int* col_addr1;
+extern volatile int* col_addr2;
+extern volatile int* col_addr3;
+extern volatile int* num_addr0;
+extern volatile int* num_addr1;
+extern volatile int* num_addr2;
 extern int number[10];
 extern sq_info sq[8];
 extern health_info health[5];
@@ -36,12 +36,10 @@ extern LCD_Display Display;
 extern Menu myMenu;
 extern Menu_Essential prev_frame;
 extern Selected selected_config;
-extern uint8_t line_start[];
-extern uint8_t set_cursor_pos[];
-extern uint8_t reset[];
-extern uint8_t clear_display[];
-extern uint8_t backlight_off[];
-extern uint8_t clear_line[];
+extern uint8_t line_start[4];
+extern uint8_t set_cursor_pos[2];
+extern uint8_t reset[1];
+extern uint8_t clear_display[2];
 // pixy.h
 extern BoundingBox range;
 extern Position pos;
@@ -70,6 +68,32 @@ __attribute__((interrupt)) void Fabric_IRQHandler(void) {
     }
 }
 
+void initAllVariables() {
+    // controller.h
+    command_addr = (uint8_t*)(CONTROLLER_ADDR);
+    // menu.h 
+    static const uint8_t line_start_temp[] = {0, 64, 20, 84};
+    memcpy(line_start, line_start_temp, sizeof(line_start_temp));
+    static const uint8_t set_cursor_pos_temp[] = {0xFE, CURSOR_POS_BASE};
+    memcpy(set_cursor_pos, set_cursor_pos_temp, sizeof(set_cursor_pos_temp));
+    reset[0] = 0x12;
+    static const uint8_t clear_display_temp[] = {0xFE, 0x01};
+    memcpy(clear_display, clear_display_temp, sizeof(clear_display_temp));
+    // soundboard.h
+    soundboard_addr = (uint8_t*)(SOUNDBOARD_ADDR);
+    // vga.h
+    col_addr1 = (int *)0x40050000;
+    col_addr2 = (int *)0x40050004;
+    col_addr3 = (int *)0x40050038;
+    num_addr0 = (int *)0x4005001c;
+    num_addr1 = (int *)0x40050020;
+    num_addr2 = (int *)0x40050028;
+    static const int number_temp[10] = {0x0f99999f, 0x04444444, 0x0f11f88f, 0x0f11f11f,
+                                        0x0aaaaf22, 0x0f88f11f, 0x0f88f99f, 0x0f111111,
+                                        0x0f99f99f, 0x0f99f11f};
+    memcpy(number, number_temp, sizeof(number_temp));
+}
+
 // void SoundEffect() {
 //     MSS_GPIO_set_output(MSS_GPIO_2, 0);
 //     int i = 0;
@@ -78,6 +102,9 @@ __attribute__((interrupt)) void Fabric_IRQHandler(void) {
 // }
 
 int main() {
+    // common
+    initAllVariables();
+
     // /* initiate Sound Board */
     // MSS_GPIO_init();
     // MSS_GPIO_config(MSS_GPIO_0, MSS_GPIO_OUTPUT_MODE);
@@ -94,7 +121,7 @@ int main() {
     vga_init();
 
     // pixy
-    const uint8_t frame_size = 16;
+    const frame_size = 16;
     MSS_SPI_init(&g_mss_spi1);
     MSS_SPI_configure_master_mode(&g_mss_spi1, MSS_SPI_SLAVE_0, MSS_SPI_MODE0,
                                   MSS_SPI_PCLK_DIV_256, frame_size);
@@ -120,10 +147,7 @@ int main() {
     changed = true;
     while (1) {
         // pixy
-        int i;
-        for (i = 0; i < 14; i++) {
-            receive_data[i] = 0;
-        }
+        memset(receive_data, 0, sizeof(receive_data));
         Two_Block data = Pixy_getData(&g_mss_spi1);
 
         // LCD display
