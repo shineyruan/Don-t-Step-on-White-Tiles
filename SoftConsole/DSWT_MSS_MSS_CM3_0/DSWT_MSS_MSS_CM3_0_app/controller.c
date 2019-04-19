@@ -17,75 +17,73 @@ void Controller_getAction(Command* cmd_struct, Command* prev_cmd_struct) {
     Command NES_command_struct = *cmd_struct;
     Command prev_NES_command_struct = *prev_cmd_struct;
 
-    if (NES_command_struct.right || NES_command_struct.select) {
-        if (!(prev_NES_command_struct.right && NES_command_struct.right) ||
-            !((prev_NES_command_struct.select && NES_command_struct.select))) {
-            switch (myMenu.curr_location) {
-                case ROOT:
-                    if (myMenu.frame.curr_selection == 0) {
-                        Display_enterStart();
-                        changed = true;
-                    } else if (myMenu.frame.curr_selection == 1) {
-                        Display_enterModeSelections();
-                        changed = true;
-                    } else if (myMenu.frame.curr_selection == 2) {
-                        Display_enterSongSelections();
-                        changed = true;
-                    } else if (myMenu.frame.curr_selection == 3) {
-                        Display_enterPrintConfig();
-                        changed = true;
-                    } else if (myMenu.frame.curr_selection == 4) {
-                        Display_enterCalibrationMode();
-                        changed = true;
-                    }
-                    break;
-                case MODE:
-                    if (myMenu.frame.curr_selection == 0) {
-                        Display_printSuccessful();
-                        selected_config.selected_mode = SLOW;
-                        speed = -5;
-                        changed = true;
-                    } else if (myMenu.frame.curr_selection == 1) {
-                        selected_config.selected_mode = MEDIUM;
-                        speed = -10;
-                        Display_printSuccessful();
-                        changed = true;
-                    } else if (myMenu.frame.curr_selection == 2) {
-                        selected_config.selected_mode = FAST;
-                        speed = -15;
-                        Display_printSuccessful();
-                        changed = true;
-                    }
-                    break;
-                case SONG:
-                    selected_config.selected_song = myMenu.frame.curr_selection + 1;
+    if ((NES_command_struct.right && !(prev_NES_command_struct.right && NES_command_struct.right)) ||
+        (NES_command_struct.select && !(prev_NES_command_struct.select && NES_command_struct.select))) {
+        switch (myMenu.curr_location) {
+            case ROOT:
+                if (myMenu.frame.curr_selection == 0) {
+                    Display_enterStart();
+                    changed = true;
+                } else if (myMenu.frame.curr_selection == 1) {
+                    Display_enterModeSelections();
+                    changed = true;
+                } else if (myMenu.frame.curr_selection == 2) {
+                    Display_enterSongSelections();
+                    changed = true;
+                } else if (myMenu.frame.curr_selection == 3) {
+                    Display_enterPrintConfig();
+                    changed = true;
+                } else if (myMenu.frame.curr_selection == 4) {
+                    Display_enterCalibrationMode();
+                    changed = true;
+                }
+                break;
+            case MODE:
+                if (myMenu.frame.curr_selection == 0) {
+                    Display_printSuccessful();
+                    selected_config.selected_mode = SLOW;
+                    speed = -5;
+                    changed = true;
+                } else if (myMenu.frame.curr_selection == 1) {
+                    selected_config.selected_mode = MEDIUM;
+                    speed = -10;
                     Display_printSuccessful();
                     changed = true;
-                    break;
-                case CALIBRATION:
-                    if (myMenu.frame.curr_selection == 0) {
-                        pos = TOP_LEFT;
-                        Display_enterCalibration();
-                        changed = true;
-                    } else if (myMenu.frame.curr_selection == 1) {
-                        pos = TOP_RIGHT;
-                        Display_enterCalibration();
-                        changed = true;
-                    } else if (myMenu.frame.curr_selection == 2) {
-                        pos = BOTTOM_RIGHT;
-                        Display_enterCalibration();
-                        changed = true;
-                    } else if (myMenu.frame.curr_selection == 3) {
-                        pos = BOTTOM_LEFT;
-                        Display_enterCalibration();
-                        changed = true;
-                    }
-                    break;
-                default:
-                    break;
-            }
-            return;
+                } else if (myMenu.frame.curr_selection == 2) {
+                    selected_config.selected_mode = FAST;
+                    speed = -15;
+                    Display_printSuccessful();
+                    changed = true;
+                }
+                break;
+            case SONG:
+                selected_config.selected_song = myMenu.frame.curr_selection + 1;
+                Display_printSuccessful();
+                changed = true;
+                break;
+            case CALIBRATION:
+                if (myMenu.frame.curr_selection == 0) {
+                    pos = TOP_LEFT;
+                    Display_enterCalibration();
+                    changed = true;
+                } else if (myMenu.frame.curr_selection == 1) {
+                    pos = TOP_RIGHT;
+                    Display_enterCalibration();
+                    changed = true;
+                } else if (myMenu.frame.curr_selection == 2) {
+                    pos = BOTTOM_RIGHT;
+                    Display_enterCalibration();
+                    changed = true;
+                } else if (myMenu.frame.curr_selection == 3) {
+                    pos = BOTTOM_LEFT;
+                    Display_enterCalibration();
+                    changed = true;
+                }
+                break;
+            default:
+                break;
         }
+        return;
     }
     if (NES_command_struct.left) {
         if (!(prev_NES_command_struct.left && NES_command_struct.left)) {
