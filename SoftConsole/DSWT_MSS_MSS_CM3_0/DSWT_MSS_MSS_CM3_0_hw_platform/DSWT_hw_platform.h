@@ -2,7 +2,7 @@
 #define DSWT_HW_PLATFORM_H_
 /*****************************************************************************
 *
-*Created by Microsemi SmartDesign  Thu Apr 18 17:40:35 2019
+*Created by Microsemi SmartDesign  Thu Apr 18 21:49:09 2019
 *
 *Memory map specification for peripherals in DSWT
 */

@@ -44,7 +44,7 @@ typedef struct Controller {
 } Command;
 
 static volatile uint8_t* command_addr = (uint8_t*)(CONTROLLER_ADDR);
-static bool changed;
+bool changed;
 
 inline void Controller_getCommand(Command* cmd_struct);
 void Controller_getAction(Command* cmd_struct, Command* prev_cmd_struct);

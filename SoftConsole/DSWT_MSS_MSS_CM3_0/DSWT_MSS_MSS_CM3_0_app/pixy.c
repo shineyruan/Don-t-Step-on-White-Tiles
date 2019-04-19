@@ -106,7 +106,7 @@ bool is_left_on_tile(sq_info* tiles, Two_Block oneframe) {
             }
         }
     }
-
+    
     return result;
 }
 

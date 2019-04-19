@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include "drivers/mss_uart/mss_uart.h"
+#include "drivers/mss_gpio/mss_gpio.h"
 
 #include "controller.h"
 #include "vga.h"
@@ -12,6 +13,8 @@
 Command NES_command_struct;
 Command prev_NES_command_struct;
 
+
+extern bool changed;
 
 __attribute__((interrupt)) void Fabric_IRQHandler(void) {
     NVIC_ClearPendingIRQ(Fabric_IRQn);
@@ -31,7 +34,24 @@ __attribute__((interrupt)) void Fabric_IRQHandler(void) {
         	dead = true;
     }
 }
+
+void SoundEffect() {
+    MSS_GPIO_set_output(MSS_GPIO_2, 0);
+    int i = 0;
+    for (i = 0; i < 10000; ++i) {}
+    MSS_GPIO_set_output(MSS_GPIO_2, 1);
+}
+
 int main() {
+    /* initiate Sound Board */
+    MSS_GPIO_init();
+    MSS_GPIO_config(MSS_GPIO_0, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(MSS_GPIO_1, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(MSS_GPIO_2, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_set_output(MSS_GPIO_0, 1);
+    MSS_GPIO_set_output(MSS_GPIO_1, 1);
+    MSS_GPIO_set_output(MSS_GPIO_2, 1);
+
     /* Enable FABINT Interrupt for generating tiles */
     NVIC_EnableIRQ(Fabric_IRQn);
 
@@ -45,22 +65,9 @@ int main() {
 
     MSS_SPI_set_slave_select(&g_mss_spi1, MSS_SPI_SLAVE_0);
 
-    // controller
-    Display.curr_line_num = 0;
-
     /* LCD init */
     MSS_UART_init(&g_mss_uart1, MSS_UART_9600_BAUD,
                   MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT);
-
-    /************* Welcome Message *************/
-
-    uint8_t tx_buff[] = "Welcome to Nintendo!";
-
-    MSS_UART_polled_tx(&g_mss_uart1, clear_display, sizeof(clear_display));
-    MSS_UART_polled_tx(&g_mss_uart1, set_cursor_pos, sizeof(set_cursor_pos));
-    MSS_UART_polled_tx_string(&g_mss_uart1, tx_buff);
-
-    /*******************************************/
 
     Display_initializeMenu();
     started = false;
@@ -74,7 +81,7 @@ int main() {
     printf("Controller init: %x\r\n", *command_addr);
 #endif
 
-    bool changed = true;
+    changed = true;
     while (1) {
         // pixy
         int i;
@@ -100,6 +107,10 @@ int main() {
         }
         if (is_right_on_tile(sq, data)) {
             printf("right foot is on tile!\r\n");
+        }
+
+        if (!is_left_on_tile(sq, data) || !(is_right_on_tile(sq, data))) {
+            SoundEffect();
         }
 
         // controller
