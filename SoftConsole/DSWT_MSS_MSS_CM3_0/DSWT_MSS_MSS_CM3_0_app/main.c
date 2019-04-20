@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "drivers/mss_uart/mss_uart.h"
-// #include "drivers/mss_gpio/mss_gpio.h"
+#include "drivers/mss_gpio/mss_gpio.h"
 
 #include "controller.h"
 #include "vga.h"
@@ -95,25 +95,26 @@ void init_everything() {
     memcpy(number, number_temp, sizeof(number_temp));
 }
 
-// void SoundEffect() {
-//     MSS_GPIO_set_output(MSS_GPIO_2, 0);
-//     int i = 0;
-//     for (i = 0; i < 10000; ++i) {}
-//     MSS_GPIO_set_output(MSS_GPIO_2, 1);
-// }
+void SoundEffect() {
+    MSS_GPIO_set_output(MSS_GPIO_2, 0);
+    int i = 0;
+    for (i = 0; i < 10000; ++i) {
+    }
+    MSS_GPIO_set_output(MSS_GPIO_2, 1);
+}
 
 int main() {
     // common
     init_everything();
 
-    // /* initiate Sound Board */
-    // MSS_GPIO_init();
-    // MSS_GPIO_config(MSS_GPIO_0, MSS_GPIO_OUTPUT_MODE);
-    // MSS_GPIO_config(MSS_GPIO_1, MSS_GPIO_OUTPUT_MODE);
-    // MSS_GPIO_config(MSS_GPIO_2, MSS_GPIO_OUTPUT_MODE);
-    // MSS_GPIO_set_output(MSS_GPIO_0, 1);
-    // MSS_GPIO_set_output(MSS_GPIO_1, 1);
-    // MSS_GPIO_set_output(MSS_GPIO_2, 1);
+    /* initiate Sound Board */
+    MSS_GPIO_init();
+    MSS_GPIO_config(MSS_GPIO_0, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(MSS_GPIO_1, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_config(MSS_GPIO_2, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_set_output(MSS_GPIO_0, 1);
+    MSS_GPIO_set_output(MSS_GPIO_1, 1);
+    MSS_GPIO_set_output(MSS_GPIO_2, 1);
 
     /* Enable FABINT Interrupt for generating tiles */
     NVIC_EnableIRQ(Fabric_IRQn);
@@ -168,9 +169,9 @@ int main() {
             printf("right foot is on tile!\r\n");
         }
 
-        // if (!is_left_on_tile(sq, data) || !(is_right_on_tile(sq, data))) {
-        //     SoundEffect();
-        // }
+        if (!is_left_on_tile(sq, data) || !(is_right_on_tile(sq, data))) {
+            SoundEffect();
+        }
 
         // controller
         prev_NES_command_struct = NES_command_struct;
