@@ -1,6 +1,22 @@
 #include "pixy.h"
 
-#define PIXY_DEBUG
+// #define PIXY_DEBUG
+int decide_col(int offset){
+    uint16_t left = range.lbx + (range.ltx - range.lbx) * (receive_data[3+offset] - range.lby) / (range.lty - range.lby);
+    uint16_t right = range.rbx + (range.rtx - range.rbx) * (receive_data[3+offset] - range.rby) / (range.rty - range.rby);
+    if (receive_data[2+offset] >= left && receive_data[2+offset] < left + (right - left) / 4) {
+        return 0;
+    } else if (receive_data[2+offset] >= left + (right - left) / 4 && receive_data[2+offset] < left + (right - left) / 2) {
+        return 1;
+    } else if (receive_data[2+offset] >= left + (right - left) / 2 && receive_data[2+offset] < left + (right - left) * 3 / 4) {
+        return 2;
+    } else if (receive_data[2+offset] >= left + (right - left) * 3 / 4 && receive_data[2+offset] < right) {
+        return 3;
+    } else {
+        return 4;
+    }
+
+}
 
 Two_Block process() {
     Two_Block oneframe;
@@ -13,19 +29,8 @@ Two_Block process() {
     oneframe.height1 = receive_data[5];
 
     //determine the column [0:3] of user's position
-    uint16_t left = range.lbx + (range.ltx - range.lbx) * (oneframe.y1 - range.lby) / (range.lty - range.lby);
-    uint16_t right = range.rbx + (range.rtx - range.rbx) * (oneframe.y1 - range.rby) / (range.rty - range.rby);
-    if (oneframe.x1 >= left && oneframe.x1 < left + (right - left) / 4) {
-        oneframe.col1 = 0;
-    } else if (oneframe.x1 >= left + (right - left) / 4 && oneframe.x1 < left + (right - left) / 2) {
-        oneframe.col1 = 1;
-    } else if (oneframe.x1 >= left + (right - left) / 2 && oneframe.x1 < left + (right - left) * 3 / 4) {
-        oneframe.col1 = 2;
-    } else if (oneframe.x1 >= left + (right - left) * 3 / 4 && oneframe.x1 < right) {
-        oneframe.col1 = 3;
-    } else {
-        oneframe.col1 = 4;
-    }
+    oneframe.col1 = decide_col(0);
+    
 
     //Object 2
     oneframe.signature2 = receive_data[7 + 1];
@@ -35,19 +40,8 @@ Two_Block process() {
     oneframe.height2 = receive_data[7 + 5];
 
     //determine the column [0:3] of user's position
-    left = range.lbx + (range.ltx - range.lbx) * (oneframe.y2 - range.lby) / (range.lty - range.lby);
-    right = range.rbx + (range.rtx - range.rbx) * (oneframe.y2 - range.rby) / (range.rty - range.rby);
-    if (oneframe.x2 >= left && oneframe.x2 < left + (right - left) / 4) {
-        oneframe.col2 = 0;
-    } else if (oneframe.x2 >= left + (right - left) / 4 && oneframe.x2 < left + (right - left) / 2) {
-        oneframe.col2 = 1;
-    } else if (oneframe.x2 >= left + (right - left) / 2 && oneframe.x2 < left + (right - left) * 3 / 4) {
-        oneframe.col2 = 2;
-    } else if (oneframe.x2 >= left + (right - left) * 3 / 4 && oneframe.x2 < right) {
-        oneframe.col2 = 3;
-    } else {
-        oneframe.col2 = 4;
-    }
+    oneframe.col2 = decide_col(7);
+    
 
 #ifdef PIXY_DEBUG
     printf(
@@ -80,11 +74,11 @@ bool is_left_on_tile(sq_info* tiles, Two_Block oneframe) {
             if (oneframe.col1 == tiles[i].col - 1) {
                 if (oneframe.y1 + oneframe.height1 / 2 > tf_floor_2_cam(tiles[i].top_y) &&
                     oneframe.y1 - oneframe.height1 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
-                    tiles[i].left_on = 1;
-                    result = true;
                     if (tiles[i].right_on == 0 && tiles[i].left_on == 0) {
                         score++;
                     }
+                    tiles[i].left_on = 1;
+                    result = true;
                     break;
                 }
             }
@@ -96,11 +90,11 @@ bool is_left_on_tile(sq_info* tiles, Two_Block oneframe) {
             if (oneframe.col2 == tiles[i].col - 1) {
                 if (oneframe.y2 + oneframe.height2 / 2 > tf_floor_2_cam(tiles[i].top_y) &&
                     oneframe.y2 - oneframe.height2 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
-                    tiles[i].left_on = 1;
-                    result = true;
                     if (tiles[i].right_on == 0 && tiles[i].left_on == 0) {
                         score++;
                     }
+                    tiles[i].left_on = 1;
+                    result = true;
                     break;
                 }
             }
@@ -119,26 +113,27 @@ bool is_right_on_tile(sq_info* tiles, Two_Block oneframe) {
             if (oneframe.col1 == tiles[i].col - 1) {
                 if (oneframe.y1 + oneframe.height1 / 2 > tf_floor_2_cam(tiles[i].top_y) &&
                     oneframe.y1 - oneframe.height1 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
-                    tiles[i].right_on = 1;
-                    result = true;
                     if (tiles[i].left_on == 0 && tiles[i].right_on == 0) {
                         score++;
                     }
+                    tiles[i].right_on = 1;
+                    result = true;
                     break;
                 }
             }
         }
-    } else if (oneframe.signature2 == 2) {
+    }
+    else if (oneframe.signature2 == 2) {
         size_t i = 0;
         for (i = 0; i < n_tiles; i++) {
             if (oneframe.col2 == tiles[i].col - 1) {
                 if (oneframe.y2 + oneframe.height2 / 2 > tf_floor_2_cam(tiles[i].top_y) &&
                     oneframe.y2 - oneframe.height2 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
-                    tiles[i].right_on = 1;
-                    result = true;
                     if (tiles[i].left_on == 0 && tiles[i].right_on == 0) {
                         score++;
                     }
+                    tiles[i].right_on = 1;
+                    result = true;
                     break;
                 }
             }
@@ -152,23 +147,28 @@ inline Two_Block Pixy_getData(mss_spi_instance_t* this_spi) {
     const uint16_t master_tx_frame = 0;
 
     int i = 0;
-    int j;
-    for (j = 0; j < 1; j++) {
-        uint16_t receiver =
-            MSS_SPI_transfer_frame(this_spi, master_tx_frame);
-        uint16_t frame_starter =
-            MSS_SPI_transfer_frame(this_spi, master_tx_frame);
+    int flag = 0;
+    while (flag == 0) {
+        receiver[1] = receiver[0];
+        receiver[0] = MSS_SPI_transfer_frame(this_spi, master_tx_frame);
 
         /* Two consecutive 0xaa55 means a start of a new frame. */
-
-        if (receiver == PIXY_START_WORD &&
-            frame_starter == PIXY_START_WORD) {
+        if (receiver[0] == PIXY_START_WORD &&
+            receiver[1] == PIXY_START_WORD) {
             while (i < 12)
                 receive_data[i++] =
                     MSS_SPI_transfer_frame(this_spi, master_tx_frame);
             i = 0;
+            memset(receiver, 0, sizeof(receiver));
+            flag = 1;
+        }
+        else if (receiver[0] == 0 &&
+            receiver[1] == 0){
+            Two_Block result; // to be assigned
+            result.signature1 = 0;
+            result.signature2 = 0;
+            return result;
         }
     }
-
     return process();
 }

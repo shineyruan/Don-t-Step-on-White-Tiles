@@ -1,8 +1,9 @@
 #include <inttypes.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
 #include "drivers/mss_uart/mss_uart.h"
-#include "drivers/mss_gpio/mss_gpio.h"
+// #include "drivers/mss_gpio/mss_gpio.h"
 
 #include "controller.h"
 #include "vga.h"
@@ -134,21 +135,19 @@ int main() {
 
     Display_initializeMenu();
     started = false;
-
-#ifdef INIT_DEBUG
-    printf("Controller init: %x\r\n", *command_addr);
-#endif
     (*soundboard_addr) = 0x7F;
-#ifdef INIT_DEBUG
-    printf("Sound Initial: %x\r\n", *soundboard_addr);
-    printf("Controller init: %x\r\n", *command_addr);
-#endif
 
     changed = true;
     while (1) {
         // pixy
-        memset(receive_data, 0, sizeof(receive_data));
+        // memset(receive_data, 0, sizeof(receive_data));
         Two_Block data = Pixy_getData(&g_mss_spi1);
+        // printf(
+        // "signature: %d\t    x center: %*d\t    y center: %*d\t    width: %*d\t    height: %*d\t 	column: %d\r\n",
+        // data.signature1, 3, data.x1, 3, data.y1, 3, data.width1, 3, data.height1, data.col1);
+        // printf(
+        // "signature: %d\t    x center: %*d\t    y center: %*d\t    width: %*d\t    height: %*d\t 	column: %d\r\n",
+        // data.signature2, 3, data.x2, 3, data.y2, 3, data.width2, 3, data.height2, data.col2);
 
         // LCD display
         if (changed) {

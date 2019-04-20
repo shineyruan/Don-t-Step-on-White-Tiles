@@ -17,8 +17,7 @@ void Controller_getAction(Command* cmd_struct, Command* prev_cmd_struct) {
     Command NES_command_struct = *cmd_struct;
     Command prev_NES_command_struct = *prev_cmd_struct;
 
-    if ((NES_command_struct.right && !(prev_NES_command_struct.right && NES_command_struct.right)) ||
-        (NES_command_struct.select && !(prev_NES_command_struct.select && NES_command_struct.select))) {
+    if (NES_command_struct.right && !(prev_NES_command_struct.right && NES_command_struct.right)) {
         switch (myMenu.curr_location) {
             case ROOT:
                 if (myMenu.frame.curr_selection == 0) {

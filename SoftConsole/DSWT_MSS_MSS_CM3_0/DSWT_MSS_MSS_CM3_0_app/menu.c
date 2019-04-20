@@ -200,15 +200,18 @@ void Display_enterCalibration() {
     int i;
     int x_mean = 0;
     int y_mean = 0;
-    int count = 50;
-    for (i = 0; i < count; i++) {
+    int count = 0;
+    int num_means = 50;
+    while(count < num_means) {
         Two_Block data = Pixy_getData(&g_mss_spi1);
+        if (data.signature1 == 0) continue;
         x_mean += data.x1;
         y_mean += data.y1;
+        count ++;
     }
 
-    x_mean /= count;
-    y_mean /= count;
+    x_mean /= num_means;
+    y_mean /= num_means;
 
     switch (pos) {
         case TOP_LEFT:

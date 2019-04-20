@@ -11,6 +11,7 @@
 #include <inttypes.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
 #include "drivers/mss_spi/drivers/mss_spi/mss_spi.h"
 #include "drivers/mss_uart/mss_uart.h"
 
@@ -71,6 +72,7 @@ Position pos;
 int score;
 
 uint16_t receive_data[14];
+uint16_t receiver[2];
 
 Two_Block process();
 uint16_t tf_floor_2_cam(int y);
@@ -80,5 +82,5 @@ bool is_right_on_tile(sq_info* tiles, Two_Block oneframe);
  * Modifies: global array `receive_data`
  */
 inline Two_Block Pixy_getData(mss_spi_instance_t* this_spi);
-
+int decide_col(int offset);
 #endif /* PIXY_H_ */
