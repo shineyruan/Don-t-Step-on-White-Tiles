@@ -76,8 +76,8 @@ bool is_left_on_tile(sq_info* tiles, Two_Block oneframe) {
                     oneframe.y1 - oneframe.height1 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     if (tiles[i].right_on == 0 && tiles[i].left_on == 0) {
                         score++;
+                        tiles[i].left_on = 1;
                     }
-                    tiles[i].left_on = 1;
                     result = true;
                     break;
                 }
@@ -92,8 +92,8 @@ bool is_left_on_tile(sq_info* tiles, Two_Block oneframe) {
                     oneframe.y2 - oneframe.height2 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     if (tiles[i].right_on == 0 && tiles[i].left_on == 0) {
                         score++;
+                        tiles[i].left_on = 1;
                     }
-                    tiles[i].left_on = 1;
                     result = true;
                     break;
                 }
@@ -115,8 +115,8 @@ bool is_right_on_tile(sq_info* tiles, Two_Block oneframe) {
                     oneframe.y1 - oneframe.height1 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     if (tiles[i].left_on == 0 && tiles[i].right_on == 0) {
                         score++;
+                        tiles[i].right_on = 1;
                     }
-                    tiles[i].right_on = 1;
                     result = true;
                     break;
                 }
@@ -131,8 +131,8 @@ bool is_right_on_tile(sq_info* tiles, Two_Block oneframe) {
                     oneframe.y2 - oneframe.height2 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     if (tiles[i].left_on == 0 && tiles[i].right_on == 0) {
                         score++;
+                        tiles[i].right_on = 1;
                     }
-                    tiles[i].right_on = 1;
                     result = true;
                     break;
                 }
