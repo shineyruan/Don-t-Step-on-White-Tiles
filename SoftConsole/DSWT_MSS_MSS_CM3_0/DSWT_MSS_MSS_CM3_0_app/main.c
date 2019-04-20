@@ -69,7 +69,7 @@ __attribute__((interrupt)) void Fabric_IRQHandler(void) {
     }
 }
 
-void initAllVariables() {
+void init_everything() {
     // controller.h
     command_addr = (uint8_t*)(CONTROLLER_ADDR);
     // menu.h 
@@ -104,7 +104,7 @@ void initAllVariables() {
 
 int main() {
     // common
-    initAllVariables();
+    init_everything();
 
     // /* initiate Sound Board */
     // MSS_GPIO_init();
