@@ -71,7 +71,7 @@ bool is_left_on_tile(sq_info* tiles, Two_Block oneframe) {
         uint8_t i = 0;
         for (i = 0; i < n_tiles; i++) {
             //		sq_info tile = tiles[i];
-            if (oneframe.col1 == tiles[i].col - 1) {
+            if (tiles[i].actual_length && oneframe.col1 == tiles[i].col - 1) {
                 if (oneframe.y1 + oneframe.height1 / 2 > tf_floor_2_cam(tiles[i].top_y) &&
                     oneframe.y1 - oneframe.height1 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     if (tiles[i].right_on == 0 && tiles[i].left_on == 0) {
@@ -87,7 +87,7 @@ bool is_left_on_tile(sq_info* tiles, Two_Block oneframe) {
         uint8_t i = 0;
         for (i = 0; i < n_tiles; i++) {
             //		sq_info tile = tiles[i];
-            if (oneframe.col2 == tiles[i].col - 1) {
+            if (tiles[i].actual_length && oneframe.col2 == tiles[i].col - 1) {
                 if (oneframe.y2 + oneframe.height2 / 2 > tf_floor_2_cam(tiles[i].top_y) &&
                     oneframe.y2 - oneframe.height2 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     if (tiles[i].right_on == 0 && tiles[i].left_on == 0) {
@@ -110,7 +110,7 @@ bool is_right_on_tile(sq_info* tiles, Two_Block oneframe) {
     if (oneframe.signature1 == 2) {
         size_t i = 0;
         for (i = 0; i < n_tiles; i++) {
-            if (oneframe.col1 == tiles[i].col - 1) {
+            if (tiles[i].actual_length && oneframe.col1 == tiles[i].col - 1) {
                 if (oneframe.y1 + oneframe.height1 / 2 > tf_floor_2_cam(tiles[i].top_y) &&
                     oneframe.y1 - oneframe.height1 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     if (tiles[i].left_on == 0 && tiles[i].right_on == 0) {
@@ -126,7 +126,7 @@ bool is_right_on_tile(sq_info* tiles, Two_Block oneframe) {
     else if (oneframe.signature2 == 2) {
         size_t i = 0;
         for (i = 0; i < n_tiles; i++) {
-            if (oneframe.col2 == tiles[i].col - 1) {
+            if (tiles[i].actual_length && oneframe.col2 == tiles[i].col - 1) {
                 if (oneframe.y2 + oneframe.height2 / 2 > tf_floor_2_cam(tiles[i].top_y) &&
                     oneframe.y2 - oneframe.height2 / 2 < tf_floor_2_cam((tiles[i].top_y + tiles[i].length))) {
                     if (tiles[i].left_on == 0 && tiles[i].right_on == 0) {
