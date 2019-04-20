@@ -72,7 +72,7 @@ __attribute__((interrupt)) void Fabric_IRQHandler(void) {
 void init_everything() {
     // controller.h
     command_addr = (uint8_t*)(CONTROLLER_ADDR);
-    // menu.h 
+    // menu.h
     static const uint8_t line_start_temp[] = {0, 64, 20, 84};
     memcpy(line_start, line_start_temp, sizeof(line_start_temp));
     static const uint8_t set_cursor_pos_temp[] = {0xFE, CURSOR_POS_BASE};
@@ -83,12 +83,12 @@ void init_everything() {
     // soundboard.h
     soundboard_addr = (uint8_t*)(SOUNDBOARD_ADDR);
     // vga.h
-    col_addr1 = (int *)0x40050000;
-    col_addr2 = (int *)0x40050004;
-    col_addr3 = (int *)0x40050038;
-    num_addr0 = (int *)0x4005001c;
-    num_addr1 = (int *)0x40050020;
-    num_addr2 = (int *)0x40050028;
+    col_addr1 = (int*)0x40050000;
+    col_addr2 = (int*)0x40050004;
+    col_addr3 = (int*)0x40050038;
+    num_addr0 = (int*)0x4005001c;
+    num_addr1 = (int*)0x40050020;
+    num_addr2 = (int*)0x40050028;
     static const int number_temp[10] = {0x0f99999f, 0x04444444, 0x0f11f88f, 0x0f11f11f,
                                         0x0aaaaf22, 0x0f88f11f, 0x0f88f99f, 0x0f111111,
                                         0x0f99f99f, 0x0f99f11f};
