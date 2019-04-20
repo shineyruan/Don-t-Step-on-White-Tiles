@@ -83,4 +83,5 @@ bool is_right_on_tile(sq_info* tiles, Two_Block oneframe);
  */
 inline Two_Block Pixy_getData(mss_spi_instance_t* this_spi);
 int decide_col(int offset);
+inline int relu(int x);
 #endif /* PIXY_H_ */
