@@ -41,16 +41,22 @@ void Controller_getAction(Command* cmd_struct, Command* prev_cmd_struct) {
                 if (myMenu.frame.curr_selection == 0) {
                     Display_printSuccessful();
                     selected_config.selected_mode = SLOW;
-                    speed = -5;
+                    speed = -3;
+                    sq_num = 6;
+                    longest_delay = 100;
                     changed = true;
                 } else if (myMenu.frame.curr_selection == 1) {
                     selected_config.selected_mode = MEDIUM;
-                    speed = -10;
+                    speed = -6;
+                    sq_num = 8;
+                    longest_delay = 100;
                     Display_printSuccessful();
                     changed = true;
                 } else if (myMenu.frame.curr_selection == 2) {
                     selected_config.selected_mode = FAST;
-                    speed = -15;
+                    speed = -8;
+                    sq_num = 8;
+                    longest_delay = 50;
                     Display_printSuccessful();
                     changed = true;
                 }
@@ -117,7 +123,7 @@ void Controller_getAction(Command* cmd_struct, Command* prev_cmd_struct) {
                 Display_returnLastMenu();
                 changed = true;
                 vga_init();
-                (*soundboard_addr) &= (~(1 << 6)) & (0xFF);
+                (*soundboard_addr) = 0x7F;
                 return;
             }
         }

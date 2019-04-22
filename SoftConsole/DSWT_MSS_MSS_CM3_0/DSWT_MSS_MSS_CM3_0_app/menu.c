@@ -195,28 +195,38 @@ void Display_enterCalibration() {
     myMenu.frame.end_line = 2;
     myMenu.curr_location = PRINT;
 
-    // Display_displayMenu(&g_mss_uart1);
+    Display_displayMenu(&g_mss_uart1);
 
     int i;
     int x_mean = 0;
     int y_mean = 0;
     int count = 0;
     int num_means = 50;
-    while(count < num_means) {
+    while (count < num_means) {
         Two_Block data = Pixy_getData(&g_mss_spi1);
         if (data.signature1 == 0) continue;
         x_mean += data.x1;
         y_mean += data.y1;
-        count ++;
+        count++;
     }
 
     x_mean /= num_means;
     y_mean /= num_means;
 
+    char *s;
+
     switch (pos) {
         case TOP_LEFT:
             range.ltx = x_mean;
             range.lty = y_mean;
+            // strcpy(myMenu.layer[0], "     Top Left      ");
+            // sprintf(s, "x: %d, y: %d", range.ltx, range.lty);
+            // strcpy(myMenu.layer[1], s);
+            // strcpy(myMenu.layer[3], "  LEFT for return  ");
+            // myMenu.frame.length = 4;
+            // myMenu.frame.end_line = 4;
+            // Display_displayMenu(&g_mss_uart1);
+
             printf("Top-left: %d, %d\r\n", range.ltx, range.lty);
             break;
         case TOP_RIGHT:

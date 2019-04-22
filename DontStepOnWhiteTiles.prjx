@@ -357,6 +357,11 @@ STATE="utd"
 TIME="1555798492"
 SIZE="2875392"
 ENDFILE
+VALUE "<project>\designer\impl1\DSWT.fdb,fdb"
+STATE="utd"
+TIME="1555889172"
+SIZE="105691"
+ENDFILE
 VALUE "<project>\designer\impl1\DSWT.ide_des,ide_des"
 STATE="utd"
 TIME="1555798493"
@@ -369,28 +374,33 @@ SIZE="29661"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_fp\DSWT.pdb,pdb"
 STATE="utd"
-TIME="1555719952"
-SIZE="111833"
+TIME="1555880541"
+SIZE="8761"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_fp\DSWT.pro,pro"
 STATE="utd"
-TIME="1555719991"
+TIME="1555880547"
 SIZE="2442"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_fp\projectData\DSWT.pdb,pdb"
 STATE="utd"
-TIME="1555719991"
-SIZE="111833"
+TIME="1555880547"
+SIZE="8761"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_placeroute_log.rpt,log"
 STATE="utd"
-TIME="1555792981"
-SIZE="2655"
+TIME="1555889154"
+SIZE="2659"
+ENDFILE
+VALUE "<project>\designer\impl1\DSWT_prgdata_log.rpt,log"
+STATE="utd"
+TIME="1555889173"
+SIZE="762"
 ENDFILE
 VALUE "<project>\designer\impl1\DSWT_verifytiming_log.rpt,log"
 STATE="utd"
-TIME="1555792989"
-SIZE="1170"
+TIME="1555889161"
+SIZE="1174"
 ENDFILE
 VALUE "<project>\hdl\get_data.v,hdl"
 STATE="utd"
@@ -709,10 +719,10 @@ ENDLIST
 LIST PhySynthesisOptions
 ENDLIST
 LIST Profiles
-NAME="SoftConsolev5.3"
+NAME="SoftConsolev3.4"
 FUNCTION="SoftwareIDE"
 TOOL="SoftConsole"
-LOCATION="C:\Microsemi\SoftConsole_v5.3\eclipse\eclipse.exe"
+LOCATION="C:\Program Files (x86)\Microsemi\SoftConsole v3.4\Eclipse\eclipse.exe"
 PARAM=""
 BATCH=0
 LICENSE=""
@@ -795,8 +805,9 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
-StartPage;StartPage;0
-ACTIVEVIEW;StartPage
+Reports;Reports;0
+ReportsCurrentItem;Generate Programming Data:DSWT_prgdata_log.rpt
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
 LIST "BIBUF_MSS::work","component\Actel\SmartFusionMSS\MSS\2.5.200\mss_comps.v","FALSE","FALSE"

@@ -36,12 +36,14 @@ extern int number[10];
 extern sq_info sq[8];
 extern health_info health[5];
 extern int speed;
+extern int sq_num;
 extern bool dead;
 // pixy.h
 extern BoundingBox range;
 extern Position pos;
 extern int score;
 extern uint16_t receive_data[14];
+extern int longest_delay;
 // soundboard.h
 extern volatile uint8_t* soundboard_addr;
 /**********************************************************/

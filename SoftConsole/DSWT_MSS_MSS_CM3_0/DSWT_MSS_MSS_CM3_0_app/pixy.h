@@ -17,7 +17,7 @@
 
 #define PIXY_START_WORD 0xaa55
 #define PIXY_START_WORD_CC 0xaa56
-#define sq_num 8
+int sq_num;
 
 typedef enum Box_Position {
     TOP_LEFT,
@@ -65,7 +65,6 @@ typedef struct {
     int right_on;
     volatile int* addr;
 } sq_info;
-
 
 BoundingBox range;
 Position pos;

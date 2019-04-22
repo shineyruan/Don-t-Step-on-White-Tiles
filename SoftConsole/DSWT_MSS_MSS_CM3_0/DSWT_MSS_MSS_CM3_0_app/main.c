@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "drivers/mss_uart/mss_uart.h"
-#include "drivers/mss_gpio/mss_gpio.h"
+// #include "drivers/mss_gpio/mss_gpio.h"
 
 #include "controller.h"
 #include "vga.h"
@@ -30,6 +30,8 @@ extern sq_info sq[8];
 extern health_info health[5];
 extern int speed;
 extern bool dead;
+extern int sq_num;
+extern int longest_delay;
 // menu.h
 extern bool started;
 extern bool print_state;
@@ -89,32 +91,33 @@ void init_everything() {
     num_addr0 = (int*)0x4005001c;
     num_addr1 = (int*)0x40050020;
     num_addr2 = (int*)0x40050028;
+    sq_num = 4;
+    longest_delay = 500;
     static const int number_temp[10] = {0x0f99999f, 0x04444444, 0x0f11f88f, 0x0f11f11f,
                                         0x0aaaaf22, 0x0f88f11f, 0x0f88f99f, 0x0f111111,
                                         0x0f99f99f, 0x0f99f11f};
     memcpy(number, number_temp, sizeof(number_temp));
 }
 
-void SoundEffect() {
-    MSS_GPIO_set_output(MSS_GPIO_2, 0);
-    int i = 0;
-    for (i = 0; i < 10000; ++i) {
-    }
-    MSS_GPIO_set_output(MSS_GPIO_2, 1);
-}
+// void SoundEffect() {
+//     MSS_GPIO_set_output(MSS_GPIO_2, 0);
+//     int i = 0;
+//     for (i = 0; i < 10000; ++i) {}
+//     MSS_GPIO_set_output(MSS_GPIO_2, 1);
+// }
 
 int main() {
     // common
     init_everything();
 
-    /* initiate Sound Board */
-    MSS_GPIO_init();
-    MSS_GPIO_config(MSS_GPIO_0, MSS_GPIO_OUTPUT_MODE);
-    MSS_GPIO_config(MSS_GPIO_1, MSS_GPIO_OUTPUT_MODE);
-    MSS_GPIO_config(MSS_GPIO_2, MSS_GPIO_OUTPUT_MODE);
-    MSS_GPIO_set_output(MSS_GPIO_0, 1);
-    MSS_GPIO_set_output(MSS_GPIO_1, 1);
-    MSS_GPIO_set_output(MSS_GPIO_2, 1);
+    // /* initiate Sound Board */
+    // MSS_GPIO_init();
+    // MSS_GPIO_config(MSS_GPIO_0, MSS_GPIO_OUTPUT_MODE);
+    // MSS_GPIO_config(MSS_GPIO_1, MSS_GPIO_OUTPUT_MODE);
+    // MSS_GPIO_config(MSS_GPIO_2, MSS_GPIO_OUTPUT_MODE);
+    // MSS_GPIO_set_output(MSS_GPIO_0, 1);
+    // MSS_GPIO_set_output(MSS_GPIO_1, 1);
+    // MSS_GPIO_set_output(MSS_GPIO_2, 1);
 
     /* Enable FABINT Interrupt for generating tiles */
     NVIC_EnableIRQ(Fabric_IRQn);
@@ -123,7 +126,7 @@ int main() {
     vga_init();
 
     // pixy
-    const frame_size = 16;
+    const uint8_t frame_size = 16;
     MSS_SPI_init(&g_mss_spi1);
     MSS_SPI_configure_master_mode(&g_mss_spi1, MSS_SPI_SLAVE_0, MSS_SPI_MODE0,
                                   MSS_SPI_PCLK_DIV_256, frame_size);
@@ -136,19 +139,23 @@ int main() {
 
     Display_initializeMenu();
     started = false;
+    changed = true;
+
+    // soundboard
     (*soundboard_addr) = 0x7F;
 
-    changed = true;
     while (1) {
         // pixy
-        // memset(receive_data, 0, sizeof(receive_data));
         Two_Block data = Pixy_getData(&g_mss_spi1);
-        // printf(
-        // "signature: %d\t    x center: %*d\t    y center: %*d\t    width: %*d\t    height: %*d\t 	column: %d\r\n",
-        // data.signature1, 3, data.x1, 3, data.y1, 3, data.width1, 3, data.height1, data.col1);
-        // printf(
-        // "signature: %d\t    x center: %*d\t    y center: %*d\t    width: %*d\t    height: %*d\t 	column: %d\r\n",
-        // data.signature2, 3, data.x2, 3, data.y2, 3, data.width2, 3, data.height2, data.col2);
+
+#ifdef PIXY_DEBUG
+        printf(
+            "signature: %d\t    x center: %*d\t    y center: %*d\t    width: %*d\t    height: %*d\t 	column: %d\r\n",
+            data.signature1, 3, data.x1, 3, data.y1, 3, data.width1, 3, data.height1, data.col1);
+        printf(
+            "signature: %d\t    x center: %*d\t    y center: %*d\t    width: %*d\t    height: %*d\t 	column: %d\r\n",
+            data.signature2, 3, data.x2, 3, data.y2, 3, data.width2, 3, data.height2, data.col2);
+#endif
 
         // LCD display
         if (changed) {
@@ -169,9 +176,9 @@ int main() {
             printf("right foot is on tile!\r\n");
         }
 
-        if (!is_left_on_tile(sq, data) || !(is_right_on_tile(sq, data))) {
-            SoundEffect();
-        }
+        // if (!is_left_on_tile(sq, data) || !(is_right_on_tile(sq, data))) {
+        //     SoundEffect();
+        // }
 
         // controller
         prev_NES_command_struct = NES_command_struct;
