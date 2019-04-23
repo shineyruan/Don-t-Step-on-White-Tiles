@@ -29,7 +29,7 @@ In order to increase project difficulty, we use Actel SmartFusion FPGA (Verilog)
 
 ![poster](https://github.com/shineyruan/Don-t-Step-on-White-Tiles/blob/master/poster/poster.PNG)
 
-## Milestone Preview Demo Videos 
+## Milestone Preview Demo Videos (YouTube)
 
 [![fase](http://img.youtube.com/vi/Fj3yvPvErxQ/0.jpg)](https://youtu.be/Fj3yvPvErxQ)
 
