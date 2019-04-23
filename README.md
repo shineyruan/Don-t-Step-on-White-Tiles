@@ -19,6 +19,10 @@ We aim to extend the game *Don't Step on White Tiles* into real world. We hope t
 
 In order to increase project difficulty, we use Actel SmartFusion FPGA (Verilog) to generate VGA signals to the projector, combined with C to implement other functions.
 
+## Component Diagram
+
+![diagram](https://github.com/shineyruan/Don-t-Step-on-White-Tiles/blob/master/poster/diagram.png)
+
 ## EECS373 Project Expo Poster 
 
 ![poster](https://github.com/shineyruan/Don-t-Step-on-White-Tiles/blob/master/poster/poster.PNG)
