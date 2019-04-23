@@ -1,0 +1,2543 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dF:/microsemi/MTI/mti10.4c/modeltech/actel/vlog
+vacb_96_bit
+Z0 !s110 1441379376
+!s100 5^=jge@2ZF;_TG5c2TLC<2
+I_R39ag5oH1cT3NgZiefdb0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+d.
+Z2 Fnofile
+L0 1169
+Z3 OW;L;10.4c;61
+r1
+!s85 0
+31
+Z4 !s108 1441379376.000000
+Z5 !s107 v:/sim_sn/release/lib/smartfusion/special/vlog/abmodules.v|
+Z6 !s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vlog/abmodules.v|
+!s101 -O0
+!i113 1
+Z7 o-nodebug -work MSS_BFM_LIB -O0
+x1
+vadc
+R0
+!s100 zaZ329N@:=`Y:Tk2kKMjc1
+IYVo;czBAG:PlOmhCI?dBJ0
+R1
+d.
+R2
+L0 720
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
+x1
+vAddrDecM0
+Z8 !s110 1441379370
+!s100 Q5IX<T[RUV8:NK?COc:EV1
+IB?0]J_P>9EU?P30hlnhW62
+R1
+d.
+R2
+Z9 L0 29
+R3
+r1
+!s85 0
+31
+Z10 !s108 1441379370.000000
+Z11 !s107 v:/sim_sn/release/lib/smartfusion/special/vlog/comms/SlaveArbiter.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/Matrix5x8.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/F2DSS_COMMSMATRIX.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/DefaultSlaveSM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/CMSlaveStage.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/CMMaster4Stage.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/CMMaster3Stage.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/CMMaster2Stage.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/CMMaster1Stage.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/CMMaster0Stage.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/AddrDecM4.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/AddrDecM3.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/AddrDecM2.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/AddrDecM1.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/AddrDecM0.v|
+Z12 !s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/AddrDecM0.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/AddrDecM1.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/AddrDecM2.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/AddrDecM3.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/AddrDecM4.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/CMMaster0Stage.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/CMMaster1Stage.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/CMMaster2Stage.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/CMMaster3Stage.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/CMMaster4Stage.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/CMSlaveStage.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/DefaultSlaveSM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/F2DSS_COMMSMATRIX.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/Matrix5x8.v|v:/sim_sn/release/lib/smartfusion/special/vlog/comms/SlaveArbiter.v|
+!s101 -O0
+!i113 1
+R7
+n@addr@dec@m0
+x1
+vAddrDecM1
+R8
+!s100 B8B4jL;^XcQ0NLFJ1QA`;2
+IToe_^ZNoDABQYo2<?iNZS1
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@addr@dec@m1
+x1
+vAddrDecM2
+R8
+!s100 kDm_>4;LI0;1IYmC;gQSf0
+I=HA2cNoPFYFe@obUUneeJ3
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@addr@dec@m2
+x1
+vAddrDecM3
+R8
+!s100 ^YOT]DMoEV6J`dD:eWK=Q3
+I<K_:dLf0ldDNW1E5f24BQ2
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@addr@dec@m3
+x1
+vAddrDecM4
+R8
+!s100 La9R61BzJojH_:iaM[gmj2
+ISJPYJXieXgKYCc@MZJHZe1
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@addr@dec@m4
+x1
+vAhbClient_HM
+R8
+!s100 M6AdS^Thajf^7h=TIfG]J3
+Iz[hVejf7@ge@SGiGDFdj`3
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+Z13 !s107 v:/sim_sn/release/lib/smartfusion/special/vlog/fic/FABRICIF_HM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/FABRICIF_FM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/F2DSS_FABRICIF.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/Client_FM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/ClientAddrData_HM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/ClientAddrData_FM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/ApbWrapper_FM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/ApbClient_HM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/AhbWrapper_HM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/AhbWrapper_FM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/AhbClient_HM.v|
+Z14 !s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/AhbClient_HM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/AhbWrapper_FM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/AhbWrapper_HM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/ApbClient_HM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/ApbWrapper_FM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/ClientAddrData_FM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/ClientAddrData_HM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/Client_FM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/F2DSS_FABRICIF.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/FABRICIF_FM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/fic/FABRICIF_HM.v|
+!s101 -O0
+!i113 1
+R7
+n@ahb@client_@h@m
+x1
+vAhbWrapper_FM
+R8
+!s100 XdVDMB1`7ihN9zIJFdMD01
+IN:CgIOhL[mUh9FiDIb`2k1
+R1
+d.
+R2
+Z15 L0 26
+R3
+r1
+!s85 0
+31
+R10
+R13
+R14
+!s101 -O0
+!i113 1
+R7
+n@ahb@wrapper_@f@m
+x1
+vAhbWrapper_HM
+R8
+!s100 b2=Hcz4aNzH4h]kge1GTW2
+Im`z@]1n@AL22LV[h;@FK21
+R1
+d.
+R2
+Z16 L0 28
+R3
+r1
+!s85 0
+31
+R10
+R13
+R14
+!s101 -O0
+!i113 1
+R7
+n@ahb@wrapper_@h@m
+x1
+vanalog_mux
+R0
+!s100 Pa7Z0aI?A@5[gIWL9bHAR0
+IG3;O<g8lYPIB]]]oQkK>Y2
+R1
+d.
+R2
+L0 578
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
+x1
+vanalog_mux_F060
+R0
+!s100 J5E^aSn1d^bLOShD8[]n_1
+IT?Po67V=SnhVkQhmaCA6e2
+R1
+d.
+R2
+L0 628
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
+nanalog_mux_@f060
+x1
+vanalog_quad
+R0
+!s100 `R5YoRMeTIFJ3ghSGY2bE3
+If8ojl]IhJMh0Q11CeM2SN3
+R1
+d.
+R2
+L0 5
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
+x1
+vApbClient_HM
+R8
+!s100 cK@KMhY=9S2gQczHg;@mA2
+IcenHZ_eJ2X>FAi?bM<iMT2
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R13
+R14
+!s101 -O0
+!i113 1
+R7
+n@apb@client_@h@m
+x1
+vApbWrapper_FM
+R8
+!s100 Pd4AF[0YhXIF[XPoH3nk=1
+I?IH_3?bOzj=bSF:jQEC2@2
+R1
+d.
+R2
+R15
+R3
+r1
+!s85 0
+31
+R10
+R13
+R14
+!s101 -O0
+!i113 1
+R7
+n@apb@wrapper_@f@m
+x1
+vBFM_MAIN
+Z17 !s110 1441379368
+!s100 og]Bg1j4U:<IJ19:3h>:f2
+I^F@ZFh9iJBOnoX[GkCEFT2
+R1
+d.
+R2
+R2
+L0 51
+R3
+r1
+!s85 0
+31
+Z18 !s108 1441379367.000000
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/bfm_package.v|v:/sim_sn/release/lib/smartfusion/simulation/vlog/bfm_main.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/bfm_main.v|
+!s101 -O0
+!i113 1
+R7
+Z19 !s92 -nodebug -work MSS_BFM_LIB +incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog -O0
+n@b@f@m_@m@a@i@n
+x1
+vClient_FM
+R8
+!s100 l:0Pc>m@z9EzoHc2JLNea2
+ICJ=h7QPPUY>mBYDMS>Z0B0
+R1
+d.
+R2
+R15
+R3
+r1
+!s85 0
+31
+R10
+R13
+R14
+!s101 -O0
+!i113 1
+R7
+n@client_@f@m
+x1
+vClientAddrData_FM
+R8
+!s100 J6hEVCAFI`BIXklW6moRd0
+IR=Z3N[KZ_BALYC`3OZ2mJ2
+R1
+d.
+R2
+R15
+R3
+r1
+!s85 0
+31
+R10
+R13
+R14
+!s101 -O0
+!i113 1
+R7
+n@client@addr@data_@f@m
+x1
+vClientAddrData_HM
+R8
+!s100 4S@MezZg]aI18zYz6<3Y;0
+IUT>74IBG?bGl<i5UKElhe1
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R13
+R14
+!s101 -O0
+!i113 1
+R7
+n@client@addr@data_@h@m
+x1
+vCMMaster0Stage
+R8
+!s100 fB9a:0eTZSXFKm;N`8Z@b1
+IzRSOSkb[eg?z3gdY3G>Lz3
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@c@m@master0@stage
+x1
+vCMMaster1Stage
+Z20 !s110 1441379371
+!s100 P4OZ55=2U]CdB0oRDzL5C0
+IOfJZFIFLAl1gU10PAbjJG2
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@c@m@master1@stage
+x1
+vCMMaster2Stage
+R20
+!s100 BZjAMV9FzV@fM[MQfE5Y;0
+Ij4EoTQE57WoiQ6b4YFVO42
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@c@m@master2@stage
+x1
+vCMMaster3Stage
+R20
+!s100 F09YZN<^SLiBZ]Qk7O72z1
+IHG_8lY7STJBXRmA9KM@CV0
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@c@m@master3@stage
+x1
+vCMMaster4Stage
+R20
+!s100 `Si;D[@faBd9mGRXn17eP2
+IXg^8Mlh5D3AMTlOc1OhHM1
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@c@m@master4@stage
+x1
+vCMSlaveStage
+R20
+!s100 FMb[fn?<g?Nj@;?eU>lo]3
+I8eWQF^mji`O_oB^I@TOOb1
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@c@m@slave@stage
+x1
+vDefaultSlaveSM
+R20
+!s100 [kkH_7_XhF<B_YIMF8CZG0
+ITzg<UL_no<UB7JTfiSFn=2
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@default@slave@s@m
+x1
+vdp512x32
+Z21 !s110 1441379373
+!s100 =VP@:UCG;zlg84KhL:V7e2
+I^DRWmTdIN_^RznXH5A47f2
+R1
+d.
+R2
+L0 72
+R3
+r1
+!s85 0
+31
+Z22 !s108 1441379372.000000
+!s107 v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_RAMs/dp512x32.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_common|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_RAMs/dp512x32.v|
+!s101 -O0
+!i113 1
+R7
+Z23 !s92 -nodebug -work MSS_BFM_LIB +incdir+v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_common -O0
+x1
+vdp512x32_col
+R20
+!s100 S5:B=eH9igO9njl=FoLbU2
+IRo5VHZ4D5lG6lDL]@Q=5I1
+R1
+d.
+R2
+Z24 L0 30
+R3
+r1
+!s85 0
+31
+Z25 !s108 1441379371.000000
+Z26 !s107 v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_common/F2DSS_ACE_address_map_include.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_XFER_DINMUX.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_THRFLAGS.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_SSE_CTRL.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_RDMUX.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_MULT.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_FSM_STFILT.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_FSM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_FIFO_CTRL.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_FIFO.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_DPRAM_CTRL.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_DPRAM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_ALU.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_ADDER.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/dp512x32_col.v|
+Z27 !s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_common|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/dp512x32_col.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_ADDER.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_ALU.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_DPRAM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_DPRAM_CTRL.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_FIFO.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_FIFO_CTRL.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_FSM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_FSM_STFILT.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_MULT.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_RDMUX.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_SSE_CTRL.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_THRFLAGS.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_PPE/F2DSS_ACE_PPE_XFER_DINMUX.v|
+!s101 -O0
+!i113 1
+R7
+R23
+x1
+vdrive_analog_input
+R0
+!s100 9R4Wm1z1<eEgnlQ4mcz:d3
+IOkof=N`4Cze_SzBC5b9Kh2
+R1
+d.
+R2
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+Z28 !s107 v:/sim_sn/release/lib/smartfusion/special/vlog/drive_varef_out.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_temperature_quad.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_differential_inputs.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_current_monitor.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_current_inputs.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_analog_io_39bit.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_analog_io.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_analog_input_varef.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_analog_input.v|
+Z29 !s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_analog_input.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_analog_input_varef.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_analog_io.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_analog_io_39bit.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_current_inputs.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_current_monitor.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_differential_inputs.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_temperature_quad.v|v:/sim_sn/release/lib/smartfusion/special/vlog/drive_varef_out.v|
+!s101 -O0
+!i113 1
+R7
+x1
+vdrive_analog_input_varef
+R0
+!s100 OAHJgPP^7G@9eP`]TJ3Z50
+Iz3nazU4:=6A@8gfe7R3fV1
+R1
+d.
+R2
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R28
+R29
+!s101 -O0
+!i113 1
+R7
+x1
+vdrive_analog_io
+R0
+!s100 8AhSYdY>Ag^fL0EGfm4@^2
+IQka:FXbfkMJ`bPQ:6656L2
+R1
+d.
+R2
+L0 8
+R3
+r1
+!s85 0
+31
+R4
+R28
+R29
+!s101 -O0
+!i113 1
+R7
+x1
+vdrive_analog_io_39bit
+R0
+!s100 [`W=moJz7z^Q8Jk5527W;0
+I<PCZZIzKa^oEzCl02[VN=0
+R1
+d.
+R2
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R28
+R29
+!s101 -O0
+!i113 1
+R7
+x1
+vdrive_current_inputs
+R0
+!s100 LDb]dG8?m6Cc1_FaY?kF20
+I;5Q5]DaPM>i8;OC`W6z__3
+R1
+d.
+R2
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R28
+R29
+!s101 -O0
+!i113 1
+R7
+x1
+vdrive_current_monitor
+R0
+!s100 <:QoKWz11XF2P_Pi?NHXH3
+I=^>3@3MYKlhkMao?P_jN42
+R1
+d.
+R2
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R28
+R29
+!s101 -O0
+!i113 1
+R7
+x1
+vdrive_differential_inputs
+R0
+!s100 Ub6Po2=6Yi[27c8oe]O@W3
+IJce=]N5HkZao_2mhGgfPF3
+R1
+d.
+R2
+L0 8
+R3
+r1
+!s85 0
+31
+R4
+R28
+R29
+!s101 -O0
+!i113 1
+R7
+x1
+vdrive_temperature_quad
+R0
+!s100 L;NOgj6]GV1[aGknDRm8^1
+IYBB[`C8@kegz1k[PKT5hi3
+R1
+d.
+R2
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R28
+R29
+!s101 -O0
+!i113 1
+R7
+x1
+vdrive_varef_out
+R0
+!s100 8^BWSW4MnKReeLGHbmYmV0
+I>l1bHZRKiaeTQ7_mlB:f`3
+R1
+d.
+R2
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R28
+R29
+!s101 -O0
+!i113 1
+R7
+x1
+vDSSAB
+Z30 !s110 1441379377
+!s100 B]KB3lROA4[W`oHoQ^k;90
+Ik_6dB0^fcIL]RIba5DJi52
+R1
+d.
+R2
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 v:/sim_sn/release/lib/smartfusion/special/vlog/DSSAB.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vlog/DSSAB.v|
+!s101 -O0
+!i113 1
+R7
+n@d@s@s@a@b
+x1
+vDSSAB_F060
+R30
+!s100 lZI0PeU9l6?AT<lV[JhiI2
+IWenN^P0JTFa9F:JnPiH^z2
+R1
+d.
+R2
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1441379377.000000
+!s107 v:/sim_sn/release/lib/smartfusion/special/vlog/DSSAB_F060.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vlog/DSSAB_F060.v|
+!s101 -O0
+!i113 1
+R7
+n@d@s@s@a@b_@f060
+x1
+Eem_addr_gen
+w0
+Z31 DPx4 work 6 em_pkg 0 22 5j28=DbDe0K<Cge9^gUcJ1
+Z32 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z33 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z34 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+d.
+Z35 8nofile
+R2
+l0
+L32
+V6K=Yzk;JTCK[5S1G_eGoz1
+!s100 640ng0mD`@Qjm:9G:d2Ig1
+Z36 OW;C;10.4c;61
+32
+Z37 !s110 1441379374
+Z38 !s108 1441379373.000000
+Z39 !s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vital/emc/EM_addr_gen.vhd|
+Z40 !s107 v:/sim_sn/release/lib/smartfusion/special/vital/emc/EM_addr_gen.vhd|
+!i113 1
+R7
+Z41 tExplicit 1
+x1
+Artl
+R31
+R32
+R33
+R34
+DEx4 work 11 em_addr_gen 0 22 6K=Yzk;JTCK[5S1G_eGoz1
+l59
+L54
+VGVARd_02_Xj;KX`hT72Xz2
+!s100 gnnCEkV5jHHY5XH0c]IT61
+R36
+32
+R37
+R38
+R39
+R40
+!i113 1
+R7
+R41
+x1
+Eem_ahb_int
+w0
+R31
+R32
+R33
+R34
+d.
+R35
+R2
+l0
+L32
+VT3JNG=iTagUaH>OVZm2?d1
+!s100 dBT1VWCP1cjKj;^EFM^302
+R36
+32
+R37
+Z42 !s108 1441379374.000000
+Z43 !s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vital/emc/EM_ahb_int.vhd|
+Z44 !s107 v:/sim_sn/release/lib/smartfusion/special/vital/emc/EM_ahb_int.vhd|
+!i113 1
+R7
+R41
+x1
+Artl
+R31
+R32
+R33
+R34
+DEx4 work 10 em_ahb_int 0 22 T3JNG=iTagUaH>OVZm2?d1
+l212
+L105
+V@Y;Z>^9MjeT6XZ>0E?OEL3
+!s100 fe[nhA;of^M8h1M4>;=g91
+R36
+32
+R37
+R42
+R43
+R44
+!i113 1
+R7
+R41
+x1
+Eem_phase_gen
+w0
+R31
+R32
+R33
+R34
+d.
+R35
+R2
+l0
+L32
+V<EcDbbRP5@kbDfQ9:7^L60
+!s100 z`^Gd1aVUGHJTd;VAOT>h3
+R36
+32
+R37
+R42
+Z45 !s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vital/emc/EM_phase_gen.vhd|
+Z46 !s107 v:/sim_sn/release/lib/smartfusion/special/vital/emc/EM_phase_gen.vhd|
+!i113 1
+R7
+R41
+x1
+Artl
+R31
+R32
+R33
+R34
+DEx4 work 12 em_phase_gen 0 22 <EcDbbRP5@kbDfQ9:7^L60
+l74
+L59
+Vk@zdWOMI]?TAUT3g0VMWN0
+!s100 4YT6::F5VB@[1cB8ZcmCL3
+R36
+32
+R37
+R42
+R45
+R46
+!i113 1
+R7
+R41
+x1
+Pem_pkg
+R32
+R33
+R34
+d.
+R35
+R2
+l0
+L29
+V5j28=DbDe0K<Cge9^gUcJ1
+!s100 a`V=Pz=2Z=QmC9@h@g^R_0
+R36
+32
+b1
+R21
+R38
+Z47 !s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vital/emc/em_pkg.vhd|
+Z48 !s107 v:/sim_sn/release/lib/smartfusion/special/vital/emc/em_pkg.vhd|
+!i113 1
+R7
+R41
+x1
+Bbody
+R31
+R32
+R33
+R34
+l0
+L148
+V:?8C>ENZOeUnRJknG`@2]3
+!s100 2Fb2GQXP?ZeQRS__:eJGC1
+R36
+32
+R21
+R38
+R47
+R48
+!i113 1
+R7
+R41
+nbody
+x1
+Eem_rdata_gen
+w0
+R31
+R32
+R33
+R34
+d.
+R35
+R2
+l0
+L31
+VOLiVWLP2jgiD90E]W?TT;2
+!s100 D>AY[3Of5Mb08HSlb2cBC3
+R36
+32
+Z49 !s110 1441379375
+Z50 !s108 1441379375.000000
+Z51 !s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vital/emc/EM_rdata_gen.vhd|
+Z52 !s107 v:/sim_sn/release/lib/smartfusion/special/vital/emc/EM_rdata_gen.vhd|
+!i113 1
+R7
+R41
+x1
+Artl
+R31
+R32
+R33
+R34
+DEx4 work 12 em_rdata_gen 0 22 OLiVWLP2jgiD90E]W?TT;2
+l112
+L78
+VA4McHTaW4[4ZmRDQhl?X;0
+!s100 <bFSS8C@<SM2VPLEaz7Nn2
+R36
+32
+R49
+R50
+R51
+R52
+!i113 1
+R7
+R41
+x1
+Eem_wdata_gen
+w0
+R31
+R32
+R33
+R34
+d.
+R35
+R2
+l0
+L32
+V4_V;OX;O;mEekN9_7BjUI3
+!s100 60fCz:XJ>gRh096BhJhGP2
+R36
+32
+R49
+R50
+Z53 !s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vital/emc/EM_wdata_gen.vhd|
+Z54 !s107 v:/sim_sn/release/lib/smartfusion/special/vital/emc/EM_wdata_gen.vhd|
+!i113 1
+R7
+R41
+x1
+Artl
+R31
+R32
+R33
+R34
+DEx4 work 12 em_wdata_gen 0 22 4_V;OX;O;mEekN9_7BjUI3
+l110
+L86
+VHIhhC7I1@@:C^DE<`8>kc2
+!s100 8ehQJBZPoZQglX9g<E;aF2
+R36
+32
+R49
+R50
+R53
+R54
+!i113 1
+R7
+R41
+x1
+vF2_ACE_512x16
+R20
+!s100 YCB9@PH3F9kTnFHehZEhk3
+Id=fZG[e7RRc<;8S?CiNPX2
+R1
+d.
+R2
+Z55 L0 31
+R3
+r1
+!s85 0
+31
+R25
+Z56 !s107 v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_SSE/F2_ACE_512x16.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_SSE/F2DSS_SSE_TDM_FSM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_SSE/F2DSS_SSE_PHASE_ACCUMS.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_SSE/F2DSS_SSE_ENGINE.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_SSE/F2DSS_SSE_APB3_PPE_IF.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_SSE/F2DSS_SSE.v|
+Z57 !s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_common|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_SSE/F2DSS_SSE.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_SSE/F2DSS_SSE_APB3_PPE_IF.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_SSE/F2DSS_SSE_ENGINE.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_SSE/F2DSS_SSE_PHASE_ACCUMS.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_SSE/F2DSS_SSE_TDM_FSM.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_SSE/F2_ACE_512x16.v|
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2_@a@c@e_512x16
+x1
+vF2AB
+R0
+!s100 0YA2PaiONkW3Vk7Gbh?j@2
+I>6Ko=[CV3FGUXo:Ba`nKC2
+R1
+d.
+R2
+L0 1515
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
+n@f2@a@b
+x1
+vF2AB_F060
+R0
+!s100 TM4]`T?SPG;]YIEH[VQVG0
+I`=hkMWl^9:>@GRXa[^5@U3
+R1
+d.
+R2
+L0 2166
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
+n@f2@a@b_@f060
+x1
+vF2DSS_ACE
+R21
+!s100 UU]`oW6M_RdChWOWB``YN2
+IYkD<9I`6WmeMZQjghPX;F3
+R1
+d.
+R2
+Z58 L0 34
+R3
+r1
+!s85 0
+31
+R38
+!s107 v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_top/F2DSS_ACE.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_common|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_top/F2DSS_ACE.v|
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e
+x1
+vF2DSS_ACE_MISC
+Z59 !s110 1441379372
+!s100 092;?LRTlP>1_F:Te8j>M2
+IGW`:T2?Az_UbghBUmokDD2
+R1
+d.
+R2
+Z60 L0 33
+R3
+r1
+!s85 0
+31
+R22
+Z61 !s107 v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_common/F2DSS_ACE_address_map_include.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_RAMS.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_SYNC12.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_SYNC.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_STICKYFLAG9.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_STICKYFLAG32.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_STICKYFLAG24.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_STICKYFLAG21.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_STICKYFLAG.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_RDMUX.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_RDET32.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_RDET12.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_RDET.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_PDMA.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_INT_LOGIC.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_FDET12.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_FDET.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_APB3.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC.v|
+Z62 !s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_common|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_APB3.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_FDET.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_FDET12.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_INT_LOGIC.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_PDMA.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_RDET.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_RDET12.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_RDET32.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_RDMUX.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_STICKYFLAG.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_STICKYFLAG21.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_STICKYFLAG24.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_STICKYFLAG32.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_STICKYFLAG9.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_SYNC.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_MISC_SYNC12.v|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_MISC/F2DSS_ACE_RAMS.v|
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c
+x1
+vF2DSS_ACE_MISC_APB3
+R59
+!s100 MOzj=h^:aenOh`z?2]=W51
+IRR5KPV7M6o7?A2fc4HROS3
+R1
+d.
+R2
+R58
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@a@p@b3
+x1
+vF2DSS_ACE_MISC_FDET
+R59
+!s100 Q4<6MWj@LEN4oJCFe`f]k1
+I8Vn2lh;bo^8Z=zG_2kB?j3
+R1
+d.
+R2
+R58
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@f@d@e@t
+x1
+vF2DSS_ACE_MISC_FDET12
+R59
+!s100 9C=`8PMdSfDMgPK2V^Vz]0
+I<a=iJSSjC>oa2:1=J@cf42
+R1
+d.
+R2
+Z63 L0 35
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@f@d@e@t12
+x1
+vF2DSS_ACE_MISC_INT_LOGIC
+R59
+!s100 `dh:C[P<81[4gKPI9U[9J2
+IlJWKS95GhM5di0;[jodkG1
+R1
+d.
+R2
+R2
+R60
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@i@n@t_@l@o@g@i@c
+x1
+vF2DSS_ACE_MISC_PDMA
+R59
+!s100 WdQ;lQB:cDzKnRFmEmcSa0
+Ifmg=;j@5@UamARfJKP54H1
+R1
+d.
+R2
+R2
+R60
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@p@d@m@a
+x1
+vF2DSS_ACE_MISC_RDET
+R59
+!s100 g?TAALTH?AC:bC=R6z7cM2
+IKbC^DMO>PDBG1EW03b1;82
+R1
+d.
+R2
+R58
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@r@d@e@t
+x1
+vF2DSS_ACE_MISC_RDET12
+R59
+!s100 SGlT6Q8ViU_2jbX4B>7UE2
+IMC?IM8`DZRYdLNQIz0]5]3
+R1
+d.
+R2
+R63
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@r@d@e@t12
+x1
+vF2DSS_ACE_MISC_RDET32
+R59
+!s100 h<:hT@ODQX_J[b69LaPBa0
+ImZUcmP^Ihg1oUW8JMjB=I0
+R1
+d.
+R2
+R63
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@r@d@e@t32
+x1
+vF2DSS_ACE_MISC_RDMUX
+R59
+!s100 V`iFGK1E9bS_]?kC?^H:91
+I9QN?8ecSeAMUB9fJc`BQY1
+R1
+d.
+R2
+R2
+R60
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@r@d@m@u@x
+x1
+vF2DSS_ACE_MISC_STICKYFLAG
+R59
+!s100 jRdVjo1;HRCcSA1BzS=[g2
+I4mKlJ[dFK[eNY3mLJDcMR0
+R1
+d.
+R2
+Z64 L0 36
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@s@t@i@c@k@y@f@l@a@g
+x1
+vF2DSS_ACE_MISC_STICKYFLAG21
+R59
+!s100 5moaQj8=iOTLVzI=dRd^50
+IJ9U@V0zjSa@8ngE5BJHbP1
+R1
+d.
+R2
+Z65 L0 37
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@s@t@i@c@k@y@f@l@a@g21
+x1
+vF2DSS_ACE_MISC_STICKYFLAG24
+R59
+!s100 5mTd26?OG2gTHSl]B8=<a1
+IbX?m4D`Kb`7X_JTO[:nLi3
+R1
+d.
+R2
+R65
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@s@t@i@c@k@y@f@l@a@g24
+x1
+vF2DSS_ACE_MISC_STICKYFLAG32
+R59
+!s100 62RV?Uh0N@i_;Z5XH_XMT0
+IAbNAL[d@3DchObZMF=jHa2
+R1
+d.
+R2
+R65
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@s@t@i@c@k@y@f@l@a@g32
+x1
+vF2DSS_ACE_MISC_STICKYFLAG9
+R59
+!s100 FA9V[fl9WW;cYba0UeJ160
+ISe?d2::XF@ZIhUWoD9Uzb0
+R1
+d.
+R2
+R65
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@s@t@i@c@k@y@f@l@a@g9
+x1
+vF2DSS_ACE_MISC_SYNC
+R59
+!s100 fS@QjkV9Ez;obKZna^C:h2
+IU8<0HBP:?jQ66ODlCKRA53
+R1
+d.
+R2
+R60
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@s@y@n@c
+x1
+vF2DSS_ACE_MISC_SYNC12
+R59
+!s100 F80PQEiho0dZlZ9nzQbnZ0
+IaJ9cBm`4U@RL]m5AI8n@R0
+R1
+d.
+R2
+R58
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@m@i@s@c_@s@y@n@c12
+x1
+vF2DSS_ACE_PPE
+R20
+!s100 LD8F<U1A?3CWjiAfc^a?:0
+IRB5b`2IoEoUS4g3Nz[D]Y0
+R1
+d.
+R2
+R60
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e
+x1
+vF2DSS_ACE_PPE_ADDER
+R20
+!s100 m6i5zFgl7Y^JHZgo:@VaI3
+I1DH77F;o1?R6VEU__V;Od0
+R1
+d.
+R2
+R64
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e_@a@d@d@e@r
+x1
+vF2DSS_ACE_PPE_ALU
+R20
+!s100 ^TO4=@>Y6C?UU3bT`A[o23
+IVDHPL2[`;1L`Z1LSRBiac2
+R1
+d.
+R2
+R2
+R63
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e_@a@l@u
+x1
+vF2DSS_ACE_PPE_DPRAM
+R20
+!s100 GA9>GO^2bQR5UiJ^GbXZ?2
+I4I8APOGBiJdKiBc_EfP`c0
+R1
+d.
+R2
+R58
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e_@d@p@r@a@m
+x1
+vF2DSS_ACE_PPE_DPRAM_CTRL
+R59
+!s100 @XPa4>Jfz^lKYAKS56MPL0
+IS>1N_ZV<5Xm6jfag7=LRc2
+R1
+d.
+R2
+R2
+R58
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e_@d@p@r@a@m_@c@t@r@l
+x1
+vF2DSS_ACE_PPE_FIFO
+R59
+!s100 OcAG_=9@GeWLDa1jXbB7?2
+IWJ`K9OK;17BAzM`<Q[lhj2
+R1
+d.
+R2
+L0 38
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e_@f@i@f@o
+x1
+vF2DSS_ACE_PPE_FIFO_CTRL
+R59
+!s100 QMgJBX8Bd@H>4=^lkKFjZ2
+IMhcGG<fzAiTLz^5QQ80<33
+R1
+d.
+R2
+R2
+R60
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e_@f@i@f@o_@c@t@r@l
+x1
+vF2DSS_ACE_PPE_FSM
+R59
+!s100 1]XhI^j:Qz0XDOEC:2cUH2
+IS_2;Z3:mK_;JfFK5:=`OV3
+R1
+d.
+R2
+R64
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e_@f@s@m
+x1
+vF2DSS_ACE_PPE_FSM_STFILT
+R59
+!s100 XQ:_4]7O;aOk@SIc321XC2
+I6Z2jf;?M651<`5U71o25=0
+R1
+d.
+R2
+R2
+R58
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e_@f@s@m_@s@t@f@i@l@t
+x1
+vF2DSS_ACE_PPE_MULT
+R59
+!s100 83z?J747RNjP00AF=THS03
+IGNHTdW[^jR>ZgiP]ih0nM0
+R1
+d.
+R2
+R58
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e_@m@u@l@t
+x1
+vF2DSS_ACE_PPE_RDMUX
+R59
+!s100 WbK]1NoK<J8i@YLnKI<Zh2
+I15jB;83ZQoLg2_1d>V;c@2
+R1
+d.
+R2
+R2
+R60
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e_@r@d@m@u@x
+x1
+vF2DSS_ACE_PPE_SSE_CTRL
+R59
+!s100 YT9]lmdm?f4b`4Ok@kWnM2
+I``2k;FEm[F4[e2Z0F4G[53
+R1
+d.
+R2
+R58
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e_@s@s@e_@c@t@r@l
+x1
+vF2DSS_ACE_PPE_THRFLAGS
+R59
+!s100 l=o<I;46K9=j>hAC[0K[F1
+Ij0d<^c:iG<_;jELHgO3X73
+R1
+d.
+R2
+R2
+R60
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e_@t@h@r@f@l@a@g@s
+x1
+vF2DSS_ACE_PPE_XFER_DINMUX
+R59
+!s100 @kMbeMdih6<_8NzoEH;fl3
+I?WIFLcUe<Se89=AMVjNZB1
+R1
+d.
+R2
+R60
+R3
+r1
+!s85 0
+31
+R25
+R26
+R27
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@p@p@e_@x@f@e@r_@d@i@n@m@u@x
+x1
+vF2DSS_ACE_RAMS
+R59
+!s100 ENjmaWY1;XDeWh@7BA>BC2
+IlHm>9=D`dRgMKc8MkoMh61
+R1
+d.
+R2
+R65
+R3
+r1
+!s85 0
+31
+R22
+R61
+R62
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@a@c@e_@r@a@m@s
+x1
+vF2DSS_COMMSMATRIX
+R20
+!s100 Y2gV[aE=jSS4zIW;Mi]Ko3
+I>dSERCZGlFm4Heh54`@dR0
+R1
+d.
+R2
+R55
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@f2@d@s@s_@c@o@m@m@s@m@a@t@r@i@x
+x1
+Ef2dss_emc
+w0
+R31
+Z66 DPx8 synopsys 10 attributes 0 22 liCm]LV3<lX4Zl>o6^8IV1
+Z67 DPx4 ieee 14 std_logic_misc 0 22 BLzBaQbXS>Q1z>5YO]m[52
+R32
+R33
+R34
+d.
+R35
+R2
+l0
+L33
+Ve[U]:HkQan6E0bP^>W1dE2
+!s100 _SX2YQK6ho>fR4>2>9OdB1
+R36
+32
+R0
+R50
+Z68 !s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vital/emc/F2DSS_EMC.vhd|
+Z69 !s107 v:/sim_sn/release/lib/smartfusion/special/vital/emc/F2DSS_EMC.vhd|
+!i113 1
+R7
+R41
+x1
+Artl
+R31
+R66
+R67
+R32
+R33
+R34
+DEx4 work 9 f2dss_emc 0 22 e[U]:HkQan6E0bP^>W1dE2
+l359
+L67
+VkD61S^6_QE0hO:hV0K=ma0
+!s100 l8C9VJJCMaDXb2QO;DfA?0
+R36
+32
+R0
+R50
+R68
+R69
+!i113 1
+R7
+R41
+x1
+vF2DSS_FABRICIF
+R8
+!s100 BUo06YQ68oM6^;bS=cM^F2
+IV;oi_I@k`f[ljg[VB25e=1
+R1
+d.
+R2
+R60
+R3
+r1
+!s85 0
+31
+R10
+R13
+R14
+!s101 -O0
+!i113 1
+R7
+n@f2@d@s@s_@f@a@b@r@i@c@i@f
+x1
+vF2DSS_GPIO
+R8
+!s100 Tm:65BooY:C[QJ;]VFFP_3
+IR98=08l6hfKJJmI8E^]Ml1
+R1
+d.
+R2
+R58
+R3
+r1
+!s85 0
+31
+R10
+!s107 v:/sim_sn/release/lib/smartfusion/special/vlog/gpio/F2DSS_GPIO.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vlog/gpio/F2DSS_GPIO.v|
+!s101 -O0
+!i113 1
+R7
+n@f2@d@s@s_@g@p@i@o
+x1
+vF2DSS_SSE
+R20
+!s100 YKL:lIf>eKWd2]_b0SRm63
+I4P@[mI4Um9TJ<3gGD4`[L2
+R1
+d.
+R2
+Z70 L0 25
+R3
+r1
+!s85 0
+31
+R25
+R56
+R57
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@s@s@e
+x1
+vF2DSS_SSE_APB3_PPE_IF
+R20
+!s100 `a@`Y27Hfd5:6DjA>_EeW3
+IFOD55c78N_30iRTcf_O3L2
+R1
+d.
+R2
+R70
+R3
+r1
+!s85 0
+31
+R25
+R56
+R57
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@s@s@e_@a@p@b3_@p@p@e_@i@f
+x1
+vF2DSS_SSE_ENGINE
+R20
+!s100 hgG?PX2[<c__Y[bKgfXNN0
+I:ROzcI>g5m@DnNhDLIQgh0
+R1
+d.
+R2
+L0 27
+R3
+r1
+!s85 0
+31
+R25
+R56
+R57
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@s@s@e_@e@n@g@i@n@e
+x1
+vF2DSS_SSE_PHASE_ACCUMS
+R20
+!s100 7EI__YcLio@6^3:nV9=[`1
+I47;2JO6f3QDD<UK0l4^]m0
+R1
+d.
+R2
+R70
+R3
+r1
+!s85 0
+31
+R25
+R56
+R57
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@s@s@e_@p@h@a@s@e_@a@c@c@u@m@s
+x1
+vF2DSS_SSE_TDM_FSM
+R20
+!s100 Sg<Mo4biQS2`zQPk@AQ>I3
+Idg6Sl6MnV:F5GzneAT<D91
+R1
+d.
+R2
+R70
+R3
+r1
+!s85 0
+31
+R25
+R56
+R57
+!s101 -O0
+!i113 1
+R7
+R23
+n@f2@d@s@s_@s@s@e_@t@d@m_@f@s@m
+x1
+vFABRICIF_FM
+R8
+!s100 9hR70ZQY^TROkT:]^NYOC1
+IETWEY:[8f[hX6B>Pc8k3o1
+R1
+d.
+R2
+R15
+R3
+r1
+!s85 0
+31
+R10
+R13
+R14
+!s101 -O0
+!i113 1
+R7
+n@f@a@b@r@i@c@i@f_@f@m
+x1
+vFABRICIF_HM
+R8
+!s100 KHW2;IlAGY9Y@jbQ4R`Rb0
+IIiE8JUk_mEjP8VeaP@GX:2
+R1
+d.
+R2
+R16
+R3
+r1
+!s85 0
+31
+R10
+R13
+R14
+!s101 -O0
+!i113 1
+R7
+n@f@a@b@r@i@c@i@f_@h@m
+x1
+vM3_BFM
+R17
+!s100 G>7S1e`?i5DRlh`aIoBI;3
+I0j=WOD@I1La5_ZN?T4Y:I0
+R1
+d.
+R2
+R65
+R3
+r1
+!s85 0
+31
+Z71 !s108 1441379368.000000
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/m3_bfm.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/m3_bfm.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m3_@b@f@m
+x1
+vMatrix5x8
+R20
+!s100 B1?9C<nSKf=Ii0C]L:ko`0
+ImSnP>AClAO1zboiR<QDjk2
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@matrix5x8
+x1
+vMSS_AHB
+R17
+!s100 AM=k?KKMi6B_W:TL`nCC92
+IJKGa`8LL02<Z]2cY>:Bff2
+R1
+d.
+R2
+L0 3
+R3
+r1
+!s85 0
+31
+R71
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_AHB.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_AHB.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m@s@s_@a@h@b
+x1
+vMSS_AHB_F060
+R17
+!s100 N7neo^z@:Y:AGQFY0aZVd3
+IMl27]2PT21z2m^JO=bbLi2
+R1
+d.
+R2
+L0 3
+R3
+r1
+!s85 0
+31
+R71
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_AHB_F060.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_AHB_F060.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m@s@s_@a@h@b_@f060
+x1
+vMSS_AHB_F060_IP
+Z72 !s110 1441379369
+!s100 I:HXZKWj7:SaLCK?2Vz3E3
+I`0D?NLe;i=R6iYk?Y2fUf1
+R1
+d.
+R2
+L0 3
+R3
+r1
+!s85 0
+31
+Z73 !s108 1441379369.000000
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_AHB_F060_IP.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_AHB_F060_IP.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m@s@s_@a@h@b_@f060_@i@p
+x1
+vMSS_AHB_IP
+R72
+!s100 JcfAoCRZo18Hj7hHCNHFa2
+IH1^G<]d0<3dWnMVYcFkK]0
+R1
+d.
+R2
+L0 3
+R3
+r1
+!s85 0
+31
+R73
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_AHB_IP.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_AHB_IP.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m@s@s_@a@h@b_@i@p
+x1
+vMSS_APB
+R17
+!s100 1EK4Qz@1Ff]iofiCPgJ?[2
+I4;Y2daNXOY<[eVeEU5f^g1
+R1
+d.
+R2
+L0 2
+R3
+r1
+!s85 0
+31
+R71
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_APB.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_APB.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m@s@s_@a@p@b
+x1
+vMSS_APB_F060
+R72
+!s100 FRkzLVPz?;keRC@X?i3Z92
+I@4B<ijbR><9@B3XMlRMF42
+R1
+d.
+R2
+L0 2
+R3
+r1
+!s85 0
+31
+R71
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_APB_F060.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_APB_F060.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m@s@s_@a@p@b_@f060
+x1
+vMSS_APB_F060_IP
+R8
+!s100 n6i;njJ152ENMkK=iDXfb3
+I[NMC]_15O<:[2<?knAAZ<0
+R1
+d.
+R2
+L0 3
+R3
+r1
+!s85 0
+31
+R73
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_APB_F060_IP.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_APB_F060_IP.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m@s@s_@a@p@b_@f060_@i@p
+x1
+vMSS_APB_IP
+R72
+!s100 71KJCW=kEElOn;k2z>c0j1
+IdJ^G0X?S]n?HgM2bcH>dU2
+R1
+d.
+R2
+L0 3
+R3
+r1
+!s85 0
+31
+R73
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_APB_IP.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/MSS_APB_IP.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m@s@s_@a@p@b_@i@p
+x1
+vMSS_APBSLAVES
+Z74 !s110 1441379367
+!s100 iUHF34DU0UiTOjXL_CL;X1
+IUjUEQzU3bXYXaVF?Bf<213
+R1
+d.
+R2
+R2
+R63
+R3
+r1
+!s85 0
+31
+!s108 1441379366.000000
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/bfm_package.v|v:/sim_sn/release/lib/smartfusion/simulation/vlog/bfm_apbslaves.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/bfm_apbslaves.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m@s@s_@a@p@b@s@l@a@v@e@s
+x1
+vMSS_BFM_AHB2APB
+R74
+!s100 M@7b[7dGFPY_hGUZldgY10
+IIPlg@Y`zROk<8LEjzhL]`2
+R1
+d.
+R2
+R63
+R3
+r1
+!s85 0
+31
+R18
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/bfm_ahbtoapb.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/bfm_ahbtoapb.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m@s@s_@b@f@m_@a@h@b2@a@p@b
+x1
+vMSS_BFM_AHBSLAVE
+R74
+!s100 mlG9YRkmiXhmOYXD93_163
+I8F`9ng>9gAAP]8=n31H@71
+R1
+d.
+R2
+R63
+R3
+r1
+!s85 0
+31
+R18
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/bfm_ahbslave.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/bfm_ahbslave.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m@s@s_@b@f@m_@a@h@b@s@l@a@v@e
+x1
+vMSS_BFM_AHBSLAVEEXT
+R74
+!s100 6f0kYLDGNO]cMIU1fJDda3
+IBzXeI6dSJbP>9bADo@^VI1
+R1
+d.
+R2
+R2
+R24
+R3
+r1
+!s85 0
+31
+R18
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/bfm_package.v|v:/sim_sn/release/lib/smartfusion/simulation/vlog/bfm_ahbslaveext.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/bfm_ahbslaveext.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m@s@s_@b@f@m_@a@h@b@s@l@a@v@e@e@x@t
+x1
+vmss_clockgen
+R74
+!s100 1Ie@9_`mbKKXOPD]^=X;S0
+ISCzENo7;KN=lZoZQJ4SPo3
+R1
+d.
+R2
+L0 2
+R3
+r1
+!s85 0
+31
+R18
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/CLOCKGEN.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/CLOCKGEN.v|
+!s101 -O0
+!i113 1
+R7
+R19
+x1
+vMSS_SYSREG
+R74
+!s100 Ua[<khRVU=ejaBMbb>Qjl1
+I6CVRG3o3dXIlFDiice5IM1
+R1
+d.
+R2
+L0 2
+R3
+r1
+!s85 0
+31
+R18
+!s107 v:/sim_sn/release/lib/smartfusion/simulation/vlog/SYSREG.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/simulation/vlog|v:/sim_sn/release/lib/smartfusion/simulation/vlog/SYSREG.v|
+!s101 -O0
+!i113 1
+R7
+R19
+n@m@s@s_@s@y@s@r@e@g
+x1
+vobd
+R0
+!s100 _O_SmT5bEf9HR5HhM]72j3
+IJ>b<oP1bIambodLIF=_Y03
+R1
+d.
+R2
+L0 1398
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
+x1
+vobd_mux
+R0
+!s100 Z9dCo]n<]A?[50ikQ`BSR3
+IZ[>IJ:WWzhEmH?VgVzV5`0
+R1
+d.
+R2
+L0 1338
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!s101 -O0
+!i113 1
+R7
+x1
+vread_39bit_analog_io
+R0
+!s100 2P=<>?FVBh735N:H7McWQ1
+Ih;<E86ZoXZ[g=T]=B;Yj>2
+R1
+d.
+R2
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+Z75 !s107 v:/sim_sn/release/lib/smartfusion/special/vlog/read_analog_io.v|v:/sim_sn/release/lib/smartfusion/special/vlog/read_analog_input.v|v:/sim_sn/release/lib/smartfusion/special/vlog/read_39bit_analog_io.v|
+Z76 !s90 -nodebug|-work|MSS_BFM_LIB|v:/sim_sn/release/lib/smartfusion/special/vlog/read_39bit_analog_io.v|v:/sim_sn/release/lib/smartfusion/special/vlog/read_analog_input.v|v:/sim_sn/release/lib/smartfusion/special/vlog/read_analog_io.v|
+!s101 -O0
+!i113 1
+R7
+x1
+vread_analog_input
+R0
+!s100 ?i==Pkl?]niQzg]^de8Eh0
+I61bAWfn_GD>hfUkc474@B2
+R1
+d.
+R2
+L0 8
+R3
+r1
+!s85 0
+31
+R4
+R75
+R76
+!s101 -O0
+!i113 1
+R7
+x1
+vread_analog_io
+R0
+!s100 5>6Ln8>4d9XWT4a<[z31H2
+I5`^:;S7WB8fg2W[<YQLWb1
+R1
+d.
+R2
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R75
+R76
+!s101 -O0
+!i113 1
+R7
+x1
+vSINGLE_PORT_RAM
+R20
+!s100 UFz2DPB`kEh[kPj<c8MML3
+IF5Cn?XFCA0n7U<6Kh>NJM2
+R1
+d.
+R2
+L0 153
+R3
+r1
+!s85 0
+31
+R25
+R56
+R57
+!s101 -O0
+!i113 1
+R7
+R23
+n@s@i@n@g@l@e_@p@o@r@t_@r@a@m
+x1
+vSlaveArbiter
+R20
+!s100 OCbejk<>QkJnFFQ9DY=5o2
+I4j@0J4^>jCONlci>eI[@;1
+R1
+d.
+R2
+R9
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+!i113 1
+R7
+n@slave@arbiter
+x1
+vsp512x16
+R59
+!s100 ^i]WCmLZOalkdZN[z7fk20
+I65NADcl_9<:Q?UZ?<ieoX1
+R1
+d.
+R2
+L0 69
+R3
+r1
+!s85 0
+31
+R22
+!s107 v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_RAMs/sp512x16.v|
+!s90 -nodebug|-work|MSS_BFM_LIB|+incdir+v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_common|v:/sim_sn/release/lib/smartfusion/special/vlog/ace/ACE_RAMs/sp512x16.v|
+!s101 -O0
+!i113 1
+R7
+R23
+x1

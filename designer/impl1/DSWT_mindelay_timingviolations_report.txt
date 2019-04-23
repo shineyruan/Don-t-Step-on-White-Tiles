@@ -1,0 +1,24 @@
+Timing Violation Report Min Delay Analysis
+
+SmartTime Version v11.9 SP3
+Microsemi Corporation - Microsemi Libero Software Release v11.9 SP3 (Version 11.9.3.5)
+Date: Mon Apr 22 20:38:56 2019
+
+
+Design: DSWT
+Family: SmartFusion
+Die: A2F200M3F
+Package: 484 FBGA
+Temperature Range: 0 - 85 C
+Voltage Range: 1.425 - 1.575 V
+Speed Grade: STD
+Design State: Post-Layout
+Data source: Silicon verified
+Min Operating Conditions: BEST - 1.575 V - 0 C
+Max Operating Conditions: WORST - 1.425 V - 85 C
+Using Enhanced Min Delay Analysis
+Scenario for Timing Analysis: Primary
+
+
+No Path
+

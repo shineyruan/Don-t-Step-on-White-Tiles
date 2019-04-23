@@ -3,7 +3,7 @@
 
 #include <inttypes.h>
 #include <stdbool.h>
-
+#include "drivers/mss_gpio/mss_gpio.h"
 #include "menu.h"
 #include "vga.h"
 #include "pixy.h"
@@ -45,7 +45,7 @@ extern int score;
 extern uint16_t receive_data[14];
 extern int longest_delay;
 // soundboard.h
-extern volatile uint8_t* soundboard_addr;
+extern volatile uint8_t *soundboard_addr;
 /**********************************************************/
 
 typedef struct Controller {
@@ -60,14 +60,14 @@ typedef struct Controller {
     bool button_a;
 } Command;
 
-volatile uint8_t* command_addr;
+volatile uint8_t *command_addr;
 bool changed;
 
-inline void Controller_getCommand(Command* cmd_struct);
+inline void Controller_getCommand(Command *cmd_struct);
 /**
  * Left, Right, Up, Down, B 
  * Only 5 buttons are in use 
  */
-void Controller_getAction(Command* cmd_struct, Command* prev_cmd_struct);
+void Controller_getAction(Command *cmd_struct, Command *prev_cmd_struct);
 
 #endif

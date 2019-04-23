@@ -70,7 +70,9 @@ void random_mode(int k) {
             length += speed;
             if (length < 0) {
                 if (sq[k].left_on == 0 && sq[k].right_on == 0) {
-                    //miss tbe tile
+                    //miss the tile
+                    is_miss = true;
+
                     int i;
                     bool found = false;
                     for (i = heart_num - 1; i >= 0; i--)

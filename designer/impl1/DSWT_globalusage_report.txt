@@ -1,0 +1,27 @@
+********************************************************************
+                            Global Usage Report
+********************************************************************
+  
+Product: Designer
+Release: v11.9 SP3
+Version: 11.9.3.5
+Date: Mon Apr 22 20:38:47 2019
+Design Name: DSWT  Family: SmartFusion  Die: A2F200M3F  Package: 484 FBGA
+Design State: Post-Layout
+
+The following nets have been routed to a chip global resource:
+
+    Fanout            Name
+    ----------------------
+    894               Net   : FAB_CLK
+                      Driver: DSWT_MSS_0/MSS_CCC_0/I_MSSCCC/U_TILE2
+    94                Net   : Core_Control_0/x[9]
+                      Driver: Core_Control_0/display/h_count_RNID90B1_4[9]/U_CLKSRC/U_GL
+    96                Net   : Core_Control_0/x[6]
+                      Driver: Core_Control_0/display/h_count_RNISM6S1_0[9]/U_CLKSRC/U_GL
+    357               Net   : Core_Control_0/animate
+                      Driver: Core_Control_0/display/v_count_RNIE2NQ2_0[2]/U_CLKSRC/U_GL
+
+
+
+

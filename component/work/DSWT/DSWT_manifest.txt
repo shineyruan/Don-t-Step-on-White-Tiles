@@ -1,0 +1,17 @@
+Microsemi Corporation - Microsemi Libero Software Release v11.9 SP3 (Version 11.9.3.5)
+
+Date      :  Mon Apr 22 20:36:53 2019
+Project   :  C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles
+Component :  DSWT
+Family    :  SmartFusion
+
+
+HDL source files for all Synthesis and Simulation tools:
+    C:/Users/10339/source/repos/eecs373Project/DontStepOnWhiteTiles/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core_obfuscated/coreapb3.v
+    C:/Users/10339/source/repos/eecs373Project/DontStepOnWhiteTiles/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core_obfuscated/coreapb3_iaddr_reg.v
+    C:/Users/10339/source/repos/eecs373Project/DontStepOnWhiteTiles/component/Actel/DirectCore/CoreAPB3/4.1.100/rtl/vlog/core_obfuscated/coreapb3_muxptob3.v
+    C:/Users/10339/source/repos/eecs373Project/DontStepOnWhiteTiles/component/work/DSWT/DSWT.v
+
+Stimulus files for all Simulation tools:
+    C:/Users/10339/source/repos/eecs373Project/DontStepOnWhiteTiles/component/work/DSWT/subsystem.bfm
+

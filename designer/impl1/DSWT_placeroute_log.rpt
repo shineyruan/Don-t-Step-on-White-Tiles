@@ -1,0 +1,88 @@
+Microsemi Libero Software
+Version: 11.9.3.5
+Release: v11.9 SP3
+
+Info: The design DSWT.adb was last modified by software version 11.9.3.5.
+Opened an existing Libero design DSWT.adb.
+'BA_NAME' set to 'DSWT_ba'
+'IDE_DESIGNERVIEW_NAME' set to 'Impl1'
+'IDE_DESIGNERVIEW_COUNT' set to '1'
+'IDE_DESIGNERVIEW_REV0' set to 'Impl1'
+'IDE_DESIGNERVIEW_REVNUM0' set to '1'
+'IDE_DESIGNERVIEW_ROOTDIR' set to
+'C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles\designer'
+'IDE_DESIGNERVIEW_LASTREV' set to '1'
+***** Layout Variables *********************************************
+
+Mode: TIMING_DRIVEN
+Power-driven Layout: OFF
+Incremental Placement: OFF
+Incremental Route: OFF
+
+
+Info: I/O Bank Assigner detected (1) out of (6) I/O Bank(s) with locked I/O technologies.
+
+Running I/O Bank Assigner.
+
+I/O Bank Assigner completed successfully.
+ 
+
+Planning global net placement...
+
+
+Global net placement completed successfully.
+
+                        o - o - o - o - o - o
+
+Timing-driven Placer Started: Mon Apr 22 20:37:25 2019
+
+Placer Finished: Mon Apr 22 20:38:03 2019
+Total Placer CPU Time:     00:00:38
+
+                        o - o - o - o - o - o
+
+
+Timing-driven Router 
+Design: DSWT                            Started: Mon Apr 22 20:38:07 2019
+
+ 
+Iterative improvement...
+
+Timing-driven Router completed successfully.
+
+Design: DSWT                            
+Finished: Mon Apr 22 20:38:43 2019
+Total CPU Time:     00:00:35            Total Elapsed Time: 00:00:36
+Total Memory Usage: 218.0 Mbytes
+                        o - o - o - o - o - o
+
+Loading the Timing data for the design.
+Finished loading the Timing data.
+TIMER: Max delay timing requirements have NOT been met.
+TIMER: Min delay timing requirements have been met.
+
+The Layout command succeeded ( 00:01:24 )
+Wrote status report to file: DSWT_place_and_route_report.txt
+
+The Report command succeeded ( 00:00:00 )
+Wrote globalnet report to file: DSWT_globalnet_report.txt
+
+The Report command succeeded ( 00:00:00 )
+Wrote globalusage report to file: DSWT_globalusage_report.txt
+
+The Report command succeeded ( 00:00:00 )
+Wrote iobank report to file: DSWT_iobank_report.txt
+
+The Report command succeeded ( 00:00:00 )
+Wrote pin report to file: DSWT_report_pin_byname.txt
+
+The Report command succeeded ( 00:00:00 )
+Wrote pin report to file: DSWT_report_pin_bynumber.txt
+
+The Report command succeeded ( 00:00:01 )
+Design saved to file
+C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles\designer\impl1\DSWT.adb.
+
+The Execute Script command succeeded ( 00:01:29 )
+Design closed.
+

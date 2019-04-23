@@ -1,0 +1,37 @@
+*****************************************************************
+Pin Report - Date: Mon Apr 22 20:38:48 2019 Pinchecksum: NOT-AVAILABLE
+Product: Designer
+Release: v11.9 SP3
+Version: 11.9.3.5
+Design Name: DSWT
+Family: SmartFusion
+Die: A2F200M3F
+Package: 484 FBGA
+*****************************************************************
+Port         |Pin  |Fixed |Function           |I/O Std |Output Drive (mA) |Slew |Resistor Pull |Schmitt Trigger |Skew |Output Load (pF) |Use I/O Reg |Hot Swappable |
+-------------|-----|------|-------------------|--------|------------------|-----|--------------|----------------|-----|-----------------|------------|--------------|
+clock         J6    Yes    GFA0/IO64NDB5V0     LVTTL    12                 High  None           ---              No    35                No           No
+data          C22   Yes    GBB2/IO20NDB1V0     LVTTL    ---                ---   None           No               ---   ---               No           No
+GPIO_0_OUT    V1    Yes    GPIO_0/IO47RSB4V0   LVTTL    8                  High  None           ---              No    35                No           Yes
+latch         B22   Yes    GBA2/IO20PDB1V0     LVTTL    12                 High  None           ---              No    35                No           No
+MSS_RESET_N   R1    Yes    MSS_RESET_N         LVTTL    ---                ---   None           No               ---   ---               No           Yes
+reset         G21   Yes    GCB2/IO24PDB1V0     LVTTL    12                 High  None           ---              No    35                No           No
+selection[0]  K19   Yes    GDA0/IO31NDB1V0     LVTTL    12                 High  None           ---              No    35                No           No
+selection[1]  J22   Yes    GCB1/IO27PDB1V0     LVTTL    12                 High  None           ---              No    35                No           No
+selection[2]  J21   Yes    GCC1/IO26PPB1V0     LVTTL    12                 High  None           ---              No    35                No           No
+selection[3]  J20   Yes    GCA1/IO28PDB1V0     LVTTL    12                 High  None           ---              No    35                No           No
+selection[4]  J19   Yes    GCA0/IO28NDB1V0     LVTTL    12                 High  None           ---              No    35                No           No
+selection[5]  F1    Yes    GFB1/IO65PPB5V0     LVTTL    12                 High  None           ---              No    35                No           No
+SPI_1_CLK     AA22  Yes    SPI_1_CLK/GPIO_26   LVTTL    8                  High  None           No               No    35                No           Yes
+SPI_1_DI      V19   Yes    SPI_1_DI/GPIO_25    LVTTL    ---                ---   None           No               ---   ---               No           Yes
+SPI_1_DO      T17   Yes    SPI_1_DO/GPIO_24    LVTTL    8                  High  None           ---              No    35                No           Yes
+SPI_1_SS      W21   Yes    SPI_1_SS/GPIO_27    LVTTL    8                  High  None           No               No    35                No           Yes
+UART_0_RXD    U18   Yes    UART_0_RXD/GPIO_21  LVTTL    ---                ---   None           No               ---   ---               No           Yes
+UART_0_TXD    Y22   Yes    UART_0_TXD/GPIO_20  LVTTL    8                  High  None           ---              No    35                No           Yes
+UART_1_RXD    W22   Yes    UART_1_RXD/GPIO_29  LVTTL    ---                ---   None           No               ---   ---               No           Yes
+UART_1_TXD    V20   Yes    UART_1_TXD/GPIO_28  LVTTL    8                  High  None           ---              No    35                No           Yes
+VGA_B         H6    Yes    GFA1/IO64PDB5V0     LVTTL    12                 High  None           ---              No    35                No           No
+VGA_G         H5    Yes    GFC0/IO66NPB5V0     LVTTL    12                 High  None           ---              No    35                No           No
+VGA_HS_O      E3    Yes    GFA2/IO68PDB5V0     LVTTL    12                 High  None           ---              No    35                No           No
+VGA_R         G4    Yes    GFC1/IO66PPB5V0     LVTTL    12                 High  None           ---              No    35                No           No
+VGA_VS_O      F3    Yes    GFB2/IO68NDB5V0     LVTTL    12                 High  None           ---              No    35                No           No

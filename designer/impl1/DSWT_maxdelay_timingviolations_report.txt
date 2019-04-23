@@ -1,0 +1,126 @@
+Timing Violation Report Max Delay Analysis
+
+SmartTime Version v11.9 SP3
+Microsemi Corporation - Microsemi Libero Software Release v11.9 SP3 (Version 11.9.3.5)
+Date: Mon Apr 22 20:38:56 2019
+
+
+Design: DSWT
+Family: SmartFusion
+Die: A2F200M3F
+Package: 484 FBGA
+Temperature Range: 0 - 85 C
+Voltage Range: 1.425 - 1.575 V
+Speed Grade: STD
+Design State: Post-Layout
+Data source: Silicon verified
+Min Operating Conditions: BEST - 1.575 V - 0 C
+Max Operating Conditions: WORST - 1.425 V - 85 C
+Using Enhanced Min Delay Analysis
+Scenario for Timing Analysis: Primary
+
+
+Path 1
+  From:                  Core_Control_0/display/h_count[7]:CLK
+  To:                    DSWT_MSS_0/MSS_ADLIB_INST/U_CORE:FABINT
+  Delay (ns):            10.641
+  Slack (ns):            -2.476
+  Arrival (ns):          15.407
+  Required (ns):         12.931
+
+Path 2
+  From:                  Core_Control_0/display/h_count[6]:CLK
+  To:                    DSWT_MSS_0/MSS_ADLIB_INST/U_CORE:FABINT
+  Delay (ns):            10.990
+  Slack (ns):            -2.460
+  Arrival (ns):          15.756
+  Required (ns):         13.296
+
+Path 3
+  From:                  Core_Control_0/display/h_count[5]:CLK
+  To:                    DSWT_MSS_0/MSS_ADLIB_INST/U_CORE:FABINT
+  Delay (ns):            10.883
+  Slack (ns):            -2.362
+  Arrival (ns):          15.658
+  Required (ns):         13.296
+
+Path 4
+  From:                  Core_Control_0/display/v_count[6]:CLK
+  To:                    DSWT_MSS_0/MSS_ADLIB_INST/U_CORE:FABINT
+  Delay (ns):            10.339
+  Slack (ns):            -2.255
+  Arrival (ns):          15.186
+  Required (ns):         12.931
+
+Path 5
+  From:                  Core_Control_0/display/v_count[8]:CLK
+  To:                    DSWT_MSS_0/MSS_ADLIB_INST/U_CORE:FABINT
+  Delay (ns):            10.303
+  Slack (ns):            -2.155
+  Arrival (ns):          15.086
+  Required (ns):         12.931
+
+Path 6
+  From:                  Core_Control_0/display/v_count[7]:CLK
+  To:                    DSWT_MSS_0/MSS_ADLIB_INST/U_CORE:FABINT
+  Delay (ns):            9.998
+  Slack (ns):            -1.833
+  Arrival (ns):          14.764
+  Required (ns):         12.931
+
+Path 7
+  From:                  Core_Control_0/display/h_count[8]:CLK
+  To:                    DSWT_MSS_0/MSS_ADLIB_INST/U_CORE:FABINT
+  Delay (ns):            9.762
+  Slack (ns):            -1.606
+  Arrival (ns):          14.537
+  Required (ns):         12.931
+
+Path 8
+  From:                  Core_Control_0/display/h_count[9]:CLK
+  To:                    DSWT_MSS_0/MSS_ADLIB_INST/U_CORE:FABINT
+  Delay (ns):            9.660
+  Slack (ns):            -1.526
+  Arrival (ns):          14.457
+  Required (ns):         12.931
+
+Path 9
+  From:                  Core_Control_0/display/v_count[9]:CLK
+  To:                    DSWT_MSS_0/MSS_ADLIB_INST/U_CORE:FABINT
+  Delay (ns):            9.142
+  Slack (ns):            -0.994
+  Arrival (ns):          13.925
+  Required (ns):         12.931
+
+Path 10
+  From:                  Core_Control_0/display/v_count[5]:CLK
+  To:                    DSWT_MSS_0/MSS_ADLIB_INST/U_CORE:FABINT
+  Delay (ns):            9.043
+  Slack (ns):            -0.895
+  Arrival (ns):          13.826
+  Required (ns):         12.931
+
+Path 11
+  From:                  Core_Control_0/display/v_count[4]:CLK
+  To:                    DSWT_MSS_0/MSS_ADLIB_INST/U_CORE:FABINT
+  Delay (ns):            8.931
+  Slack (ns):            -0.847
+  Arrival (ns):          13.778
+  Required (ns):         12.931
+
+Path 12
+  From:                  Core_Control_0/display/h_count[0]:CLK
+  To:                    DSWT_MSS_0/MSS_ADLIB_INST/U_CORE:FABINT
+  Delay (ns):            8.462
+  Slack (ns):            -0.306
+  Arrival (ns):          13.237
+  Required (ns):         12.931
+
+Path 13
+  From:                  Core_Control_0/display/h_count[2]:CLK
+  To:                    DSWT_MSS_0/MSS_ADLIB_INST/U_CORE:FABINT
+  Delay (ns):            8.172
+  Slack (ns):            -0.007
+  Arrival (ns):          12.938
+  Required (ns):         12.931
+

@@ -3,16 +3,12 @@
 #include <stdio.h>
 #include <string.h>
 #include "drivers/mss_uart/mss_uart.h"
-// #include "drivers/mss_gpio/mss_gpio.h"
 
 #include "controller.h"
 #include "vga.h"
 #include "menu.h"
 #include "pixy.h"
 #include "soundboard.h"
-
-Command NES_command_struct;
-Command prev_NES_command_struct;
 
 /******************* EXTERNAL VARIABLES *******************/
 // controller.h
@@ -52,6 +48,12 @@ extern uint16_t receive_data[14];
 extern volatile uint8_t* soundboard_addr;
 /**********************************************************/
 
+Command NES_command_struct;
+Command prev_NES_command_struct;
+
+bool is_miss;
+int cnt;
+
 __attribute__((interrupt)) void Fabric_IRQHandler(void) {
     NVIC_ClearPendingIRQ(Fabric_IRQn);
 
@@ -68,12 +70,36 @@ __attribute__((interrupt)) void Fabric_IRQHandler(void) {
                 found = true;
         if (!found)
             dead = true;
+    } else {
+        if (dead) {
+            if (MSS_GPIO_get_outputs() == 1) {
+                MSS_GPIO_set_output(MSS_GPIO_0, 0);
+                cnt = 20;
+            } else if (MSS_GPIO_get_outputs() == 0 && (cnt > 0)) {
+                cnt--;
+            } else {
+                MSS_GPIO_set_output(MSS_GPIO_0, 1);
+                cnt = 20;
+            }
+        }
+
+        (*soundboard_addr) = 0x7F;
     }
 }
 
 void init_everything() {
     // controller.h
     command_addr = (uint8_t*)(CONTROLLER_ADDR);
+    // pixy.h
+    range.ltx = 112;
+    range.lty = 10;
+    range.rtx = 292;
+    range.rty = 11;
+    range.lbx = 103;
+    range.lby = 187;
+    range.rbx = 252;
+    range.rby = 188;
+
     // menu.h
     static const uint8_t line_start_temp[] = {0, 64, 20, 84};
     memcpy(line_start, line_start_temp, sizeof(line_start_temp));
@@ -97,27 +123,19 @@ void init_everything() {
                                         0x0aaaaf22, 0x0f88f11f, 0x0f88f99f, 0x0f111111,
                                         0x0f99f99f, 0x0f99f11f};
     memcpy(number, number_temp, sizeof(number_temp));
+    // main
+    cnt = -1;
+    is_miss = false;
 }
-
-// void SoundEffect() {
-//     MSS_GPIO_set_output(MSS_GPIO_2, 0);
-//     int i = 0;
-//     for (i = 0; i < 10000; ++i) {}
-//     MSS_GPIO_set_output(MSS_GPIO_2, 1);
-// }
 
 int main() {
     // common
     init_everything();
 
-    // /* initiate Sound Board */
-    // MSS_GPIO_init();
-    // MSS_GPIO_config(MSS_GPIO_0, MSS_GPIO_OUTPUT_MODE);
-    // MSS_GPIO_config(MSS_GPIO_1, MSS_GPIO_OUTPUT_MODE);
-    // MSS_GPIO_config(MSS_GPIO_2, MSS_GPIO_OUTPUT_MODE);
-    // MSS_GPIO_set_output(MSS_GPIO_0, 1);
-    // MSS_GPIO_set_output(MSS_GPIO_1, 1);
-    // MSS_GPIO_set_output(MSS_GPIO_2, 1);
+    /* initiate Sound Board */
+    MSS_GPIO_init();
+    MSS_GPIO_config(MSS_GPIO_0, MSS_GPIO_OUTPUT_MODE);
+    MSS_GPIO_set_output(MSS_GPIO_0, 1);
 
     /* Enable FABINT Interrupt for generating tiles */
     NVIC_EnableIRQ(Fabric_IRQn);
@@ -175,10 +193,6 @@ int main() {
         if (is_right_on_tile(sq, data)) {
             printf("right foot is on tile!\r\n");
         }
-
-        // if (!is_left_on_tile(sq, data) || !(is_right_on_tile(sq, data))) {
-        //     SoundEffect();
-        // }
 
         // controller
         prev_NES_command_struct = NES_command_struct;

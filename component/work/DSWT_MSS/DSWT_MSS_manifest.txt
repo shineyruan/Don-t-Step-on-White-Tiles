@@ -1,0 +1,22 @@
+Microsemi Corporation - Microsemi Libero Software Release v11.9 SP3 (Version 11.9.3.5)
+
+Date      :  Mon Apr 22 20:36:30 2019
+Project   :  C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles
+Component :  DSWT_MSS
+Family    :  SmartFusion
+
+
+HDL source files for all Synthesis and Simulation tools:
+    C:/Users/10339/source/repos/eecs373Project/DontStepOnWhiteTiles/component/work/DSWT_MSS/DSWT_MSS.v
+    C:/Users/10339/source/repos/eecs373Project/DontStepOnWhiteTiles/component/work/DSWT_MSS/MSS_CCC_0/DSWT_MSS_tmp_MSS_CCC_0_MSS_CCC.v
+
+HDL source files for Synopsys SynplifyPro Synthesis tool:
+    C:/Users/10339/source/repos/eecs373Project/DontStepOnWhiteTiles/component/Actel/SmartFusionMSS/MSS/2.5.200/mss_comps.v
+    C:/Users/10339/source/repos/eecs373Project/DontStepOnWhiteTiles/component/work/DSWT_MSS/mss_tshell.v
+    C:/Users/10339/source/repos/eecs373Project/DontStepOnWhiteTiles/component/work/DSWT_MSS/mss_tshell_syn.sdc
+
+Stimulus files for all Simulation tools:
+    C:/Users/10339/source/repos/eecs373Project/DontStepOnWhiteTiles/component/Actel/SmartFusionMSS/MSS/2.5.200/CompileDssBfm.tcl
+    C:/Users/10339/source/repos/eecs373Project/DontStepOnWhiteTiles/component/Actel/SmartFusionMSS/MSS/2.5.200/bfmtovec.exe
+    C:/Users/10339/source/repos/eecs373Project/DontStepOnWhiteTiles/component/work/DSWT_MSS/MSS_ENVM_0/test.bfm
+

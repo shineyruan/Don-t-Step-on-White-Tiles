@@ -1,0 +1,28 @@
+Microsemi Libero Software
+Version: 11.9.3.5
+Release: v11.9 SP3
+
+'IDE_DESIGNERVIEW_ROOTDIR' set to
+'C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles\designer'
+Info: The design DSWT.adb was last modified by software version 11.9.3.5.
+Opened an existing Libero design DSWT.adb.
+
+The Execute Script command succeeded ( 00:00:20 )
+Checking for software updates...
+This software version is up to date.
+Design saved to file
+C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles\designer\impl1\DSWT.adb.
+Wrote pin report to file:
+C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles\designer\impl1\DSWT_report_pin_\
+byname.txt
+
+The Report command succeeded ( 00:00:00 )
+Wrote pin report to file:
+C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles\designer\impl1\DSWT_report_pin_\
+bynumber.txt
+
+The Report command succeeded ( 00:00:01 )
+
+The Execute Script command succeeded ( 00:00:02 )
+Design closed.
+

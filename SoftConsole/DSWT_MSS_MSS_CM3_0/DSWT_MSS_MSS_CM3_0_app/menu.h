@@ -41,7 +41,7 @@ typedef enum SelectionLocation {
 typedef struct LCD {
     /* data */
     uint8_t curr_line_num;
-    uint8_t lines[4][20];
+    char lines[4][20];
 } LCD_Display;
 
 typedef struct menuEssential
@@ -55,7 +55,7 @@ typedef struct menuEssential
 
 typedef struct menu
 {
-    uint8_t layer[6][20];
+    char layer[6][20];
     Menu_Location curr_location;
     Menu_Essential frame;
 } Menu;

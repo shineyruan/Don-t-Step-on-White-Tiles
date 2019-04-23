@@ -1,0 +1,32 @@
+Microsemi Libero Software
+Version: 11.9.3.5
+Release: v11.9 SP3
+
+Info: The design DSWT.adb was last modified by software version 11.9.3.5.
+Opened an existing Libero design DSWT.adb.
+'BA_NAME' set to 'DSWT_ba'
+'IDE_DESIGNERVIEW_NAME' set to 'Impl1'
+'IDE_DESIGNERVIEW_COUNT' set to '1'
+'IDE_DESIGNERVIEW_REV0' set to 'Impl1'
+'IDE_DESIGNERVIEW_REVNUM0' set to '1'
+'IDE_DESIGNERVIEW_ROOTDIR' set to
+'C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles\designer'
+'IDE_DESIGNERVIEW_LASTREV' set to '1'
+Wrote timing report to file: DSWT_maxdelay_timing_report.txt
+
+The Report command succeeded ( 00:00:05 )
+Wrote timing report to file: DSWT_mindelay_timing_report.txt
+
+The Report command succeeded ( 00:00:00 )
+Wrote timing_violations report to file: DSWT_maxdelay_timingviolations_report.txt
+
+The Report command succeeded ( 00:00:00 )
+Wrote timing_violations report to file: DSWT_mindelay_timingviolations_report.txt
+
+The Report command succeeded ( 00:00:00 )
+Design saved to file
+C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles\designer\impl1\DSWT.adb.
+
+The Execute Script command succeeded ( 00:00:07 )
+Design closed.
+

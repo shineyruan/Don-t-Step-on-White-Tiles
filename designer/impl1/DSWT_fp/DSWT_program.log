@@ -1,0 +1,52 @@
+FlashPro
+Version: 11.9.3.5
+Release: v11.9 SP3
+
+Software Version: 11.9.3.5
+PDB file
+'C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles\designer\impl1\DSWT_fp\DSWT.pd\
+b' has been loaded successfully.
+DESIGN : DSWT;  CHECKSUM : 678A;  PDB_VERSION : 1.9
+Driver : 3.0.0 build 1
+programmer '80222' : FlashPro3
+Opened
+'C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles\designer\impl1\DSWT_fp\DSWT.pr\
+o'
+The 'open_project' command succeeded.
+The 'set_programming_file' command succeeded.
+The 'set_device_type' command succeeded.
+The 'set_device_package' command succeeded.
+Info: Adding Flash Memory data from file
+      C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles\component\work\DSWT_MSS\M\
+      SS_ENVM_0\MSS_ENVM_0.efc.
+Info: Adding FPGA Array data from file
+      C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles\designer\impl1\DSWT.fdb.
+PDB file
+'C:\Users\10339\source\repos\eecs373Project\DontStepOnWhiteTiles\designer\impl1\DSWT_fp\DSWT.pd\
+b' has been loaded successfully.
+DESIGN : DSWT;  CHECKSUM : 05DC;  PDB_VERSION : 1.9
+The 'update_programming_file' command succeeded.
+The 'set_programming_action' command succeeded.
+programmer '80222' : Scan Chain...
+Warning: programmer '80222' : Vpump has been selected on programmer AND an externally provided
+         Vpump has also been detected. Using externally provided Vpump voltage source.
+programmer '80222' : Scan Chain PASSED.
+programmer '80222' : Executing action PROGRAM
+programmer '80222' : EXPORT FSN[48] = 014b3e645c8c
+programmer '80222' : Erase ...
+programmer '80222' : Completed erase
+programmer '80222' : EXPORT CHECKSUM[16] = 05dc
+programmer '80222' : Programming FPGA Array
+programmer '80222' : Verifying FPGA Array
+programmer '80222' :         Verifying FPGA Array -- pass
+programmer '80222' : Program System Init and Boot Clients...
+programmer '80222' : Verify System Init and Boot Clients...
+programmer '80222' : Finished: Mon Apr 22 20:39:55 2019 (Elapsed time 00:00:35)
+programmer '80222' : Executing action PROGRAM PASSED.
+
+                        o - o - o - o - o - o
+
+The 'run_selected_actions' command succeeded.
+Project saved.
+The 'save_project' command succeeded.
+Project closed.

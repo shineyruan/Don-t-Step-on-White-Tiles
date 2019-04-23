@@ -1,5 +1,7 @@
 #include "controller.h"
 
+extern int rand_song_sel;
+
 inline void Controller_getCommand(Command* cmd_struct) {
     uint8_t command = (*command_addr);
 
@@ -44,6 +46,7 @@ void Controller_getAction(Command* cmd_struct, Command* prev_cmd_struct) {
                     speed = -3;
                     sq_num = 6;
                     longest_delay = 100;
+                    selected_config.selected_song = random_song();
                     changed = true;
                 } else if (myMenu.frame.curr_selection == 1) {
                     selected_config.selected_mode = MEDIUM;
@@ -51,6 +54,7 @@ void Controller_getAction(Command* cmd_struct, Command* prev_cmd_struct) {
                     sq_num = 8;
                     longest_delay = 100;
                     Display_printSuccessful();
+                    selected_config.selected_song = random_song() + 2;
                     changed = true;
                 } else if (myMenu.frame.curr_selection == 2) {
                     selected_config.selected_mode = FAST;
@@ -58,11 +62,12 @@ void Controller_getAction(Command* cmd_struct, Command* prev_cmd_struct) {
                     sq_num = 8;
                     longest_delay = 50;
                     Display_printSuccessful();
+                     selected_config.selected_song = random_song() + 4;
                     changed = true;
                 }
                 break;
             case SONG:
-                selected_config.selected_song = myMenu.frame.curr_selection + 1;
+                selected_config.selected_song = myMenu.frame.curr_selection;
                 Display_printSuccessful();
                 changed = true;
                 break;
@@ -124,6 +129,7 @@ void Controller_getAction(Command* cmd_struct, Command* prev_cmd_struct) {
                 changed = true;
                 vga_init();
                 (*soundboard_addr) = 0x7F;
+                MSS_GPIO_set_output(MSS_GPIO_0, 1);
                 return;
             }
         }

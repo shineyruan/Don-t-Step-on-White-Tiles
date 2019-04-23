@@ -1,0 +1,57 @@
+# Microsemi I/O Physical Design Constraints file
+# Auto Generated User I/O Constraints file
+
+# Version: v11.9 SP3 11.9.3.5
+# Family: SmartFusion , Die: A2F200M3F , Package: 484 FBGA
+# Date generated: Mon Apr 22 20:36:46 2019 
+
+
+# 
+# User Groups
+# 
+
+define_group -name UART_1
+
+define_group -name UART_0
+
+define_group -name SPI_1
+
+
+# 
+# User Locked I/O Bank Settings
+# 
+
+
+# 
+# Unlocked I/O Bank Settings
+# The I/O Bank Settings can be locked by directly editing this file
+# or by making changes in the I/O Attribute Editor
+# 
+
+
+# 
+# User Locked I/O settings
+# 
+
+
+# 
+# Dedicated Peripheral I/O Settings
+# 
+
+
+# 
+# Unlocked I/O settings
+# The I/Os in this section are unplaced or placed but are not locked
+# the other listed attributes have been applied
+# 
+
+
+#
+# Non IO constraints
+#
+
+
+#
+# Old IO constraints, commented out for reference
+#
+

@@ -6,6 +6,7 @@
 #include "pixy.h"
 #include "CMSIS/a2fxxxm3.h"
 #include <time.h>
+#include <stdlib.h>
 //width of column
 #define width 96
 //width of column line
@@ -56,4 +57,5 @@ void delay(int x);
 void set_health();
 void vga_init();
 
+extern bool is_miss;
 #endif
