@@ -20,7 +20,7 @@ In order to increase project difficulty, we use Actel SmartFusion FPGA (Verilog)
 
 Here is a demo at the *EECS 373 Project Expo* at the University of Michigan.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2wzuU-qfCKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![final](https://www.youtube.com/embed/2wzuU-qfCKQ/0.jpg)](https://www.youtube.com/embed/2wzuU-qfCKQ)
 
 ## Work Environment 
 
