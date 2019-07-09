@@ -6,7 +6,7 @@ This is a very popular music game on smartphones. Simply by tapping on the black
 
 This is a picture showing the basic interface. **Image is obtained through Google Image and will be deleted immediately if it is subject to copyright issues.**
 
-![interface](https://camo.githubusercontent.com/3b0d318c074302d637a824d385afe76b60715138/687474703a2f2f696d672e636e6d6f2d696d672e636f6d2e636e2f313035305f353030783337352f313034393532332e6a7067)
+![interface](http://s9.rr.itc.cn/r/wapChange/20145_16_13/a497lx8444512524323.jpg)
 
 ## Project Objectives &mdash; Name Changed to *Step on White Tiles*
 
