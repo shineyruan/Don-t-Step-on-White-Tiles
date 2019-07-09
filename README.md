@@ -16,6 +16,12 @@ Due to the limitations of projector brightness in the day, **we changed our proj
 
 In order to increase project difficulty, we use Actel SmartFusion FPGA (Verilog) to generate VGA signals to the projector, combined with C to implement other functions.
 
+## Demo 
+
+Here is a demo at the *EECS 373 Project Expo* at the University of Michigan.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2wzuU-qfCKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Work Environment 
 
 * [Actel SmartFusion SoC FPGA](https://www.microsemi.com/product-directory/soc-fpgas/1693-smartfusion)
