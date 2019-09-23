@@ -24,7 +24,16 @@ https://www.youtube.com/embed/2wzuU-qfCKQ/
 
 ## Work Environment 
 
+Operating systems:
+
+* Windows only
+
+Hardware:
+
 * [Actel SmartFusion SoC FPGA](https://www.microsemi.com/product-directory/soc-fpgas/1693-smartfusion)
+
+Software environment:
+
 * [Libero SoC v11.9 SP3](https://www.microsemi.com/product-directory/design-resources/1750-libero-soc)
 * Microsemi SoftConsole IDE v3.4
 * Visual Studio Code (used for code editing)
