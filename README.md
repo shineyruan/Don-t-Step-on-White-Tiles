@@ -1,6 +1,6 @@
 # Don't Step on White Tiles (Chinese: 别踩白块)
 
-**For detailed information, please visit the full introduction on [my personal website](https://shineyruan.github.io/2019/05/03/373Proj/).**
+**For detailed information, please visit the full introduction on [my personal website](https://zhihaoruan.xyz/posts/projects/373proj/).**
 
 This is a very popular music game on smartphones. Simply by tapping on the blacktiles on a piano-like graphical interface, users can generate pieces of piano music (and even more!) and have fun with it. This game has already had many extended versions.
 
